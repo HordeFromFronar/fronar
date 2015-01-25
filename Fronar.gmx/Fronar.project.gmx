@@ -6,8 +6,15 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites"/>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bg_tileset_main</background>
+  </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts"/>
+  <objects name="objects"/>
+  <rooms name="rooms">
+    <room>rooms\rm_night_level1</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
