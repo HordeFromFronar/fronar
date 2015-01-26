@@ -9,6 +9,7 @@
     <sprite>sprites\spr_char</sprite>
     <sprite>sprites\spr_debug_grid</sprite>
     <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_enemy</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tileset_main</background>
@@ -26,6 +27,7 @@
     <object>objects\obj_mouse</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_grid</object>
+    <object>objects\obj_enemy</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>

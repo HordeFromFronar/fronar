@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>//Initialize variables
 image_speed = 0;
-moveSpeed = 5;
+moveSpeed = 3;
 gender = "";
 firsName = "";
 lastName = "";
