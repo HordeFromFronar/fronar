@@ -5,14 +5,31 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\spr_char</sprite>
+    <sprite>sprites\spr_debug_grid</sprite>
+    <sprite>sprites\spr_wall</sprite>
+  </sprites>
   <backgrounds name="background">
     <background>background\bg_tileset_main</background>
   </backgrounds>
   <paths name="paths"/>
-  <scripts name="scripts"/>
-  <objects name="objects"/>
+  <scripts name="scripts">
+    <script>scripts\select.gml</script>
+    <script>scripts\generateChar.gml</script>
+    <script>scripts\generateName.gml</script>
+  </scripts>
+  <objects name="objects">
+    <object>objects\obj_char</object>
+    <object>objects\obj_debug_controller</object>
+    <object>objects\obj_start</object>
+    <object>objects\obj_mouse</object>
+    <object>objects\obj_wall</object>
+    <object>objects\obj_grid</object>
+  </objects>
   <rooms name="rooms">
+    <room>rooms\rm_start</room>
+    <room>rooms\rm_test</room>
     <room>rooms\rm_night_level1</room>
   </rooms>
   <help>
