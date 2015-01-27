@@ -57,4 +57,3 @@ ds_list_add(lastNames,
 
 char.firstName = ds_list_find_value(firstNames,irandom(ds_list_size(firstNames) - 1));
 char.lastName = ds_list_find_value(lastNames,irandom(ds_list_size(lastNames) - 1));
-
