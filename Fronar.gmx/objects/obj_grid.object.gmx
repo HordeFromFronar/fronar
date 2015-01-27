@@ -27,9 +27,14 @@
             <kind>1</kind>
             <string>//Set up grid for pathfinding
 globalvar grid;
-grid = mp_grid_create(0,0,round(room_width/32),round(room_height/32),32,32)
+var gridSize;
+gridSize = 16;
+
+grid = mp_grid_create(-8,-8,round(room_width/gridSize),round(room_height/gridSize),gridSize,gridSize)
 
 mp_grid_add_instances(grid, obj_wall, false);
+mp_grid_add_instances(grid, obj_wall_inner, false);
+mp_grid_add_instances(grid, obj_wall_outer, false);
 </string>
           </argument>
         </arguments>

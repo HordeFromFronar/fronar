@@ -10,6 +10,8 @@
     <sprite>sprites\spr_debug_grid</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_enemy</sprite>
+    <sprite>sprites\spr_wall_inner</sprite>
+    <sprite>sprites\spr_wall_outer</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tileset_main</background>
@@ -28,6 +30,8 @@
     <object>objects\obj_wall</object>
     <object>objects\obj_grid</object>
     <object>objects\obj_enemy</object>
+    <object>objects\obj_wall_inner</object>
+    <object>objects\obj_wall_outer</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
