@@ -1,4 +1,4 @@
-//generateName(gender, obj)
+//generateName(char, gender)
 
 char = argument[0];
 gender = argument[1];
@@ -55,5 +55,5 @@ ds_list_add(lastNames,
 "Sawyer",
 "Chen");
 
-char.firstName = ds_list_find_value(firstNames,irandom(ds_list_size(firstNames) - 1));
-char.lastName = ds_list_find_value(lastNames,irandom(ds_list_size(lastNames) - 1));
+ds_list_add(char,ds_list_find_value(firstNames,irandom(ds_list_size(firstNames) - 1)));
+ds_list_add(char,ds_list_find_value(lastNames,irandom(ds_list_size(lastNames) - 1)));

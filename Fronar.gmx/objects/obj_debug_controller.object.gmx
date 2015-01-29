@@ -31,9 +31,18 @@ if (global.selected) {
     draw_text(x,y,"Selected ID: " + string(global.selected) +
     "#X: " + string(global.selected.x) +
     "#Y: " + string(global.selected.y) +
-    "#Gender: " + global.selected.gender +
-    "#First Name: " + global.selected.firstName +
-    "#Last Name: " + global.selected.lastName);
+    "#Gender: " + ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),0) +
+    "#First: " + ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),1) +
+    "#Last: " + ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),2) +
+    "#HP: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),3)) +
+    "#Range: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),4)) +
+    "#Speed: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),5))
+    );
+    
+    draw_text(x,y + 200,"#First: " + ds_list_find_value(ds_list_find_value(global.charList, 0),1) +
+    "#First: " + ds_list_find_value(ds_list_find_value(global.charList, 1),1) +
+    "#First: " + ds_list_find_value(ds_list_find_value(global.charList, 2),1)
+    );
 }
 
 draw_sprite(spr_debug_grid, 0, 
@@ -43,6 +52,30 @@ draw_sprite(spr_debug_grid, 0,
 draw_set_alpha(0.05);
 mp_grid_draw(global.grid);
 draw_set_alpha(1);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="78">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.currChar = 0;
+room_goto_next();
 </string>
           </argument>
         </arguments>

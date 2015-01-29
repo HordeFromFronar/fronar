@@ -19,6 +19,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\select.gml</script>
+    <script>scripts\assignChar.gml</script>
     <script>scripts\generateChar.gml</script>
     <script>scripts\generateName.gml</script>
   </scripts>
@@ -32,10 +33,12 @@
     <object>objects\obj_enemy</object>
     <object>objects\obj_wall_inner</object>
     <object>objects\obj_wall_outer</object>
+    <object>objects\obj_set_char</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
-    <room>rooms\rm_test</room>
+    <room>rooms\rm_test_1</room>
+    <room>rooms\rm_test_2</room>
     <room>rooms\rm_night_level1</room>
   </rooms>
   <help>
