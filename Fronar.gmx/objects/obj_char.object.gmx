@@ -27,14 +27,10 @@
             <kind>1</kind>
             <string>//Initialize variables
 image_speed = 0;
-moveSpeed = 5;
-gender = "";
-firsName = "";
-lastName = "";
+charID = 0;
+assignChar();
 xDest = x;
 yDest = y;
-
-generateChar(id);
 </string>
           </argument>
         </arguments>
@@ -57,16 +53,18 @@ generateChar(id);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Pathfinding
+<string>// Pathfinding
 if (x != xDest || y != yDest) {
-    if (point_distance(x,y,xDest,yDest) &lt;= moveSpeed) {
+    //if (point_distance(x,y,xDest,yDest) &lt;= moveSpeed) {
+    if (point_distance(x,y,xDest,yDest) &lt;= ds_list_find_value(ds_list_find_value(global.charList, charID),5)) {
         speed = 0;
         x = xDest;
         y = yDest;
     } else {
         path = path_add();
         if (mp_grid_path(global.grid, path, x, y, xDest, yDest, true)) {
-            path_start(path, moveSpeed, 0, true);
+            //path_start(path, moveSpeed, 0, true);
+            path_start(path, ds_list_find_value(ds_list_find_value(global.charList, charID),5), 0, true);
             image_angle = direction;
         }
     }
