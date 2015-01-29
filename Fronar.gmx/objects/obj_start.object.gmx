@@ -35,6 +35,8 @@ selected = 0;
 charList = ds_list_create();
 
 generateChar(3);
+
+room_goto_next();
 </string>
           </argument>
         </arguments>

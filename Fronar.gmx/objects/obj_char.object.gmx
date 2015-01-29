@@ -33,8 +33,6 @@ xDest = x;
 yDest = y;
 //Currently range is random, will be class based later
 range = irandom(6) + 1
-
-generateChar(id);
 </string>
           </argument>
         </arguments>
@@ -148,7 +146,7 @@ image_angle = orientation;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>highlightRange();
+            <string>//highlightRange();
 
 </string>
           </argument>
@@ -172,7 +170,7 @@ image_angle = orientation;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>unHighlightRange();
+            <string>//unHighlightRange();
 </string>
           </argument>
         </arguments>
