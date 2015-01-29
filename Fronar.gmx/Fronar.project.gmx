@@ -34,6 +34,7 @@
     <object>objects\obj_wall_inner</object>
     <object>objects\obj_wall_outer</object>
     <object>objects\obj_set_char</object>
+    <object>objects\obj_enemy_manager</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
