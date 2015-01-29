@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="obj_char" x="48" y="48" name="inst_817CC64A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_char" x="336" y="144" name="inst_67E911AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_char" x="480" y="192" name="inst_E7198C96" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_debug_controller" x="0" y="288" name="inst_A6B6564D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mouse" x="32" y="288" name="inst_6172F6F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grid" x="64" y="288" name="inst_984B49EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -297,6 +297,7 @@
     <tile bgName="bg_tileset_main" x="448" y="192" w="32" h="32" xo="352" yo="160" id="10000405" name="inst_484D7837" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_tileset_main" x="480" y="96" w="32" h="32" xo="352" yo="160" id="10000406" name="inst_F5015155" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_tileset_main" x="480" y="192" w="32" h="32" xo="352" yo="128" id="10000407" name="inst_A3DE3574" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_tileset_main" x="32" y="448" w="32" h="32" xo="0" yo="0" id="10000408" name="inst_EDC68E12" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

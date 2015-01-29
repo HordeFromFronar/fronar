@@ -21,6 +21,8 @@
     <script>scripts\select.gml</script>
     <script>scripts\generateChar.gml</script>
     <script>scripts\generateName.gml</script>
+    <script>scripts\highlightRange.gml</script>
+    <script>scripts\unHighlightRange.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_char</object>
