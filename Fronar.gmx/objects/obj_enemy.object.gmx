@@ -61,10 +61,7 @@ var closest = instance_nearest(x, y, obj_char);
 xDest = closest.x;
 yDest = closest.y;
 
-// Variables used for subpath calculations
-subgoal_x = xDest;
-subgoal_y = yDest;
-subgoal_point = 0;
+// Padding from the destination
 padding = 12;
 
 if (point_distance(x, y, xDest, yDest) &gt;= global.gridSize + padding) arrived = false;
@@ -72,18 +69,8 @@ if (point_distance(x, y, xDest, yDest) &gt;= global.gridSize + padding) arrived 
 // Fancy path finding to avoid other enemies
 if (!arrived) {
     path = path_add()
-    mp_potential_step(subgoal_x, subgoal_y, moveSpeed, true);
-    //mp_potential_step_object(subgoal_x, subgoal_y, moveSpeed, obj_enemy);
-    if (point_distance(x, y, subgoal_x, subgoal_y) &lt; global.gridSize + padding) {
-        subgoal_point++;
-        if (subgoal_point &lt; path_get_number(path)) {
-            subgoal_x = path_get_point_x(path, subgoal_point);
-            subgoal_y = path_get_point_y(path, subgoal_point);
-        } else {
-            subgoal_x = xDest;
-            subgoal_y = yDest;
-        }
-    }
+    mp_potential_step(xDest, yDest, moveSpeed, true);
+
     if (point_distance(x, y, xDest, yDest) &lt; global.gridSize + padding) {
         arrived = true;
         exit;
