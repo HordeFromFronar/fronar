@@ -1,4 +1,4 @@
-//generateChar(#)
+///generateChar(#)
 
 //char list format:
 //0: gender

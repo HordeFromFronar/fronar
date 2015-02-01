@@ -7,8 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_char</sprite>
-    <sprite>sprites\spr_debug_grid</sprite>
-    <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_grid</sprite>
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_wall_inner</sprite>
     <sprite>sprites\spr_wall_outer</sprite>
@@ -24,13 +23,12 @@
     <script>scripts\generateName.gml</script>
     <script>scripts\highlightRange.gml</script>
     <script>scripts\unHighlightRange.gml</script>
+    <script>scripts\lineOfSight.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_char</object>
     <object>objects\obj_debug_controller</object>
     <object>objects\obj_start</object>
-    <object>objects\obj_mouse</object>
-    <object>objects\obj_wall</object>
     <object>objects\obj_grid</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_wall_inner</object>

@@ -1,4 +1,4 @@
-//select(id)
+///select(id)
 
 if (selected) {
     selected.image_index = 0;

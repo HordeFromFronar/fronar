@@ -1,4 +1,4 @@
-//generateName(char, gender)
+///generateName(char, gender)
 
 char = argument[0];
 gender = argument[1];

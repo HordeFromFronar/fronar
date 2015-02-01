@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Set up grid for pathfinding
+            <string>///Set up grid for pathfinding
 globalvar grid;
 var gridSize;
 gridSize = 16;
@@ -33,9 +33,183 @@ gridSize = 16;
 //grid = mp_grid_create(-8,-8,round(room_width/gridSize),round(room_height/gridSize),gridSize,gridSize)
 grid = mp_grid_create(-8,-8,37,19,gridSize,gridSize)
 
-mp_grid_add_instances(grid, obj_wall, false);
 mp_grid_add_instances(grid, obj_wall_inner, false);
 mp_grid_add_instances(grid, obj_wall_outer, false);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Initialize variables
+
+displayRange = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="57">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set character destination
+xDest = 0;
+yDest = 0;
+
+if (global.selected) {
+    xDest = mouse_x - (mouse_x % 32) + 16;
+    yDest = mouse_y - (mouse_y % 32) + 16;
+    global.selected.xDest = xDest;
+    global.selected.yDest = yDest;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw firing range
+
+xRange = 0;
+yRange = 0;
+i = 0;
+j = 0;
+
+if (global.selected &amp;&amp; displayRange) {
+    xRange = mouse_x - (mouse_x % 32) + 16;
+    yRange = mouse_y - (mouse_y % 32) + 16;
+    
+    xGrid = xRange / 16;
+    yGrid = yRange / 16;
+    
+    if (mp_grid_get_cell(grid, xGrid, yGrid) != -1) {
+        draw_sprite(spr_grid, 0, xRange, yRange);
+        for (i = 0; i &lt; selected.range; i++) {
+            offset = (i + 1) * 32;
+            if (lineOfSight(xRange, yRange, xRange + offset, yRange)) {
+                draw_sprite(spr_grid, 0, xRange + offset, yRange);
+            }
+            if (lineOfSight(xRange, yRange, xRange - offset, yRange)) {
+                draw_sprite(spr_grid, 0, xRange - offset, yRange);
+            }
+            if (lineOfSight(xRange, yRange, xRange, yRange + offset)) {
+                draw_sprite(spr_grid, 0, xRange, yRange + offset);
+            }
+            if (lineOfSight(xRange, yRange, xRange, yRange - offset)) {
+                draw_sprite(spr_grid, 0, xRange, yRange - offset);
+            }
+            for (j = selected.range - i; j &gt; 1; j--) {
+                offset2 = (j - 1) * 32;
+                if (lineOfSight(xRange, yRange, xRange + offset, yRange + offset2)) {
+                    draw_sprite(spr_grid, 0, xRange + offset, yRange + offset2);
+                }
+                if (lineOfSight(xRange, yRange, xRange + offset, yRange - offset2)) {
+                    draw_sprite(spr_grid, 0, xRange + offset, yRange - offset2);
+                }
+                if (lineOfSight(xRange, yRange, xRange - offset, yRange + offset2)) {
+                    draw_sprite(spr_grid, 0, xRange - offset, yRange + offset2);
+                }
+                if (lineOfSight(xRange, yRange, xRange - offset, yRange - offset2)) {
+                    draw_sprite(spr_grid, 0, xRange - offset, yRange - offset2);
+                }
+            }
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="16">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set displayRange
+
+displayRange = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="16">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Unset displayRange
+
+displayRange = 0;
 </string>
           </argument>
         </arguments>
