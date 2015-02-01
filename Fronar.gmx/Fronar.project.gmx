@@ -13,6 +13,7 @@
     <sprite>sprites\spr_wall_outer</sprite>
   </sprites>
   <backgrounds name="background">
+    <background>background\bg_title_temp</background>
     <background>background\bg_tileset_main</background>
   </backgrounds>
   <paths name="paths"/>
@@ -35,9 +36,11 @@
     <object>objects\obj_wall_outer</object>
     <object>objects\obj_set_char</object>
     <object>objects\obj_enemy_manager</object>
+    <object>objects\obj_title_manager</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
+    <room>rooms\rm_title_screen</room>
     <room>rooms\rm_test_1</room>
     <room>rooms\rm_night_level1</room>
   </rooms>
