@@ -116,7 +116,7 @@ if (global.selected) {
 
 xRange = 0;
 yRange = 0;
-i = 0;
+i = 1;
 j = 0;
 
 if (global.selected &amp;&amp; displayRange) {
@@ -128,8 +128,8 @@ if (global.selected &amp;&amp; displayRange) {
     
     if (mp_grid_get_cell(global.grid, xGrid, yGrid) != -1) {
         draw_sprite(spr_grid, 0, xRange, yRange);
-        for (i = 0; i &lt; selected.range; i++) {
-            offset = (i + 1) * 32;
+        for (i = 1; i &lt; selected.range + 1; i++) {
+            offset = i * 32;
             if (lineOfSight(xRange, yRange, xRange + offset, yRange)) {
                 draw_sprite(spr_grid, 0, xRange + offset, yRange);
             }
@@ -142,8 +142,8 @@ if (global.selected &amp;&amp; displayRange) {
             if (lineOfSight(xRange, yRange, xRange, yRange - offset)) {
                 draw_sprite(spr_grid, 0, xRange, yRange - offset);
             }
-            for (j = selected.range - i; j &gt; 1; j--) {
-                offset2 = (j - 1) * 32;
+            for (j = selected.range - i; j &gt; 0; j--) {
+                offset2 = j * 32;
                 if (lineOfSight(xRange, yRange, xRange + offset, yRange + offset2)) {
                     draw_sprite(spr_grid, 0, xRange + offset, yRange + offset2);
                 }
