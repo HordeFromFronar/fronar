@@ -44,9 +44,9 @@ if (global.selected) {
 //    mouse_x - (mouse_x % 32) + 16, 
 //    mouse_y - (mouse_y % 32) + 16);
     
-draw_set_alpha(0.2);
-mp_grid_draw(global.grid);
-draw_set_alpha(1);
+//draw_set_alpha(0.2);
+//mp_grid_draw(global.grid);
+//draw_set_alpha(1);
 </string>
           </argument>
         </arguments>

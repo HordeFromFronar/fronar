@@ -126,7 +126,7 @@ if (global.selected &amp;&amp; displayRange) {
     xGrid = xRange / 16;
     yGrid = yRange / 16;
     
-    if (mp_grid_get_cell(grid, xGrid, yGrid) != -1) {
+    if (mp_grid_get_cell(global.grid, xGrid, yGrid) != -1) {
         draw_sprite(spr_grid, 0, xRange, yRange);
         for (i = 0; i &lt; selected.range; i++) {
             offset = (i + 1) * 32;
