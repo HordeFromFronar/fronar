@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Set up grid for pathfinding
 globalvar grid;
-var gridSize;
+globalvar gridSize;
 gridSize = 16;
 
 //grid = mp_grid_create(-8,-8,round(room_width/gridSize),round(room_height/gridSize),gridSize,gridSize)
