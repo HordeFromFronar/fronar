@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>//Initialize variables
-moveSpeed = 2;
+moveSpeed = 1;
 xDest = x;
 yDest = y;
 arrived = false;

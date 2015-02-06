@@ -40,6 +40,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
+    <room>rooms\House_Room</room>
     <room>rooms\rm_test_2</room>
     <room>rooms\rm_title_screen</room>
     <room>rooms\rm_test_1</room>
