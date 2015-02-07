@@ -73,14 +73,14 @@ for (i = 0; i &lt; instance_number(obj_enemy); ++i) {
     }
 }
 // Add collision detection to players, and walls
-//mp_grid_add_instances(e_grid, obj_char, false)
+// mp_grid_add_instances(e_grid, obj_char, false)
 mp_grid_add_instances(e_grid, obj_wall_inner, false);
 mp_grid_add_instances(e_grid, obj_wall_outer, false);
 
 // Set xDest and yDest to closest available cell by character's x and y
-/*if mp_grid_get_cell(e_grid, (closest.x div 32) + 1, (closest.y div 32) + 1) == 0 {
+/*if mp_grid_get_cell(e_grid, closest.x + 32, closest.y + 32) == 0 {
     xDest = closest.x + 32; yDest = closest.y + 32;    
-} else if mp_grid_get_cell(e_grid, (closest.x div 32) + 1, (closest.y div 32)) == 0 {
+} else if mp_grid_get_cell(e_grid, closest.x + 32, closest.y) == 0 {
     xDest = closest.x + 32; yDest = closest.y;
 } else if mp_grid_get_cell(e_grid, (closest.x div 32) + 1, (closest.y div 32) - 1) == 0 {
     xDest = closest.x + 32; yDest = closest.y - 32;
@@ -100,23 +100,21 @@ mp_grid_add_instances(e_grid, obj_wall_outer, false);
 
 xDest = closest.x; yDest = closest.y;
 
-path = path_end();
+//path = path_end();
 
 // Move towards the nearest player
 if (x != xDest || y != yDest) {
     // If we're close enough to the player, kill the path so
     // the enemy doesn't walk into the player.
-    padding = 25;
+    padding = 32;
     if (abs(x - xDest) &lt;= padding &amp;&amp; abs(y - yDest) &lt;= padding) {
         xDest = x; yDest = y;
         path = path_end();
-        // move_snap(32, 32)
     // Otherwise keep path finding the optimal path to the player
     } else {
         path = path_add();
         if (mp_grid_path(e_grid, path, x, y, xDest, yDest, true)) {
             path_start(path, moveSpeed, 0, true);
-            image_angle = point_direction(x, y, closest.x, closest.y);
         } else if (instance_place(x, y, obj_enemy) != noone) {
             // Check the odd case that we do end up on another enemy, and get stuck
             mp_grid_clear_all(e_grid);
@@ -126,12 +124,15 @@ if (x != xDest || y != yDest) {
             yDest = y + random(padding) - random(padding);
             path = path_add();
             if (mp_grid_path(e_grid, path, x, y, xDest, yDest, true)) {
-                path_start(path, moveSpeed, 0, true);
-                image_angle = point_direction(x, y, closest.x, closest.y);
+                path_start(path, moveSpeed, 0, true);    
             }
         }
     }
+    move_snap(16, 16)
 }
+
+// Look at the player
+image_angle = point_direction(x, y, closest.x, closest.y);
 
 // Clear collision detection so the old cells aren't marked
 mp_grid_clear_all(e_grid);
