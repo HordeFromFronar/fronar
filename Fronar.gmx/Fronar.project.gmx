@@ -4,17 +4,34 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_title</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_char</sprite>
     <sprite>sprites\spr_grid</sprite>
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_wall_inner</sprite>
     <sprite>sprites\spr_wall_outer</sprite>
+    <sprite>sprites\spr_title</sprite>
+    <sprite>sprites\spr_title_borgi</sprite>
+    <sprite>sprites\spr_title_continue</sprite>
+    <sprite>sprites\spr_title_new</sprite>
+    <sprite>sprites\spr_title_options</sprite>
+    <sprite>sprites\spr_title_quit</sprite>
+    <sprite>sprites\spr_opening_1</sprite>
+    <sprite>sprites\spr_left_arrow</sprite>
+    <sprite>sprites\spr_right_arrow</sprite>
+    <sprite>sprites\spr_opening_skip_all</sprite>
+    <sprite>sprites\spr_crew_select</sprite>
+    <sprite>sprites\spr_start</sprite>
+    <sprite>sprites\spr_mainmenu</sprite>
   </sprites>
   <backgrounds name="background">
-    <background>background\bg_title_temp</background>
+    <background>background\bg_title</background>
     <background>background\bg_tileset_main</background>
+    <background>background\bg_logo</background>
+    <background>background\bg_title_dark</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -37,12 +54,28 @@
     <object>objects\obj_set_char</object>
     <object>objects\obj_enemy_manager</object>
     <object>objects\obj_title_manager</object>
+    <object>objects\obj_splash_manager</object>
+    <object>objects\obj_new_game</object>
+    <object>objects\obj_options</object>
+    <object>objects\obj_continue</object>
+    <object>objects\obj_quit</object>
+    <object>objects\obj_title_borgi</object>
+    <object>objects\obj_opening_panel</object>
+    <object>objects\obj_opening_left</object>
+    <object>objects\obj_opening_right</object>
+    <object>objects\obj_opening_skip_all</object>
+    <object>objects\obj_crew_select</object>
+    <object>objects\obj_start_button</object>
+    <object>objects\obj_main_menu_button</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
+    <room>rooms\rm_splash_screen</room>
+    <room>rooms\rm_title_screen</room>
+    <room>rooms\rm_opening_cutscene</room>
+    <room>rooms\rm_crew_select_1</room>
     <room>rooms\House_Room</room>
     <room>rooms\rm_test_2</room>
-    <room>rooms\rm_title_screen</room>
     <room>rooms\rm_test_1</room>
     <room>rooms\rm_night_level1</room>
   </rooms>
