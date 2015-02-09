@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>///Init
 
-hp = 5;
+maxHealth = 5;
+hp = maxHealth;
 evade = 0;
 armour = 0;
 </string>
@@ -56,6 +57,34 @@ armour = 0;
     instance_create(x,y,obj_crate_destroyed)
 
     instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw health bar
+if (hp &lt; maxHealth) {
+    hpDisplay = round((hp/maxHealth) * 100);
+
+    draw_healthbar(x - 8, y + 5, x + 8, y - 5, hpDisplay, c_black, c_red, c_lime, 0, true, true)
 }
 </string>
           </argument>
