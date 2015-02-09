@@ -33,7 +33,7 @@ moveSpeed = 1;
 xDest = x;
 yDest = y;
 arrived = false;
-hp = 10;
+hp = 5;
 rate = 1;
 attacking = 0;
 damage = 1;
@@ -133,8 +133,15 @@ if (target &amp;&amp; attacking) {
             <kind>1</kind>
             <string>/// Pathfinding Enemy
 
-// Determine the closest player
-var closest = instance_nearest(x, y, obj_char);
+// Determine the closest target
+target_char = instance_nearest(x, y, obj_char);
+target_crate = instance_nearest(x, y, obj_crate);
+
+if (distance_to_object(target_char) &lt;= distance_to_object(target_crate)) {
+    closest = target_char;
+} else {
+    closest = target_crate;
+}
 
 // Add collision detection to all other enemies
 var i;
@@ -256,7 +263,15 @@ if (hp == 0) {
           <argument>
             <kind>1</kind>
             <string>///Attacking
-target = instance_nearest(x, y, obj_char);
+
+target_char = instance_nearest(x, y, obj_char);
+target_crate = instance_nearest(x, y, obj_crate);
+
+if (distance_to_object(target_char) &lt;= distance_to_object(target_crate)) {
+    target = target_char;
+} else {
+    target = target_crate;
+}
 
 if (target &amp;&amp; !attacking) {
     if (x == xDest &amp;&amp; y == yDest &amp;&amp; lineOfSight(x, y, target.x, target.y)) {

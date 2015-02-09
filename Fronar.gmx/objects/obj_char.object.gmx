@@ -186,6 +186,7 @@ mp_grid_add_instances(p_grid, obj_enemy, false);
 mp_grid_add_instances(p_grid, obj_enemy_laser, false);
 mp_grid_add_instances(p_grid, obj_wall_inner, false);
 mp_grid_add_instances(p_grid, obj_wall_outer, false);
+mp_grid_add_instances(p_grid, obj_crate, false);
 
 // Move towards the dest
 if (x != xDest || y != yDest) {

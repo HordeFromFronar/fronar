@@ -15,6 +15,8 @@
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_wall_inner</sprite>
     <sprite>sprites\spr_wall_outer</sprite>
+    <sprite>sprites\spr_crate</sprite>
+    <sprite>sprites\spr_crate_destroyed</sprite>
     <sprite>sprites\spr_title</sprite>
     <sprite>sprites\spr_title_borgi</sprite>
     <sprite>sprites\spr_title_continue</sprite>
@@ -43,6 +45,7 @@
     <script>scripts\assignChar.gml</script>
     <script>scripts\generateChar.gml</script>
     <script>scripts\generateName.gml</script>
+    <script>scripts\generateResources.gml</script>
     <script>scripts\highlightRange.gml</script>
     <script>scripts\unHighlightRange.gml</script>
     <script>scripts\damageObj.gml</script>
@@ -58,6 +61,8 @@
     <object>objects\obj_bullet</object>
     <object>objects\obj_wall_inner</object>
     <object>objects\obj_wall_outer</object>
+    <object>objects\obj_crate</object>
+    <object>objects\obj_crate_destroyed</object>
     <object>objects\obj_set_char</object>
     <object>objects\obj_enemy_manager</object>
     <object>objects\obj_title_manager</object>
