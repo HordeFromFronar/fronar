@@ -34,6 +34,7 @@ if (global.selected) {
     "#Gender: " + ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),0) +
     "#First: " + ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),1) +
     "#Last: " + ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),2) +
+    "#Age: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID), 7)) + 
     "#HP: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),3)) +
     "#Range: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),4)) +
     "#Speed: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),5))

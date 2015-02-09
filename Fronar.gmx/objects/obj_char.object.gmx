@@ -39,6 +39,8 @@ last = ds_list_find_value(ds_list_find_value(global.charList, charID),2);
 hp = ds_list_find_value(ds_list_find_value(global.charList, charID),3);
 range = ds_list_find_value(ds_list_find_value(global.charList, charID),4);
 moveSpeed = ds_list_find_value(ds_list_find_value(global.charList, charID),5);
+portraitId = ds_list_find_value(ds_list_find_value(global.charList, charID),6);
+age = ds_list_find_value(ds_list_find_value(global.charList, charID),7);
 
 //Each character requires its own grid for collision reasons.
 p_gridSize = 16;

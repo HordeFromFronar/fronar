@@ -26,12 +26,14 @@
     <sprite>sprites\spr_crew_select</sprite>
     <sprite>sprites\spr_start</sprite>
     <sprite>sprites\spr_mainmenu</sprite>
+    <sprite>sprites\spr_ally_portrait</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_title</background>
     <background>background\bg_tileset_main</background>
     <background>background\bg_logo</background>
     <background>background\bg_title_dark</background>
+    <background>background\bg_win</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -67,6 +69,7 @@
     <object>objects\obj_crew_select</object>
     <object>objects\obj_start_button</object>
     <object>objects\obj_main_menu_button</object>
+    <object>objects\obj_crew_select_drawer_1</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
@@ -78,6 +81,7 @@
     <room>rooms\rm_test_2</room>
     <room>rooms\rm_test_1</room>
     <room>rooms\rm_night_level1</room>
+    <room>rooms\rm_win</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
