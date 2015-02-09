@@ -56,8 +56,8 @@ crit = ds_list_find_value(ds_list_find_value(global.charList, charID),13);
 
 //Each character requires its own grid for collision reasons.
 p_gridSize = 16;
-p_grid = mp_grid_create(-8,-8,round(room_width/p_gridSize),
-                        round(room_height/p_gridSize),p_gridSize,p_gridSize)
+p_grid = mp_grid_create(-8,-8,round(room_width/p_gridSize) + 10,
+                        round(room_height/p_gridSize) + 10,p_gridSize,p_gridSize)
 </string>
           </argument>
         </arguments>

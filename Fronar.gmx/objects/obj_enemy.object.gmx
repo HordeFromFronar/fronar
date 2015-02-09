@@ -46,8 +46,8 @@ target = 0;
 
 //Each enemy requires its own grid for collision reasons.
 e_gridSize = 16;
-e_grid = mp_grid_create(-8,-8,round(room_width/e_gridSize),
-                        round(room_height/e_gridSize),e_gridSize,e_gridSize);
+e_grid = mp_grid_create(-40,-40,round(room_width/e_gridSize) + 6,
+                        round(room_height/e_gridSize) + 6,e_gridSize,e_gridSize);
 </string>
           </argument>
         </arguments>

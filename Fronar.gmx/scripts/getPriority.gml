@@ -16,15 +16,15 @@ with (obj) {
         !target_door.open) {
         target = target_door;
         ignoreSight = 1;
-    } else if (distance_to_object(target_char) <= distance_to_object(target_crate) && 
-        distance_to_object(target_char) <= distance_to_object(target_turret) &&
+    } else if (distance_to_object(target_crate) <= distance_to_object(target_char) && 
+        distance_to_object(target_crate) <= distance_to_object(target_turret) &&
+        distance_to_object(target_crate) <= distance_to_object(target_barricade)) {
+        target = target_crate;
+    } else if (distance_to_object(target_char) <= distance_to_object(target_turret) &&
         distance_to_object(target_char) <= distance_to_object(target_barricade)) {
         target = target_char;
-    } else if (distance_to_object(target_turret) <= distance_to_object(target_crate) &&
-        distance_to_object(target_turret) <= distance_to_object(target_barricade)) {
+    } else if (distance_to_object(target_turret) <= distance_to_object(target_barricade)){
         target = target_turret;
-    } else if (distance_to_object(target_crate) <= distance_to_object(target_barricade)){
-        target = target_crate;
     } else {
         target = target_barricade;
     }

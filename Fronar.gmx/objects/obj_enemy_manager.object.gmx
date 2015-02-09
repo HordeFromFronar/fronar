@@ -55,10 +55,40 @@ alarm[0] = alarmTime;
 
 alarm[0] = room_speed * 2;
 
-spawn_x = 50
-spawn_y = 50
+loc = irandom(4);
 
-instance_create(spawn_x, spawn_y, obj_enemy);
+spawn_x = 0;
+spawn_y = 0;
+
+switch(loc) {
+    case 0:
+        spawn_x = irandom(room_width);
+        spawn_y = -16;
+        break;
+    case 1:
+        spawn_x = irandom(room_width);
+        spawn_y = room_height + 16;
+        break;
+    case 2:
+        spawn_x = -16;
+        spawn_y = irandom(room_height);
+        break;
+    case 3:
+        spawn_x = room_width + 16;
+        spawn_y = irandom(room_height);
+        break;
+}
+
+type = irandom(2);
+
+switch (type) {
+    case 0:
+        instance_create(spawn_x, spawn_y, obj_enemy);
+        break;
+    case 1:
+        instance_create(spawn_x, spawn_y, obj_enemy_laser);
+        break;
+}
 </string>
           </argument>
         </arguments>
