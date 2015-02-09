@@ -28,9 +28,9 @@ portraitId = 0;
 age = 18;
 cDamage = 1;
 cRate = 2;
-cArmour = 1;
-cEvade = 0;
-cCrit = 0;
+cArmour = 0;
+cEvade = 10;
+cCrit = 10;
 
 while (count) {
     char = ds_list_create();
