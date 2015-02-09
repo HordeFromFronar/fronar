@@ -32,7 +32,7 @@ hp = maxHealth;
 evade = 0;
 armour = 0;
 
-openSpeed = 4;
+openSpeed = 6;
 open = 0;
 
 originalX = x;
@@ -100,9 +100,9 @@ if (hp &lt;= 0) {
           <argument>
             <kind>1</kind>
             <string>///Open
-closest = instance_nearest(x, y, obj_char);
+closest = instance_nearest(originalX, originalY, obj_char);
 
-if (distance_to_object(closest) &lt; 20) {
+if (point_distance(originalX,originalY,closest.x,closest.y) &lt; 20) {
     if (x!= targetX || y != targetY) {
         if (distance_to_point(targetX, targetY) &lt;= openSpeed) {
             x = targetX;

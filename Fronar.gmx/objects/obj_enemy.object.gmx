@@ -143,25 +143,9 @@ if (target &amp;&amp; attacking) {
 padding = 32;
 
 // Determine the closest target
-target_char = instance_nearest(x, y, obj_char);
-target_crate = instance_nearest(x, y, obj_crate);
-target_door = instance_nearest(x, y, obj_door);
-target_turret = instance_nearest(x, y, obj_turret);
+getPriority(id);
 
-if (distance_to_object(target_door) &lt;= distance_to_object(target_char) &amp;&amp; 
-    distance_to_object(target_door) &lt;= distance_to_object(target_crate) &amp;&amp; 
-    distance_to_object(target_door) &lt;= distance_to_object(target_turret) &amp;&amp;
-    !target_door.open) {
-    closest = target_door;
-    //padding = 20;
-} else if (distance_to_object(target_char) &lt;= distance_to_object(target_crate) &amp;&amp; 
-    distance_to_object(target_char) &lt;= distance_to_object(target_turret)) {
-    closest = target_char;
-} else if (distance_to_object(target_turret) &lt;= distance_to_object(target_crate)) {
-    closest = target_turret;
-} else {
-    closest = target_crate;
-}
+closest = target;
 
 // Add collision detection to all other enemies
 var i;
