@@ -11,6 +11,7 @@
     <sprite>sprites\spr_char</sprite>
     <sprite>sprites\spr_grid</sprite>
     <sprite>sprites\spr_enemy</sprite>
+    <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_wall_inner</sprite>
     <sprite>sprites\spr_wall_outer</sprite>
     <sprite>sprites\spr_title</sprite>
@@ -51,6 +52,7 @@
     <object>objects\obj_start</object>
     <object>objects\obj_grid</object>
     <object>objects\obj_enemy</object>
+    <object>objects\obj_bullet</object>
     <object>objects\obj_wall_inner</object>
     <object>objects\obj_wall_outer</object>
     <object>objects\obj_set_char</object>

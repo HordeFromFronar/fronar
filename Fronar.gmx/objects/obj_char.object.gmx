@@ -31,21 +31,105 @@ charID = 0;
 assignChar();
 xDest = x;
 yDest = y;
+target = 0;
+attacking = 0;
+sight = 0;
 
 //Initialize character info
 gender = ds_list_find_value(ds_list_find_value(global.charList, charID),0);
 first = ds_list_find_value(ds_list_find_value(global.charList, charID),1);
 last = ds_list_find_value(ds_list_find_value(global.charList, charID),2);
-hp = ds_list_find_value(ds_list_find_value(global.charList, charID),3);
+maxHealth = ds_list_find_value(ds_list_find_value(global.charList, charID),3);
 range = ds_list_find_value(ds_list_find_value(global.charList, charID),4);
 moveSpeed = ds_list_find_value(ds_list_find_value(global.charList, charID),5);
 portraitId = ds_list_find_value(ds_list_find_value(global.charList, charID),6);
 age = ds_list_find_value(ds_list_find_value(global.charList, charID),7);
+hp = ds_list_find_value(ds_list_find_value(global.charList, charID),8);
+damage = ds_list_find_value(ds_list_find_value(global.charList, charID),9);
+rate = ds_list_find_value(ds_list_find_value(global.charList, charID),10);
+armour = ds_list_find_value(ds_list_find_value(global.charList, charID),11);
+evade = ds_list_find_value(ds_list_find_value(global.charList, charID),12);
+crit = ds_list_find_value(ds_list_find_value(global.charList, charID),13);
 
 //Each character requires its own grid for collision reasons.
 p_gridSize = 16;
 p_grid = mp_grid_create(-8,-8,round(room_width/p_gridSize),
                         round(room_height/p_gridSize),p_gridSize,p_gridSize)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Firing code
+
+target = instance_nearest(x, y, obj_enemy);
+
+if (target &amp;&amp; attacking) {    
+    sight = 0;
+    
+    xTarget = target.x - (target.x % 32) + 16;
+    yTarget = target.y - (target.y % 32) + 16;
+    
+    for (i = 1; i &lt; range + 1; i++) {
+        offset = i * 32;
+        if (lineOfSight(x, y, x + offset, y) &amp;&amp; xTarget == x + offset &amp;&amp; yTarget == y) {
+            sight = 1;
+        }
+        if (lineOfSight(x, y, x - offset, y) &amp;&amp; xTarget == x - offset &amp;&amp; yTarget == y) {
+            sight = 1;
+        }
+        if (lineOfSight(x, y, x, y + offset) &amp;&amp; xTarget == x &amp;&amp; yTarget == y + offset) {
+            sight = 1;
+        }
+        if (lineOfSight(x, y, x, y - offset) &amp;&amp; xTarget == x &amp;&amp; yTarget == y - offset) {
+            sight = 1;
+        }
+        for (j = range - i; j &gt; 0; j--) {
+            offset2 = j * 32;
+            if (lineOfSight(x, y, x + offset, y + offset2) &amp;&amp; xTarget == x + offset &amp;&amp; yTarget == y + offset2) {
+                sight = 1;
+            }
+            if (lineOfSight(x, y, x + offset, y - offset2) &amp;&amp; xTarget == x + offset &amp;&amp; yTarget == y - offset2) {
+                sight = 1;
+            }
+            if (lineOfSight(x, y, x - offset, y + offset2) &amp;&amp; xTarget == x - offset &amp;&amp; yTarget == y + offset2) {
+                sight = 1;
+            }
+            if (lineOfSight(x, y, x - offset, y - offset2) &amp;&amp; xTarget == x - offset &amp;&amp; yTarget == y - offset2) {
+                sight = 1;
+            } 
+        }
+    }
+    if (sight){
+        alarm[0] = 30 / rate;
+        
+        with(instance_create(x,y,obj_bullet)) { 
+            target = instance_nearest(x, y, obj_enemy);
+            move_towards_point(target.x,target.y,5); 
+        }
+    } else {
+        attacking = 0;
+    }
+} else {
+    attacking = 0;
+}
 </string>
           </argument>
         </arguments>
@@ -145,6 +229,108 @@ closest = instance_nearest(x, y, obj_enemy);
 
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Start auto firing
+target = instance_nearest(x, y, obj_enemy);
+
+if (target &amp;&amp; !attacking) {
+    sight = 0;
+    
+    xTarget = target.x - (target.x % 32) + 16;
+    yTarget = target.y - (target.y % 32) + 16;
+    
+    for (i = 1; i &lt; range + 1; i++) {
+        offset = i * 32;
+        if (lineOfSight(x, y, x + offset, y) &amp;&amp; xTarget == x + offset &amp;&amp; yTarget == y) {
+            sight = 1;
+        }
+        if (lineOfSight(x, y, x - offset, y) &amp;&amp; xTarget == x - offset &amp;&amp; yTarget == y) {
+            sight = 1;
+        }
+        if (lineOfSight(x, y, x, y + offset) &amp;&amp; xTarget == x &amp;&amp; yTarget == y + offset) {
+            sight = 1;
+        }
+        if (lineOfSight(x, y, x, y - offset) &amp;&amp; xTarget == x &amp;&amp; yTarget == y - offset) {
+            sight = 1;
+        }
+        for (j = range - i; j &gt; 0; j--) {
+            offset2 = j * 32;
+            if (lineOfSight(x, y, x + offset, y + offset2) &amp;&amp; xTarget == x + offset &amp;&amp; yTarget == y + offset2) {
+                sight = 1;
+            }
+            if (lineOfSight(x, y, x + offset, y - offset2) &amp;&amp; xTarget == x + offset &amp;&amp; yTarget == y - offset2) {
+                sight = 1;
+            }
+            if (lineOfSight(x, y, x - offset, y + offset2) &amp;&amp; xTarget == x - offset &amp;&amp; yTarget == y + offset2) {
+                sight = 1;
+            }
+            if (lineOfSight(x, y, x - offset, y - offset2) &amp;&amp; xTarget == x - offset &amp;&amp; yTarget == y - offset2) {
+                sight = 1;
+            } 
+        }
+    }
+    if (sight){
+        attacking = 1;
+        alarm[0] = 30 / rate;
+        
+        with(instance_create(x,y,obj_bullet)) { 
+            target = instance_nearest(x, y, obj_enemy);
+            move_towards_point(target.x,target.y,5); 
+        }
+    }
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Health management
+
+ds_list_replace(ds_list_find_value(global.charList, charID),8, hp);
+
+if (hp == 0) {
+    if (global.selected = id) {
+        global.selected = 0;
+    }
+
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
