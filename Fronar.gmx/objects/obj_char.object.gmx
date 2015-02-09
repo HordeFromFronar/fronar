@@ -194,7 +194,8 @@ if (x != xDest || y != yDest) {
     path = path_add();
     if (mp_grid_path(p_grid, path, x, y, xDest, yDest, true)) {
         path_start(path, moveSpeed, 0, true);
-        image_angle = point_direction(x, y, xDest, yDest);
+        //image_angle = point_direction(x, y, xDest, yDest);
+        //image_angle = direction;
     } else if (instance_place(x, y, obj_enemy) != noone || instance_place(x, y, obj_enemy_laser) != noone) {
         // Check the odd case that we do end up on an enemy, and get stuck
         mp_grid_clear_all(p_grid);
@@ -366,6 +367,8 @@ if (target) {
         orientation = point_direction(x, y, target.x, target.y);
         image_angle = orientation;
     }
+} else {
+    image_angle = direction;
 }
 </string>
           </argument>

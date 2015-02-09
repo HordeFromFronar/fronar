@@ -119,9 +119,11 @@ if (target &amp;&amp; attacking) {
         alarm[1] = 5;  
     } else {
         attacking = 0;
+        target = 0;
     }
 } else {
     attacking = 0;
+    target = 0;
 }
 </string>
           </argument>
@@ -231,8 +233,8 @@ if (x != xDest || y != yDest) {
     move_snap(16, 16)
 }
 
-// Look at the player
-image_angle = point_direction(x, y, closest.x, closest.y);
+orientation = point_direction(x, y, closest.x, closest.y);
+image_angle = orientation;
 
 // Clear collision detection so the old cells aren't marked
 mp_grid_clear_all(e_grid);
@@ -308,7 +310,36 @@ if (target &amp;&amp; !attacking) {
         
         image_index = 1;    
         alarm[1] = 5;  
-    } 
+    } else {
+        target = 0;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Set orientation
+if (target) {
+    if (instance_exists(target)) {
+        orientation = point_direction(x, y, target.x, target.y);
+        image_angle = orientation;
+    }
 }
 </string>
           </argument>

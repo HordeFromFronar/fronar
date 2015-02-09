@@ -160,9 +160,11 @@ if (target &amp;&amp; attacking) {
         damageObj(target,id);
     } else {
         attacking = 0;
+        target = 0;
     }
 } else {
     attacking = 0;
+    target = 0;
 }
 </string>
           </argument>
@@ -263,15 +265,15 @@ if (x != xDest || y != yDest) {
             yDest = y + random(padding) - random(padding);
             path = path_add();
             if (mp_grid_path(e_grid, path, x, y, xDest, yDest, true)) {
-                path_start(path, moveSpeed, 0, true);    
+                path_start(path, moveSpeed, 0, true);  
             }
         }
     }
     move_snap(16, 16)
 }
 
-// Look at the player
-image_angle = point_direction(x, y, closest.x, closest.y);
+orientation = point_direction(x, y, closest.x, closest.y);
+image_angle = orientation;
 
 // Clear collision detection so the old cells aren't marked
 mp_grid_clear_all(e_grid);
@@ -357,6 +359,8 @@ if (target &amp;&amp; !attacking) {
         alarm[1] = 5;
         
         damageObj(target,id);
+    } else {
+        target = 0;
     }
 }
 </string>
@@ -382,6 +386,33 @@ if (target &amp;&amp; !attacking) {
             <string>///Health management
 if (hp &lt;= 0) {
     instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Set orientation
+if (target) {
+    if (instance_exists(target)) {
+        orientation = point_direction(x, y, target.x, target.y);
+        image_angle = orientation;
+    }
 }
 </string>
           </argument>
