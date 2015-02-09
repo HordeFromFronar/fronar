@@ -447,7 +447,7 @@ if (laser) {
 if (hp &lt; maxHealth) {
     hpDisplay = round((hp/maxHealth) * 100);
 
-    draw_healthbar(x - 8, y + 5, x + 8, y - 5, hpDisplay, c_black, c_red, c_lime, 0, true, true)
+    draw_healthbar(x - 6, y + 3, x + 6, y - 3, hpDisplay, c_black, c_red, c_lime, 0, true, true)
 }
 </string>
           </argument>

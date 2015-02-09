@@ -54,6 +54,8 @@ armour = ds_list_find_value(ds_list_find_value(global.charList, charID),11);
 evade = ds_list_find_value(ds_list_find_value(global.charList, charID),12);
 crit = ds_list_find_value(ds_list_find_value(global.charList, charID),13);
 
+image_index = portraitId;
+
 //Each character requires its own grid for collision reasons.
 p_gridSize = 16;
 p_grid = mp_grid_create(-8,-8,round(room_width/p_gridSize) + 10,
@@ -530,7 +532,7 @@ select(id);
 if (hp &lt; maxHealth) {
     hpDisplay = round((hp/maxHealth) * 100);
 
-    draw_healthbar(x - 8, y + 5, x + 8, y - 5, hpDisplay, c_black, c_red, c_lime, 0, true, true)
+    draw_healthbar(x - 6, y + 3, x + 6, y - 3, hpDisplay, c_black, c_red, c_lime, 0, true, true)
 }
 </string>
           </argument>
