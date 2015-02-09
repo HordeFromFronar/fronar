@@ -32,7 +32,7 @@ moveSpeed = 1;
 xDest = x;
 yDest = y;
 arrived = false;
-maxHealth = 5;
+maxHealth = 8;
 hp = maxHealth;
 rate = 1;
 range = 3;
@@ -99,17 +99,7 @@ laser = 0;
           <argument>
             <kind>1</kind>
             <string>///Attacking
-target_char = instance_nearest(x, y, obj_char);
-target_crate = instance_nearest(x, y, obj_crate);
-target_door = instance_nearest(x, y, obj_door);
-
-if (distance_to_object(target_door) &lt;= distance_to_object(target_char) &amp;&amp; distance_to_object(target_door) &lt;= distance_to_object(target_crate) &amp;&amp; !target_door.open) {
-    target = target_door;
-} else if (distance_to_object(target_char) &lt;= distance_to_object(target_crate)) {
-    target = target_char;
-} else {
-    target = target_crate;
-}
+getPriority(id);
 
 if (target &amp;&amp; attacking) {
     sight = 0;
@@ -194,11 +184,18 @@ if (target &amp;&amp; attacking) {
 target_char = instance_nearest(x, y, obj_char);
 target_crate = instance_nearest(x, y, obj_crate);
 target_door = instance_nearest(x, y, obj_door);
+target_turret = instance_nearest(x, y, obj_turret);
 
-if (distance_to_object(target_door) &lt;= distance_to_object(target_char) &amp;&amp; distance_to_object(target_door) &lt;= distance_to_object(target_crate) &amp;&amp; !target_door.open) {
+if (distance_to_object(target_door) &lt;= distance_to_object(target_char) &amp;&amp; 
+    distance_to_object(target_door) &lt;= distance_to_object(target_crate) &amp;&amp; 
+    distance_to_object(target_door) &lt;= distance_to_object(target_turret) &amp;&amp;
+    !target_door.open) {
     closest = target_door;
-} else if (distance_to_object(target_char) &lt;= distance_to_object(target_crate)) {
+} else if (distance_to_object(target_char) &lt;= distance_to_object(target_crate) &amp;&amp; 
+    distance_to_object(target_char) &lt;= distance_to_object(target_turret)) {
     closest = target_char;
+} else if (distance_to_object(target_turret) &lt;= distance_to_object(target_crate)) {
+    closest = target_turret;
 } else {
     closest = target_crate;
 }
@@ -300,17 +297,7 @@ mp_grid_clear_all(e_grid);
           <argument>
             <kind>1</kind>
             <string>///Start Attacking
-target_char = instance_nearest(x, y, obj_char);
-target_crate = instance_nearest(x, y, obj_crate);
-target_door = instance_nearest(x, y, obj_door);
-
-if (distance_to_object(target_door) &lt;= distance_to_object(target_char) &amp;&amp; distance_to_object(target_door) &lt;= distance_to_object(target_crate) &amp;&amp; !target_door.open) {
-    target = target_door;
-} else if (distance_to_object(target_char) &lt;= distance_to_object(target_crate)) {
-    target = target_char;
-} else {
-    target = target_crate;
-}
+getPriority(id);
 
 if (target &amp;&amp; !attacking) {
     sight = 0;

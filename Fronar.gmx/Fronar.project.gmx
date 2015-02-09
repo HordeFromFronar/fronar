@@ -19,6 +19,9 @@
     <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_crate</sprite>
     <sprite>sprites\spr_crate_destroyed</sprite>
+    <sprite>sprites\spr_barricade</sprite>
+    <sprite>sprites\spr_turret_gun</sprite>
+    <sprite>sprites\spr_turret_base</sprite>
     <sprite>sprites\spr_title</sprite>
     <sprite>sprites\spr_title_borgi</sprite>
     <sprite>sprites\spr_title_continue</sprite>
@@ -51,22 +54,27 @@
     <script>scripts\highlightRange.gml</script>
     <script>scripts\unHighlightRange.gml</script>
     <script>scripts\damageObj.gml</script>
+    <script>scripts\getPriority.gml</script>
     <script>scripts\lineOfSight.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_char</object>
     <object>objects\obj_debug_controller</object>
+    <object>objects\obj_resources</object>
     <object>objects\obj_start</object>
     <object>objects\obj_grid</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_enemy_laser</object>
     <object>objects\obj_bullet</object>
+    <object>objects\obj_turret</object>
+    <object>objects\obj_turret_base</object>
     <object>objects\obj_wall_inner</object>
     <object>objects\obj_wall_outer</object>
     <object>objects\obj_wall_window</object>
     <object>objects\obj_door</object>
     <object>objects\obj_crate</object>
     <object>objects\obj_crate_destroyed</object>
+    <object>objects\obj_barricade</object>
     <object>objects\obj_set_char</object>
     <object>objects\obj_enemy_manager</object>
     <object>objects\obj_title_manager</object>
