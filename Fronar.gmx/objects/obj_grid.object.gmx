@@ -81,14 +81,52 @@ displayRange = 0;
           <argument>
             <kind>1</kind>
             <string>///Set character destination
+//xDest = 0;
+//yDest = 0;
+
+//if (global.selected &amp;&amp; !obj_resources.selectedPlc) {
+//    if (instance_exists(global.selected)) {
+//        xDest = mouse_x - (mouse_x % 32) + 16;
+//        yDest = mouse_y - (mouse_y % 32) + 16;
+//        global.selected.xDest = xDest;
+//        global.selected.yDest = yDest;
+//    }
+//}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="51">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set character destination
 xDest = 0;
 yDest = 0;
 
-if (global.selected) {
-    xDest = mouse_x - (mouse_x % 32) + 16;
-    yDest = mouse_y - (mouse_y % 32) + 16;
-    global.selected.xDest = xDest;
-    global.selected.yDest = yDest;
+if (global.selected &amp;&amp; !obj_resources.selectedPlc) {
+    if (instance_exists(global.selected)) {
+        xDest = mouse_x - (mouse_x % 32) + 16;
+        yDest = mouse_y - (mouse_y % 32) + 16;
+        global.selected.xDest = xDest;
+        global.selected.yDest = yDest;
+        
+        global.selected.buildOrder = 0;
+    }
 }
 </string>
           </argument>
@@ -120,41 +158,43 @@ i = 1;
 j = 0;
 
 if (global.selected &amp;&amp; displayRange) {
-    xRange = mouse_x - (mouse_x % 32) + 16;
-    yRange = mouse_y - (mouse_y % 32) + 16;
-    
-    xGrid = xRange / 16;
-    yGrid = yRange / 16;
-    
-    if (mp_grid_get_cell(global.grid, xGrid, yGrid) != -1) {
-        draw_sprite(spr_grid, 0, xRange, yRange);
-        for (i = 1; i &lt; selected.range + 1; i++) {
-            offset = i * 32;
-            if (lineOfSight(xRange, yRange, xRange + offset, yRange, true)) {
-                draw_sprite(spr_grid, 0, xRange + offset, yRange);
-            }
-            if (lineOfSight(xRange, yRange, xRange - offset, yRange, true)) {
-                draw_sprite(spr_grid, 0, xRange - offset, yRange);
-            }
-            if (lineOfSight(xRange, yRange, xRange, yRange + offset, true)) {
-                draw_sprite(spr_grid, 0, xRange, yRange + offset);
-            }
-            if (lineOfSight(xRange, yRange, xRange, yRange - offset, true)) {
-                draw_sprite(spr_grid, 0, xRange, yRange - offset);
-            }
-            for (j = selected.range - i; j &gt; 0; j--) {
-                offset2 = j * 32;
-                if (lineOfSight(xRange, yRange, xRange + offset, yRange + offset2, true)) {
-                    draw_sprite(spr_grid, 0, xRange + offset, yRange + offset2);
+    if (instance_exists(global.selected)) {
+        xRange = mouse_x - (mouse_x % 32) + 16;
+        yRange = mouse_y - (mouse_y % 32) + 16;
+        
+        xGrid = xRange / 16;
+        yGrid = yRange / 16;
+        
+        if (mp_grid_get_cell(global.selected.p_grid, xGrid, yGrid) != -1) {
+            draw_sprite(spr_grid, 0, xRange, yRange);
+            for (i = 1; i &lt; selected.range + 1; i++) {
+                offset = i * 32;
+                if (lineOfSight(xRange, yRange, xRange + offset, yRange, true)) {
+                    draw_sprite(spr_grid, 0, xRange + offset, yRange);
                 }
-                if (lineOfSight(xRange, yRange, xRange + offset, yRange - offset2, true)) {
-                    draw_sprite(spr_grid, 0, xRange + offset, yRange - offset2);
+                if (lineOfSight(xRange, yRange, xRange - offset, yRange, true)) {
+                    draw_sprite(spr_grid, 0, xRange - offset, yRange);
                 }
-                if (lineOfSight(xRange, yRange, xRange - offset, yRange + offset2, true)) {
-                    draw_sprite(spr_grid, 0, xRange - offset, yRange + offset2);
+                if (lineOfSight(xRange, yRange, xRange, yRange + offset, true)) {
+                    draw_sprite(spr_grid, 0, xRange, yRange + offset);
                 }
-                if (lineOfSight(xRange, yRange, xRange - offset, yRange - offset2, true)) {
-                    draw_sprite(spr_grid, 0, xRange - offset, yRange - offset2);
+                if (lineOfSight(xRange, yRange, xRange, yRange - offset, true)) {
+                    draw_sprite(spr_grid, 0, xRange, yRange - offset);
+                }
+                for (j = selected.range - i; j &gt; 0; j--) {
+                    offset2 = j * 32;
+                    if (lineOfSight(xRange, yRange, xRange + offset, yRange + offset2, true)) {
+                        draw_sprite(spr_grid, 0, xRange + offset, yRange + offset2);
+                    }
+                    if (lineOfSight(xRange, yRange, xRange + offset, yRange - offset2, true)) {
+                        draw_sprite(spr_grid, 0, xRange + offset, yRange - offset2);
+                    }
+                    if (lineOfSight(xRange, yRange, xRange - offset, yRange + offset2, true)) {
+                        draw_sprite(spr_grid, 0, xRange - offset, yRange + offset2);
+                    }
+                    if (lineOfSight(xRange, yRange, xRange - offset, yRange - offset2, true)) {
+                        draw_sprite(spr_grid, 0, xRange - offset, yRange - offset2);
+                    }
                 }
             }
         }
