@@ -3,7 +3,7 @@
   <spriteName>spr_char</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -98,30 +98,30 @@ if (target &amp;&amp; attacking) {
     
     for (i = 1; i &lt; range + 1; i++) {
         offset = i * 32;
-        if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin) {
+        if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin) {
             sight = 1;
         }
-        if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin) {
+        if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin) {
             sight = 1;
         }
-        if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin + offset) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin + offset) {
+        if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin + offset, true) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin + offset) {
             sight = 1;
         }
-        if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin - offset) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin - offset) {
+        if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin - offset, true) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin - offset) {
             sight = 1;
         }
         for (j = range - i; j &gt; 0; j--) {
             offset2 = j * 32;
-            if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin + offset2) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin + offset2) {
+            if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin + offset2, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin + offset2) {
                 sight = 1;
             }
-            if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin - offset2) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin - offset2) {
+            if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin - offset2, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin - offset2) {
                 sight = 1;
             }
-            if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin + offset2) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin + offset2) {
+            if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin + offset2, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin + offset2) {
                 sight = 1;
             }
-            if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin - offset2) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin - offset2) {
+            if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin - offset2, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin - offset2) {
                 sight = 1;
             } 
         }
@@ -186,6 +186,7 @@ mp_grid_add_instances(p_grid, obj_enemy, false);
 mp_grid_add_instances(p_grid, obj_enemy_laser, false);
 mp_grid_add_instances(p_grid, obj_wall_inner, false);
 mp_grid_add_instances(p_grid, obj_wall_outer, false);
+mp_grid_add_instances(p_grid, obj_wall_window, false);
 mp_grid_add_instances(p_grid, obj_crate, false);
 
 // Move towards the dest
@@ -255,30 +256,30 @@ if (target &amp;&amp; !attacking) {
     
     for (i = 1; i &lt; range + 1; i++) {
         offset = i * 32;
-        if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin) {
+        if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin) {
             sight = 1;
         }
-        if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin) {
+        if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin) {
             sight = 1;
         }
-        if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin + offset) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin + offset) {
+        if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin + offset, true) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin + offset) {
             sight = 1;
         }
-        if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin - offset) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin - offset) {
+        if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin - offset, true) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin - offset) {
             sight = 1;
         }
         for (j = range - i; j &gt; 0; j--) {
             offset2 = j * 32;
-            if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin + offset2) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin + offset2) {
+            if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin + offset2, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin + offset2) {
                 sight = 1;
             }
-            if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin - offset2) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin - offset2) {
+            if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin - offset2, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin - offset2) {
                 sight = 1;
             }
-            if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin + offset2) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin + offset2) {
+            if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin + offset2, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin + offset2) {
                 sight = 1;
             }
-            if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin - offset2) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin - offset2) {
+            if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin - offset2, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin - offset2) {
                 sight = 1;
             } 
         }
@@ -332,7 +333,7 @@ if (target &amp;&amp; !attacking) {
 
 ds_list_replace(ds_list_find_value(global.charList, charID),8, hp);
 
-if (hp == 0) {
+if (hp &lt;= 0) {
     if (global.selected = id) {
         global.selected = 0;
     }

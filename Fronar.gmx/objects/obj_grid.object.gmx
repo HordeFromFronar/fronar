@@ -130,30 +130,30 @@ if (global.selected &amp;&amp; displayRange) {
         draw_sprite(spr_grid, 0, xRange, yRange);
         for (i = 1; i &lt; selected.range + 1; i++) {
             offset = i * 32;
-            if (lineOfSight(xRange, yRange, xRange + offset, yRange)) {
+            if (lineOfSight(xRange, yRange, xRange + offset, yRange, true)) {
                 draw_sprite(spr_grid, 0, xRange + offset, yRange);
             }
-            if (lineOfSight(xRange, yRange, xRange - offset, yRange)) {
+            if (lineOfSight(xRange, yRange, xRange - offset, yRange, true)) {
                 draw_sprite(spr_grid, 0, xRange - offset, yRange);
             }
-            if (lineOfSight(xRange, yRange, xRange, yRange + offset)) {
+            if (lineOfSight(xRange, yRange, xRange, yRange + offset, true)) {
                 draw_sprite(spr_grid, 0, xRange, yRange + offset);
             }
-            if (lineOfSight(xRange, yRange, xRange, yRange - offset)) {
+            if (lineOfSight(xRange, yRange, xRange, yRange - offset, true)) {
                 draw_sprite(spr_grid, 0, xRange, yRange - offset);
             }
             for (j = selected.range - i; j &gt; 0; j--) {
                 offset2 = j * 32;
-                if (lineOfSight(xRange, yRange, xRange + offset, yRange + offset2)) {
+                if (lineOfSight(xRange, yRange, xRange + offset, yRange + offset2, true)) {
                     draw_sprite(spr_grid, 0, xRange + offset, yRange + offset2);
                 }
-                if (lineOfSight(xRange, yRange, xRange + offset, yRange - offset2)) {
+                if (lineOfSight(xRange, yRange, xRange + offset, yRange - offset2, true)) {
                     draw_sprite(spr_grid, 0, xRange + offset, yRange - offset2);
                 }
-                if (lineOfSight(xRange, yRange, xRange - offset, yRange + offset2)) {
+                if (lineOfSight(xRange, yRange, xRange - offset, yRange + offset2, true)) {
                     draw_sprite(spr_grid, 0, xRange - offset, yRange + offset2);
                 }
-                if (lineOfSight(xRange, yRange, xRange - offset, yRange - offset2)) {
+                if (lineOfSight(xRange, yRange, xRange - offset, yRange - offset2, true)) {
                     draw_sprite(spr_grid, 0, xRange - offset, yRange - offset2);
                 }
             }

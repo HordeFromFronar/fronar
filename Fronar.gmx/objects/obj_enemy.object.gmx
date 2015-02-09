@@ -3,7 +3,7 @@
   <spriteName>spr_enemy</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -94,10 +94,23 @@ image_index = 0;
           <argument>
             <kind>1</kind>
             <string>///Attacking
-target = instance_nearest(x, y, obj_char);
+target_char = instance_nearest(x, y, obj_char);
+target_crate = instance_nearest(x, y, obj_crate);
+target_door = instance_nearest(x, y, obj_door);
+
+ignoreSight = 0;
+
+if (distance_to_object(target_door) &lt;= distance_to_object(target_char) &amp;&amp; distance_to_object(target_door) &lt;= distance_to_object(target_crate) &amp;&amp; !target_door.open) {
+    target = target_door;
+    ignoreSight = 1;
+} else if (distance_to_object(target_char) &lt;= distance_to_object(target_crate)) {
+    target = target_char;
+} else {
+    target = target_crate;
+}
 
 if (target &amp;&amp; attacking) {
-    if (x == xDest &amp;&amp; y == yDest &amp;&amp; lineOfSight(x, y, target.x, target.y)) {
+    if (x == xDest &amp;&amp; y == yDest &amp;&amp; (lineOfSight(x, y, target.x, target.y, false) || ignoreSight)) {
         alarm[0] = 30 / rate;
         
         damageObj(target,id);
@@ -134,11 +147,17 @@ if (target &amp;&amp; attacking) {
             <kind>1</kind>
             <string>/// Pathfinding Enemy
 
+padding = 32;
+
 // Determine the closest target
 target_char = instance_nearest(x, y, obj_char);
 target_crate = instance_nearest(x, y, obj_crate);
+target_door = instance_nearest(x, y, obj_door);
 
-if (distance_to_object(target_char) &lt;= distance_to_object(target_crate)) {
+if (distance_to_object(target_door) &lt;= distance_to_object(target_char) &amp;&amp; distance_to_object(target_door) &lt;= distance_to_object(target_crate) &amp;&amp; !target_door.open) {
+    closest = target_door;
+    //padding = 20;
+} else if (distance_to_object(target_char) &lt;= distance_to_object(target_crate)) {
     closest = target_char;
 } else {
     closest = target_crate;
@@ -157,6 +176,7 @@ for (i = 0; i &lt; instance_number(obj_enemy); ++i) {
 mp_grid_add_instances(e_grid, obj_enemy_laser, false);
 mp_grid_add_instances(e_grid, obj_wall_inner, false);
 mp_grid_add_instances(e_grid, obj_wall_outer, false);
+mp_grid_add_instances(e_grid, obj_wall_window, false);
 
 // Set xDest and yDest to closest available cell by character's x and y
 /*if mp_grid_get_cell(e_grid, closest.x + 32, closest.y + 32) == 0 {
@@ -187,7 +207,6 @@ xDest = closest.x; yDest = closest.y;
 if (x != xDest || y != yDest) {
     // If we're close enough to the player, kill the path so
     // the enemy doesn't walk into the player.
-    padding = 32;
     if (abs(x - xDest) &lt;= padding &amp;&amp; abs(y - yDest) &lt;= padding) {
         xDest = x; yDest = y;
         path = path_end();
@@ -240,7 +259,7 @@ mp_grid_clear_all(e_grid);
           <argument>
             <kind>1</kind>
             <string>///Health management
-if (hp == 0) {
+if (hp &lt;= 0) {
     instance_destroy();
 }
 </string>
@@ -267,15 +286,21 @@ if (hp == 0) {
 
 target_char = instance_nearest(x, y, obj_char);
 target_crate = instance_nearest(x, y, obj_crate);
+target_door = instance_nearest(x, y, obj_door);
 
-if (distance_to_object(target_char) &lt;= distance_to_object(target_crate)) {
+ignoreSight = 0;
+
+if (distance_to_object(target_door) &lt;= distance_to_object(target_char) &amp;&amp; distance_to_object(target_door) &lt;= distance_to_object(target_crate) &amp;&amp; !target_door.open) {
+    target = target_door;
+    ignoreSight = 1;
+} else if (distance_to_object(target_char) &lt;= distance_to_object(target_crate)) {
     target = target_char;
 } else {
     target = target_crate;
 }
 
 if (target &amp;&amp; !attacking) {
-    if (x == xDest &amp;&amp; y == yDest &amp;&amp; lineOfSight(x, y, target.x, target.y)) {
+    if (x == xDest &amp;&amp; y == yDest &amp;&amp; (lineOfSight(x, y, target.x, target.y, false) || ignoreSight)) {
         attacking = 1;
         alarm[0] = 30 / rate;
         

@@ -15,6 +15,8 @@
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_wall_inner</sprite>
     <sprite>sprites\spr_wall_outer</sprite>
+    <sprite>sprites\spr_wall_window</sprite>
+    <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_crate</sprite>
     <sprite>sprites\spr_crate_destroyed</sprite>
     <sprite>sprites\spr_title</sprite>
@@ -61,6 +63,8 @@
     <object>objects\obj_bullet</object>
     <object>objects\obj_wall_inner</object>
     <object>objects\obj_wall_outer</object>
+    <object>objects\obj_wall_window</object>
+    <object>objects\obj_door</object>
     <object>objects\obj_crate</object>
     <object>objects\obj_crate_destroyed</object>
     <object>objects\obj_set_char</object>
