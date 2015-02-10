@@ -49,6 +49,8 @@
     <background>background\bg_win</background>
     <background>background\bg_worldmap_1</background>
     <background>background\bg_worldmap_dark_1</background>
+    <background>background\bg_game_win</background>
+    <background>background\bg_game_lose</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
