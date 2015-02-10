@@ -84,10 +84,10 @@ for (i = 0; i &lt; enemies; ++i) {
     // default case
     
     if loc &lt;= 5 {
-        spawn_x = room_width;
+        spawn_x = room_width + irandom(50);
         spawn_y = 464 - 200 + irandom(400);
     } else {
-        spawn_x = 0;
+        spawn_x = 0 - irandom(50);
         spawn_y = 464 - 200 + irandom(400);
     }
     
