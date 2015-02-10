@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Manages the spawning of enemies. Uses a timer to decide when to spawn.
+            <string>/// INIT timer
+// Manages the spawning of enemies. Uses a timer to decide when to spawn.
 
 alarmTime = room_speed * 5;
 alarm[0] = alarmTime;
@@ -51,32 +52,19 @@ alarm[0] = alarmTime;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//DO SPAWN
+            <string>///DO SPAWN
+// Right now it's room specific, this will need to change if we do procedural gen.
 
 alarm[0] = room_speed * 2;
 
-loc = irandom(4);
+loc = irandom(10); // Random of 2 tends to do something like this 0000011110000111
 
-spawn_x = 0;
-spawn_y = 0;
-
-switch(loc) {
-    case 0:
-        spawn_x = irandom(room_width);
-        spawn_y = -16;
-        break;
-    case 1:
-        spawn_x = irandom(room_width);
-        spawn_y = room_height + 16;
-        break;
-    case 2:
-        spawn_x = -16;
-        spawn_y = irandom(room_height);
-        break;
-    case 3:
-        spawn_x = room_width + 16;
-        spawn_y = irandom(room_height);
-        break;
+if loc &lt;= 5 {
+    spawn_x = room_width;
+    spawn_y = 464 - 100 + irandom(200);
+} else {
+    spawn_x = 0;
+    spawn_y = 464 - 100 + irandom(200);
 }
 
 type = irandom(2);
