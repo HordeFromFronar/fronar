@@ -4,11 +4,17 @@
 //0: gender
 //1: first name
 //2: last name
-//3: health
+//3: max health
 //4: range
 //5: speed
 //6: portrait id
 //7: age
+//8: current health
+//9: damage
+//10: fire rate
+//11: armour
+//12: evasion
+//13: critical
 
 //Initialize variables
 count = argument[0];
@@ -20,6 +26,11 @@ cRange = 3;
 cSpeed = 5;
 portraitId = 0;
 age = 18;
+cDamage = 1;
+cRate = 2;
+cArmour = 0;
+cEvade = 10;
+cCrit = 10;
 
 while (count) {
     char = ds_list_create();
@@ -47,6 +58,13 @@ while (count) {
     
     //Randomly set age
     ds_list_add(char, irandom(47) + 18);
+    
+    ds_list_add(char, cHealth);
+    ds_list_add(char, cDamage);
+    ds_list_add(char, cRate);
+    ds_list_add(char, cArmour);
+    ds_list_add(char, cEvade);
+    ds_list_add(char, cCrit);
     
     ds_list_add(global.charList, char);
     

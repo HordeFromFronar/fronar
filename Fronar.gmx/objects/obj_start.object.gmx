@@ -29,12 +29,15 @@
 
 globalvar selected;
 globalvar charList;
+globalvar resourceList;
 
 selected = 0;
 
 charList = ds_list_create();
+resourceList = ds_list_create();
 
 generateChar(3);
+generateResources();
 
 room_goto_next();
 </string>

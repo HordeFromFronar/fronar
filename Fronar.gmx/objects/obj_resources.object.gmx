@@ -8,6 +8,95 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Init
+turretCost = 10;
+barricadeCost = 5;
+
+selectedPlc = 0;
+
+pressed = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="57">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>selectedPlc = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="56">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Create placeable
+if (global.selected &amp;&amp; instance_exists(global.selected) &amp;&amp; !pressed) {
+    xBuild = mouse_x - (mouse_x % 32) + 16;
+    yBuild = mouse_y - (mouse_y % 32) + 16;
+        
+    global.selected.buildOrder = selectedPlc;
+    global.selected.xBuild = xBuild;
+    global.selected.yBuild = yBuild;
+    
+    selectedPlc = 0;
+}
+
+if (pressed) {
+    pressed = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -25,85 +114,30 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Draw debug info
+            <string>///Draw resource info
 
-if (global.selected) {
-    if (instance_exists(global.selected)) {
-        draw_text(x,y,"Selected ID: " + string(global.selected) +
-        "#X: " + string(global.selected.x) +
-        "#Y: " + string(global.selected.y) +
-        "#Gender: " + ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),0) +
-        "#First: " + ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),1) +
-        "#Last: " + ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),2) +
-        "#Age: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID), 7)) + 
-        "#HP: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),8)) +
-        "#Range: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),4)) +
-        "#Speed: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),5)) +
-        "#Damage: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),9)) +
-        "#Rate: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),10)) +
-        "#Armour: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),11)) +
-        "#Evade: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),12)) +
-        "#Crit: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),13))
-        );
-    }
+draw_text(x,y,
+"Parts: " + string(ds_list_find_value(global.resourceList, 0)) +
+"#Medicine: " + string(ds_list_find_value(global.resourceList, 1)) +
+"#Food: " + string(ds_list_find_value(global.resourceList, 2))
+);
+
+switch (selectedPlc) {
+    case 1:
+        draw_set_alpha(0.5);
+        draw_sprite(spr_turret_gun, 0, 
+        mouse_x - (mouse_x % 32) + 16, 
+        mouse_y - (mouse_y % 32) + 16);
+        draw_set_alpha(1);
+        break;
+    case 2:
+        draw_set_alpha(0.5);
+        draw_sprite(spr_barricade, 0, 
+        mouse_x - (mouse_x % 32) + 16, 
+        mouse_y - (mouse_y % 32) + 16);
+        draw_set_alpha(1);
+        break;
 }
-
-draw_sprite(spr_grid, 0, 
-    mouse_x - (mouse_x % 32) + 16, 
-    mouse_y - (mouse_y % 32) + 16);
-    
-//draw_set_alpha(0.2);
-//mp_grid_draw(global.grid);
-//draw_set_alpha(1);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="82">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///reset room
-global.selected = 0;
-room_restart();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="78">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.currChar = 0;
-room_goto_next();
 </string>
           </argument>
         </arguments>
