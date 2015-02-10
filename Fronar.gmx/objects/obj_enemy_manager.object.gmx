@@ -61,10 +61,10 @@ loc = irandom(10); // Random of 2 tends to do something like this 00000111100001
 
 if loc &lt;= 5 {
     spawn_x = room_width;
-    spawn_y = 464 - 100 + irandom(200);
+    spawn_y = 464 - 200 + irandom(400);
 } else {
     spawn_x = 0;
-    spawn_y = 464 - 100 + irandom(200);
+    spawn_y = 464 - 200 + irandom(400);
 }
 
 type = irandom(2);
@@ -77,6 +77,7 @@ switch (type) {
         instance_create(spawn_x, spawn_y, obj_enemy_laser);
         break;
 }
+
 </string>
           </argument>
         </arguments>

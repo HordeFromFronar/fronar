@@ -25,3 +25,4 @@ if (!window) {
 }
 
 return true;
+
