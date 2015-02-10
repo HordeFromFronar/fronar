@@ -3,11 +3,39 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>1</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+//Generate an event (Only 1 right now)
+eventId = irandom(0);
+
+//THIS IS TEMPORARY PLZ REMOVE WHEN EVENTS WORK
+room_goto_next();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -25,22 +53,29 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>for (i = 0; i &lt; 3; ++i){
-    //Draw character portraits
-    pid = ds_list_find_value(ds_list_find_value(global.charList, i),6);
-    draw_sprite(spr_ally_portrait, pid, 290 + i*250, 100);
-    
-    draw_set_colour(c_white);
-    //Draw Character Name, Gender, Age
-    draw_text(290 + i*250, 350, "Name: " + ds_list_find_value(ds_list_find_value(global.charList, i), 1) + 
-    " " + ds_list_find_value(ds_list_find_value(global.charList, i), 2) +
-    "#Gender: " + ds_list_find_value(ds_list_find_value(global.charList, i), 0) +
-    "#Age: " + string(ds_list_find_value(ds_list_find_value(global.charList, i), 7))
-);
+            <string>//Draw the Bakground for the event
+draw_set_colour(c_black);
+x1 = 5*32;
+y1 = 5*32;
+x2 = 1280-5*32;
+y2 = 720-5*32;
+draw_rectangle(x1, y1, x2, y2, false);
+
+draw_set_colour(c_white);
+switch(eventId){
+    case 0:
+        //Abandoned Shack
+        draw_text(x1+32, y1+32, 
+        "Somewhere along the road the party finds an abandoned shack with the windows blown out. " +
+        "#After poking around, " + 
+        ds_list_find_value(ds_list_find_value(global.charList, character), 1) +
+        " finds some duct tape and a kitchen knife that can be made into a bayonet," +
+        "#and some fruits and vegetables growing in what's left of the garden out back." +
+        "##+3 Food"
+        );
+
+        break;
 }
-
-
-
 </string>
           </argument>
         </arguments>
