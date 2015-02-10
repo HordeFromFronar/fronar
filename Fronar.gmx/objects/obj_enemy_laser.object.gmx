@@ -32,8 +32,8 @@ moveSpeed = 1;
 xDest = x;
 yDest = y;
 arrived = false;
-maxHealth = 8;
-hp = 8;
+maxHealth = 4;
+hp = maxHealth;
 rate = 1;
 range = 3;
 attacking = 0;
@@ -180,7 +180,7 @@ mp_grid_clear_all(e_grid);
 mp_grid_add_instances(e_grid, obj_wall_inner, false);
 mp_grid_add_instances(e_grid, obj_wall_outer, false);
 mp_grid_add_instances(e_grid, obj_wall_window, false);
-mp_grid_add_instances(e_grid, obj_door, false);
+//mp_grid_add_instances(e_grid, obj_door, false);
 
 if(unstuck) {
     for (i = 0; i &lt; instance_number(obj_enemy_laser); ++i) {

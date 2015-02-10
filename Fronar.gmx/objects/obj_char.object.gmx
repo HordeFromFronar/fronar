@@ -341,6 +341,7 @@ if (target &amp;&amp; !attacking) {
             <kind>1</kind>
             <string>///Health management
 
+//p.s. this is doug. you guys are doing great work, love y'all
 //ds_list_replace(ds_list_find_value(global.charList, charID),8, hp);
 
 if (hp &lt;= 0) {
