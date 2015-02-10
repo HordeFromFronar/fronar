@@ -58,6 +58,7 @@
     <script>scripts\damageObj.gml</script>
     <script>scripts\getPriority.gml</script>
     <script>scripts\lineOfSight.gml</script>
+    <script>scripts\gameOver.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_char</object>
@@ -108,6 +109,8 @@
     <room>rooms\rm_test_1</room>
     <room>rooms\rm_night_level1</room>
     <room>rooms\rm_win</room>
+    <room>rooms\rm_game_win</room>
+    <room>rooms\rm_game_lose</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
