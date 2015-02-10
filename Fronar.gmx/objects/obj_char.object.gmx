@@ -338,8 +338,8 @@ if (target &amp;&amp; !attacking) {
           <argument>
             <kind>1</kind>
             <string>///Health management
-
-ds_list_replace(ds_list_find_value(global.charList, charID),8, hp);
+//p.s. this is doug. you guys are doing great work, love y'all
+//ds_list_replace(ds_list_find_value(global.charList, charID),8, hp);
 
 if (hp &lt;= 0) {
     if (global.selected = id) {
