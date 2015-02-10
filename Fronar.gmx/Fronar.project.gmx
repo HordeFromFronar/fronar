@@ -109,6 +109,8 @@
     <object>objects\obj_travel</object>
     <object>objects\obj_exclamation_1</object>
     <object>objects\obj_event_1_manager</object>
+    <object>objects\obj_game_controller</object>
+    <object>objects\obj_game_over</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
