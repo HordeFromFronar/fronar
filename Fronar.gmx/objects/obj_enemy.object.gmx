@@ -34,7 +34,7 @@ xDest = x;
 yDest = y;
 arrived = false;
 maxHealth = 8;
-hp = maxHealth;
+hp = 8;
 rate = 1;
 attacking = 0;
 damage = 1;
@@ -43,11 +43,240 @@ evade = 0;
 crit = 0;
 ignoreSight = 0;
 target = 0;
+unstuck = 0;
+path = path_add();
+alarm[3] = 8;
 
 //Each enemy requires its own grid for collision reasons.
 e_gridSize = 16;
 e_grid = mp_grid_create(-40,-40,round(room_width/e_gridSize) + 6,
                         round(room_height/e_gridSize) + 6,e_gridSize,e_gridSize);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Pathfinding Enemy
+
+padding = 32;
+
+// Determine the closest target
+ignoreSight = 0;
+getPriority(id);
+
+closest = target;
+
+// Add collision detection to all other enemies
+var i;
+for (i = 0; i &lt; instance_number(obj_enemy); ++i) {
+    enemy_id = instance_find(obj_enemy, i);
+    if (enemy_id != id) {
+        mp_grid_add_instances(e_grid, enemy_id, false);
+    }
+}
+// Add collision detection to players, and walls
+// mp_grid_add_instances(e_grid, obj_char, false)
+mp_grid_add_instances(e_grid, obj_enemy_laser, false);
+mp_grid_add_instances(e_grid, obj_wall_inner, false);
+mp_grid_add_instances(e_grid, obj_wall_outer, false);
+mp_grid_add_instances(e_grid, obj_wall_window, false);
+mp_grid_add_instances(e_grid, obj_door, false);
+
+// Set xDest and yDest to closest available cell by character's x and y
+dist = 1000000;
+dir = 0;
+
+xTarget = closest.x - (closest.x % 32) + 16;
+yTarget = closest.y - (closest.y % 32) + 16;
+
+if (lineOfSight(xTarget + 32, yTarget, xTarget, yTarget, false) || ignoreSight) {
+    if (point_distance(xTarget + 32, yTarget, x, y) &lt; dist &amp;&amp;
+        mp_grid_get_cell(e_grid, (xTarget + 32) / 16 + 2 , (yTarget) / 16 + 2) == 0) {
+        if (ignoreSight) {
+            xDest = xTarget;
+            yDest = yTarget;
+            dist = point_distance(xTarget, yTarget, x, y);
+        }
+        else {
+            xDest = xTarget + 32;
+            yDest = yTarget;
+            dist = point_distance(xTarget + 32, yTarget, x, y);
+        }
+    }
+}
+if (lineOfSight(xTarget - 32, yTarget, xTarget, yTarget, false) || ignoreSight) {
+    if (point_distance(xTarget - 32, yTarget, x, y) &lt; dist &amp;&amp;
+        mp_grid_get_cell(e_grid, (xTarget - 32) / 16 + 2 , (yTarget) / 16 + 2) == 0) {
+        xDest = xTarget - 32;
+        yDest = yTarget;
+        dist = point_distance(xTarget - 32, yTarget, x, y);
+    }
+}
+if (lineOfSight(xTarget, yTarget + 32, xTarget, yTarget, false) || ignoreSight) {
+    if (point_distance(xTarget, yTarget + 32, x, y) &lt; dist &amp;&amp;
+        mp_grid_get_cell(e_grid, (xTarget) / 16 + 2 , (yTarget + 32) / 16 + 2) == 0) {
+        xDest = xTarget;
+        yDest = yTarget + 32;
+        dist = point_distance(xTarget, yTarget + 32, x, y);
+    }
+}
+if (lineOfSight(xTarget, yTarget - 32, xTarget, yTarget, false) || ignoreSight) {
+    if (point_distance(xTarget, yTarget - 32, x, y) &lt; dist &amp;&amp;
+        mp_grid_get_cell(e_grid, (xTarget) / 16 + 2 , (yTarget - 32) / 16 + 2) == 0) {
+        xDest = xTarget;
+        yDest = yTarget - 32;
+        dist = point_distance(xTarget, yTarget - 32, x, y);
+    }
+}
+if (lineOfSight(xTarget + 32, yTarget + 32, xTarget, yTarget, false) || ignoreSight) {
+    if (point_distance(xTarget + 32, yTarget + 32, x, y) &lt; dist &amp;&amp;
+        mp_grid_get_cell(e_grid, (xTarget + 32) / 16 + 2 , (yTarget + 32) / 16 + 2) == 0) {
+        if (ignoreSight) {
+            xDest = xTarget;
+            yDest = yTarget + 32;;
+            dist = point_distance(xTarget, yTarget, x, y);
+        }
+        else {
+            xDest = xTarget + 32;
+            yDest = yTarget + 32;;
+            dist = point_distance(xTarget + 32, yTarget, x, y);
+        }
+    }
+}
+if (lineOfSight(xTarget - 32, yTarget - 32, xTarget, yTarget, false) || ignoreSight) {
+    if (point_distance(xTarget - 32, yTarget - 32, x, y) &lt; dist &amp;&amp;
+        mp_grid_get_cell(e_grid, (xTarget - 32) / 16 + 2 , (yTarget - 32) / 16 + 2) == 0) {
+        xDest = xTarget - 32;
+        yDest = yTarget - 32;
+        dist = point_distance(xTarget - 32, yTarget - 32, x, y);
+    }
+}
+if (lineOfSight(xTarget + 32, yTarget - 32, xTarget, yTarget, false) || ignoreSight) {
+    if (point_distance(xTarget + 32, yTarget - 32, x, y) &lt; dist &amp;&amp;
+        mp_grid_get_cell(e_grid, (xTarget + 32) / 16 + 2 , (yTarget - 32) / 16 + 2) == 0) {
+        if (ignoreSight) {
+            xDest = xTarget;
+            yDest = yTarget + 32;;
+            dist = point_distance(xTarget, yTarget, x, y);
+        }
+        else {
+            xDest = xTarget + 32;
+            yDest = yTarget - 32;;
+            dist = point_distance(xTarget + 32, yTarget, x, y);
+        }
+    }
+}
+if (lineOfSight(xTarget - 32, yTarget + 32, xTarget, yTarget, false) || ignoreSight) {
+    if (point_distance(xTarget - 32, yTarget - 32, x, y) &lt; dist &amp;&amp;
+        mp_grid_get_cell(e_grid, (xTarget - 32) / 16 + 2 , (yTarget + 32) / 16 + 2) == 0) {
+        xDest = xTarget - 32;
+        yDest = yTarget + 32;
+        dist = point_distance(xTarget - 32, yTarget - 32, x, y);
+    }
+}
+
+//path = path_end();
+
+mp_grid_clear_all(e_grid);
+mp_grid_add_instances(e_grid, obj_wall_inner, false);
+mp_grid_add_instances(e_grid, obj_wall_outer, false);
+mp_grid_add_instances(e_grid, obj_wall_window, false);
+//mp_grid_add_instances(e_grid, obj_door, false);
+
+if(unstuck) {
+    for (i = 0; i &lt; instance_number(obj_enemy); ++i) {
+        enemy_id = instance_find(obj_enemy, i);
+        if (enemy_id != id) {
+            mp_grid_add_instances(e_grid, enemy_id, false);
+        }
+    }
+    mp_grid_add_instances(e_grid, obj_enemy_laser, false);
+}
+
+// Move towards the nearest player
+if (x != xDest || y != yDest) {
+    // Otherwise keep path finding the optimal path to the player
+    
+    if ( point_distance(x, y, xDest, yDest) &lt; moveSpeed) {
+        x = xDest;
+        y = yDest;
+        speed = 0;
+    } else if (unstuck) {
+        path_delete(path); 
+        path = path_add();
+        if (mp_potential_path(path, xDest, yDest, moveSpeed, 6, true)) {
+            path_start(path, moveSpeed, 0, false);  
+        }
+    } else {
+        path_delete(path);
+        path = path_add();
+        if (mp_grid_path(e_grid, path, x, y, xDest, yDest, true)) {
+            path_start(path, moveSpeed, 0, false);  
+        }
+        if (instance_place(x, y, obj_enemy)) {
+            if (instance_place(x, y, obj_enemy) &lt; id) {
+                path_end()
+                move_snap(16,16); 
+                unstuck = 1;
+                alarm[2] = 30;
+            }
+        }
+        if (instance_place(x, y, obj_enemy_laser)) {
+            if (instance_place(x, y, obj_enemy_laser) &lt; id) {
+                path_end()
+                move_snap(16,16); 
+                unstuck = 1;
+                alarm[2] = 30;
+            }
+        }
+    }
+}
+
+// Clear collision detection so the old cells aren't marked
+mp_grid_clear_all(e_grid);
+alarm[3] = 10;
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>unstuck = 0;
 </string>
           </argument>
         </arguments>
@@ -98,6 +327,8 @@ image_index = 0;
             <string>///Attacking
 ignoreSight = 0;
 
+target = 0;
+
 getPriority(id);
 
 if (target &amp;&amp; attacking) {
@@ -122,110 +353,6 @@ if (target &amp;&amp; attacking) {
       </action>
     </event>
     <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Pathfinding Enemy
-
-padding = 32;
-
-// Determine the closest target
-getPriority(id);
-
-closest = target;
-
-// Add collision detection to all other enemies
-var i;
-for (i = 0; i &lt; instance_number(obj_enemy); ++i) {
-    enemy_id = instance_find(obj_enemy, i);
-    if (enemy_id != id) {
-        mp_grid_add_instances(e_grid, enemy_id, false);
-    }
-}
-// Add collision detection to players, and walls
-// mp_grid_add_instances(e_grid, obj_char, false)
-mp_grid_add_instances(e_grid, obj_enemy_laser, false);
-mp_grid_add_instances(e_grid, obj_wall_inner, false);
-mp_grid_add_instances(e_grid, obj_wall_outer, false);
-mp_grid_add_instances(e_grid, obj_wall_window, false);
-
-// Set xDest and yDest to closest available cell by character's x and y
-/*if mp_grid_get_cell(e_grid, closest.x + 32, closest.y + 32) == 0 {
-    xDest = closest.x + 32; yDest = closest.y + 32;    
-} else if mp_grid_get_cell(e_grid, closest.x + 32, closest.y) == 0 {
-    xDest = closest.x + 32; yDest = closest.y;
-} else if mp_grid_get_cell(e_grid, (closest.x div 32) + 1, (closest.y div 32) - 1) == 0 {
-    xDest = closest.x + 32; yDest = closest.y - 32;
-} else if mp_grid_get_cell(e_grid, (closest.x div 32), (closest.y div 32) - 1) == 0 {
-    xDest = closest.x; yDest = closest.y - 32;    
-} else if mp_grid_get_cell(e_grid, (closest.x div 32) - 1, (closest.y div 32) - 1) == 0 {
-    xDest = closest.x - 32; yDest = closest.y - 32;
-} else if mp_grid_get_cell(e_grid, (closest.x div 32) - 1, (closest.y div 32)) == 0 {
-    xDest = closest.x - 32; yDest = closest.y;
-} else if mp_grid_get_cell(e_grid, (closest.x div 32) - 1, (closest.y div 32) + 1) == 0 {
-    xDest = closest.x - 32; yDest = closest.y + 32;    
-} else if mp_grid_get_cell(e_grid, (closest.x div 32), (closest.y div 32) + 1) == 0 {
-    xDest = closest.x; yDest = closest.y + 32;
-} else {
-    xDest = closest.x; yDest = closest.y;
-}*/
-
-xDest = closest.x; yDest = closest.y;
-
-//path = path_end();
-
-// Move towards the nearest player
-if (x != xDest || y != yDest) {
-    // If we're close enough to the player, kill the path so
-    // the enemy doesn't walk into the player.
-    if (abs(x - xDest) &lt;= padding &amp;&amp; abs(y - yDest) &lt;= padding) {
-        xDest = x; yDest = y;
-        path = path_end();
-    // Otherwise keep path finding the optimal path to the player
-    } else {
-        path = path_add();
-        if (mp_grid_path(e_grid, path, x, y, xDest, yDest, true)) {
-            path_start(path, moveSpeed, 0, true);
-        } else if (instance_place(x, y, obj_enemy) != noone || instance_place(x, y, obj_enemy_laser) != noone) {
-            // Check the odd case that we do end up on another enemy, and get stuck
-            mp_grid_clear_all(e_grid);
-            mp_grid_add_instances(e_grid, obj_wall_inner, false);
-            mp_grid_add_instances(e_grid, obj_wall_outer, false);
-            xDest = x + random(padding) - random(padding);
-            yDest = y + random(padding) - random(padding);
-            path = path_add();
-            if (mp_grid_path(e_grid, path, x, y, xDest, yDest, true)) {
-                path_start(path, moveSpeed, 0, true);    
-            }
-        }
-    }
-    move_snap(16, 16)
-}
-
-orientation = point_direction(x, y, closest.x, closest.y);
-image_angle = orientation;
-
-// Clear collision detection so the old cells aren't marked
-mp_grid_clear_all(e_grid);
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -269,10 +396,12 @@ if (hp &lt;= 0) {
             <string>///Attacking
 ignoreSight = 0;
 
+target = 0;
+
 getPriority(id);
 
 if (target &amp;&amp; !attacking) {
-    if (x == xDest &amp;&amp; y == yDest &amp;&amp; (lineOfSight(x, y, target.x, target.y, false) || ignoreSight)) {
+    if (x == xDest &amp;&amp; y == yDest &amp;&amp; distance_to_point(target.x, target.y) &lt;= 35 &amp;&amp; (lineOfSight(x, y, target.x, target.y, false) || ignoreSight)) {
         attacking = 1;
         alarm[0] = 30 / rate;
         
@@ -310,6 +439,8 @@ if (target) {
         orientation = point_direction(x, y, target.x, target.y);
         image_angle = orientation;
     }
+} else {
+    image_angle = direction;
 }
 </string>
           </argument>

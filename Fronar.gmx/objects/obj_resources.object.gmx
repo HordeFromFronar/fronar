@@ -85,6 +85,8 @@ if (global.selected &amp;&amp; instance_exists(global.selected) &amp;&amp; !pres
     global.selected.buildOrder = selectedPlc;
     global.selected.xBuild = xBuild;
     global.selected.yBuild = yBuild;
+    
+    selectedPlc = 0;
 }
 
 if (pressed) {

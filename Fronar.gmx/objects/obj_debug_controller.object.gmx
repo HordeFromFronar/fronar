@@ -78,7 +78,7 @@ draw_sprite(spr_grid, 0,
           <argument>
             <kind>1</kind>
             <string>///reset room
-
+global.selected = 0;
 room_restart();
 </string>
           </argument>

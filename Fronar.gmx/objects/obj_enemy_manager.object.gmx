@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>// Manages the spawning of enemies. Uses a timer to decide when to spawn.
 
-alarmTime = room_speed * 2;
+alarmTime = room_speed * 5;
 alarm[0] = alarmTime;
 </string>
           </argument>

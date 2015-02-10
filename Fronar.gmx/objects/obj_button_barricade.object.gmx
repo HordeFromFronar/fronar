@@ -26,8 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>///Set selected placeable
-obj_resources.selectedPlc = 2;
-obj_resources.pressed = 1;
+if (global.selected) {
+    obj_resources.selectedPlc = 2;
+    obj_resources.pressed = 1;
+}
 </string>
           </argument>
         </arguments>
