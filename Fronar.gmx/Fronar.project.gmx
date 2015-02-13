@@ -40,6 +40,10 @@
     <sprite>sprites\spr_ally_portrait</sprite>
     <sprite>sprites\spr_travel</sprite>
     <sprite>sprites\spr_exclamation</sprite>
+    <sprite>sprites\spr_continue</sprite>
+    <sprite>sprites\spr_option_blank</sprite>
+    <sprite>sprites\spr_yellow_dot</sprite>
+    <sprite>sprites\spr_defend</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_title</background>
@@ -63,8 +67,14 @@
     <script>scripts\getPriority.gml</script>
     <script>scripts\lineOfSight.gml</script>
     <script>scripts\generateEvent.gml</script>
-    <script>scripts\drawEvent.gml</script>
+    <script>scripts\getEventText.gml</script>
+    <script>scripts\getEventTextPart2.gml</script>
     <script>scripts\checkEvent.gml</script>
+    <script>scripts\resetEventCharacters.gml</script>
+    <script>scripts\getExclamationX.gml</script>
+    <script>scripts\getExclamationY.gml</script>
+    <script>scripts\getGenderedPosessive.gml</script>
+    <script>scripts\getGenderedPronoun.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_char</object>
@@ -106,6 +116,12 @@
     <object>objects\obj_travel</object>
     <object>objects\obj_exclamation_1</object>
     <object>objects\obj_event_1_manager</object>
+    <object>objects\obj_event_option_1</object>
+    <object>objects\obj_event_option_2</object>
+    <object>objects\obj_event_option_3</object>
+    <object>objects\obj_event_continue</object>
+    <object>objects\obj_current_location</object>
+    <object>objects\obj_defend</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>

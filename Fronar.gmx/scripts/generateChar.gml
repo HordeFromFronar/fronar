@@ -16,6 +16,7 @@
 //12: evasion
 //13: critical
 
+
 //Initialize variables
 count = argument[0];
 gender = "";
