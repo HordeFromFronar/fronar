@@ -53,6 +53,8 @@
     <background>background\bg_win</background>
     <background>background\bg_worldmap_1</background>
     <background>background\bg_worldmap_dark_1</background>
+    <background>background\bg_game_win</background>
+    <background>background\bg_game_lose</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -66,6 +68,7 @@
     <script>scripts\damageObj.gml</script>
     <script>scripts\getPriority.gml</script>
     <script>scripts\lineOfSight.gml</script>
+    <script>scripts\gameOver.gml</script>
     <script>scripts\generateEvent.gml</script>
     <script>scripts\getEventText.gml</script>
     <script>scripts\getEventTextPart2.gml</script>
@@ -122,6 +125,8 @@
     <object>objects\obj_event_continue</object>
     <object>objects\obj_current_location</object>
     <object>objects\obj_defend</object>
+    <object>objects\obj_game_controller</object>
+    <object>objects\obj_game_over</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
@@ -136,6 +141,8 @@
     <room>rooms\rm_test_1</room>
     <room>rooms\rm_night_level1</room>
     <room>rooms\rm_win</room>
+    <room>rooms\rm_game_win</room>
+    <room>rooms\rm_game_lose</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
