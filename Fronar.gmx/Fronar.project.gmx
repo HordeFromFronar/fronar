@@ -61,6 +61,7 @@
     <script>scripts\select.gml</script>
     <script>scripts\assignChar.gml</script>
     <script>scripts\generateChar.gml</script>
+    <script>scripts\generateOccupation.gml</script>
     <script>scripts\generateName.gml</script>
     <script>scripts\generateResources.gml</script>
     <script>scripts\highlightRange.gml</script>
@@ -135,8 +136,8 @@
     <room>rooms\rm_opening_cutscene</room>
     <room>rooms\rm_crew_select_1</room>
     <room>rooms\rm_worldmap_1</room>
-    <room>rooms\rm_event_1</room>
     <room>rooms\House_Room</room>
+    <room>rooms\rm_event_1</room>
     <room>rooms\rm_test_2</room>
     <room>rooms\rm_test_1</room>
     <room>rooms\rm_night_level1</room>

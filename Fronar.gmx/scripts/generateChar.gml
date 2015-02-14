@@ -15,6 +15,7 @@
 //11: armour
 //12: evasion
 //13: critical
+//14: occupation
 
 
 //Initialize variables
@@ -32,6 +33,8 @@ cRate = 2;
 cArmour = 0;
 cEvade = 10;
 cCrit = 10;
+occupation = "";
+
 
 while (count) {
     char = ds_list_create();
@@ -66,6 +69,9 @@ while (count) {
     ds_list_add(char, cArmour);
     ds_list_add(char, cEvade);
     ds_list_add(char, cCrit);
+    
+    //Get a random occupation
+    generateOccupation(char);
     
     ds_list_add(global.charList, char);
     
