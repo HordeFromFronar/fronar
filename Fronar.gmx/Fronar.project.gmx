@@ -3,7 +3,9 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\Glare Engine - 2D illumination</extension>
+  </NewExtensions>
   <sounds name="sound">
     <sound>sound\snd_title</sound>
   </sounds>
@@ -12,13 +14,13 @@
     <sprite>sprites\spr_grid</sprite>
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_enemy_laser</sprite>
-    <sprite>sprites\spr_bullet</sprite>
+    <sprite>sprites\spr_bullet_fronar</sprite>
     <sprite>sprites\spr_wall_inner</sprite>
     <sprite>sprites\spr_wall_outer</sprite>
     <sprite>sprites\spr_wall_window</sprite>
     <sprite>sprites\spr_door</sprite>
-    <sprite>sprites\spr_crate</sprite>
-    <sprite>sprites\spr_crate_destroyed</sprite>
+    <sprite>sprites\spr_crate_fronar</sprite>
+    <sprite>sprites\spr_crate_destroyed_fronar</sprite>
     <sprite>sprites\spr_barricade</sprite>
     <sprite>sprites\spr_turret_gun</sprite>
     <sprite>sprites\spr_turret_base</sprite>
@@ -88,15 +90,15 @@
     <object>objects\obj_grid</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_enemy_laser</object>
-    <object>objects\obj_bullet</object>
+    <object>objects\obj_bullet_fronar</object>
     <object>objects\obj_turret</object>
     <object>objects\obj_turret_base</object>
     <object>objects\obj_wall_inner</object>
     <object>objects\obj_wall_outer</object>
     <object>objects\obj_wall_window</object>
     <object>objects\obj_door</object>
-    <object>objects\obj_crate</object>
-    <object>objects\obj_crate_destroyed</object>
+    <object>objects\obj_crate_fronar</object>
+    <object>objects\obj_crate_destroyed_fronar</object>
     <object>objects\obj_barricade</object>
     <object>objects\obj_button_turret</object>
     <object>objects\obj_button_barricade</object>
@@ -131,12 +133,12 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
+    <room>rooms\House_Room</room>
     <room>rooms\rm_splash_screen</room>
     <room>rooms\rm_title_screen</room>
     <room>rooms\rm_opening_cutscene</room>
     <room>rooms\rm_crew_select_1</room>
     <room>rooms\rm_worldmap_1</room>
-    <room>rooms\House_Room</room>
     <room>rooms\rm_event_1</room>
     <room>rooms\rm_test_2</room>
     <room>rooms\rm_test_1</room>

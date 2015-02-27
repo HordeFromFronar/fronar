@@ -4,7 +4,7 @@ with (obj) {
     ignoreSight = 0;
     
     target_char = instance_nearest(x, y, obj_char);
-    target_crate = instance_nearest(x, y, obj_crate);
+    target_crate = instance_nearest(x, y, obj_crate_fronar);
     target_door = instance_nearest(x, y, obj_door);
     target_turret = instance_nearest(x, y, obj_turret);
     target_barricade = instance_nearest(x, y, obj_barricade);
