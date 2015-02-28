@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_light_bulb</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -26,12 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>
-color = make_color_rgb(random(255),random(255),random(255));
-intensity = choose(0, random(1.5));
+//color = make_color_rgb(random(255),random(255),random(255));
+color = make_color_rgb(237, 193, 121);
+//intensity = choose(0, random(1.5));
+intensity = 0.1;
 sprite = spr_light_mask_point;
 light = glr_light_create(sprite, 0, x, y, color, intensity);
 rot = 0;
-glr_light_set_shadow_strength(light, 0.6)
+glr_light_set_shadow_strength(light, 0.8)
 glr_light_set_static(light, true);
 glr_light_set_layer(light, 2);
 </string>

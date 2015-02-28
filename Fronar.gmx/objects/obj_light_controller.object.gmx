@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1000</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,17 +25,31 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//DEBUG
-debug = true;
+            <string>glr_init(1);
 
-fxaa = true;
-directional = true;
-intensity = true;
-occlusion = true;
-getillum = false;
-
-add_time = 0;
-
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="72">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>glr_render();
 </string>
           </argument>
         </arguments>
@@ -58,24 +72,32 @@ add_time = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>daytime = ((current_time + add_time) mod 100000 )/100000;
+            <string>daytime = (current_time mod 300000 )/300000;
 
-if(directional){
-    glr_set_ambient_daytime(daytime);
-}else{
-    glr_set_ambient_daytime(0);
-}
-
-//if desktop
-if(room == room_mobile_test ){
-    //android or ios
-    glrtest_gui_mobile();
-}else{ 
-    //windows, mac, linux
-    glrtest_gui_desktop()
-}
-
-
+glr_set_ambient_daytime(daytime);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>glr_draw(view_xview, view_yview);
 </string>
           </argument>
         </arguments>

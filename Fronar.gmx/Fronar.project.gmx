@@ -354,6 +354,9 @@
     <object>objects\obj_defend</object>
     <object>objects\obj_game_controller</object>
     <object>objects\obj_game_over</object>
+    <objects name="fronar_lights">
+      <object>objects\obj_light_controller</object>
+    </objects>
     <objects name="Glare demo">
       <object>objects\obj_berrel</object>
       <object>objects\obj_box</object>
@@ -396,24 +399,24 @@
     <room>rooms\rm_crew_select_1</room>
     <room>rooms\rm_worldmap_1</room>
     <room>rooms\rm_event_1</room>
-    <rooms name="Glare">
-      <room>rooms\room_glare_init</room>
-    </rooms>
     <room>rooms\House_Room</room>
-    <rooms name="Glare demo">
-      <room>rooms\room_daylight</room>
-      <room>rooms\room_game</room>
-      <room>rooms\room_shadowsprites</room>
-      <room>rooms\room_night</room>
-      <room>rooms\room_tiles_shadow_example</room>
-      <room>rooms\room_mobile_test</room>
-    </rooms>
     <room>rooms\rm_test_2</room>
     <room>rooms\rm_test_1</room>
     <room>rooms\rm_night_level1</room>
     <room>rooms\rm_win</room>
     <room>rooms\rm_game_win</room>
     <room>rooms\rm_game_lose</room>
+    <rooms name="Glare">
+      <room>rooms\room_glare_init</room>
+    </rooms>
+    <rooms name="Glare demo">
+      <room>rooms\room_game</room>
+      <room>rooms\room_shadowsprites</room>
+      <room>rooms\room_tiles_shadow_example</room>
+      <room>rooms\room_night</room>
+      <room>rooms\room_daylight</room>
+      <room>rooms\room_mobile_test</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

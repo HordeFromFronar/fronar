@@ -29,7 +29,7 @@
 
 if (global.selected) {
     if (instance_exists(global.selected)) {
-        draw_text(x,y,"Selected ID: " + string(global.selected) +
+        draw_text_color(x,y,"Selected ID: " + string(global.selected) +
         "#X: " + string(global.selected.x) +
         "#Y: " + string(global.selected.y) +
         "#Gender: " + ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),0) +
@@ -45,7 +45,7 @@ if (global.selected) {
         "#Armour: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),11)) +
         "#Evade: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),12)) +
         "#Crit: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),13))
-        );
+        , c_white, c_white, c_white, c_white, 1);
     }
 }
 
