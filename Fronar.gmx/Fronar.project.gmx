@@ -46,6 +46,34 @@
     <sprite>sprites\spr_option_blank</sprite>
     <sprite>sprites\spr_yellow_dot</sprite>
     <sprite>sprites\spr_defend</sprite>
+    <sprites name="Glare demo">
+      <sprite>sprites\player_mask</sprite>
+      <sprite>sprites\spr_berrel</sprite>
+      <sprite>sprites\spr_black</sprite>
+      <sprite>sprites\spr_shadow_area</sprite>
+      <sprite>sprites\spr_box</sprite>
+      <sprite>sprites\spr_box32</sprite>
+      <sprite>sprites\spr_bullet</sprite>
+      <sprite>sprites\spr_crate</sprite>
+      <sprite>sprites\spr_enemy_1</sprite>
+      <sprite>sprites\spr_enemy_1_dead</sprite>
+      <sprite>sprites\spr_glare_sun</sprite>
+      <sprite>sprites\spr_glare_text</sprite>
+      <sprite>sprites\spr_occlusion</sprite>
+      <sprite>sprites\spr_player</sprite>
+      <sprite>sprites\spr_player_leg</sprite>
+      <sprite>sprites\spr_player_shadow</sprite>
+      <sprite>sprites\spr_tree</sprite>
+      <sprite>sprites\spr_tree_shadow</sprite>
+      <sprite>sprites\spr_arrow</sprite>
+      <sprite>sprites\spr_roof</sprite>
+    </sprites>
+    <sprites name="Glare">
+      <sprite>sprites\spr_light_bulb</sprite>
+      <sprite>sprites\spr_light_mask_point</sprite>
+      <sprite>sprites\spr_light_mask_point_hd</sprite>
+      <sprite>sprites\spr_light_mask_spot</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_title</background>
@@ -57,9 +85,185 @@
     <background>background\bg_worldmap_dark_1</background>
     <background>background\bg_game_win</background>
     <background>background\bg_game_lose</background>
+    <backgrounds name="Glare">
+      <backgrounds name="demo">
+        <background>background\back_1</background>
+        <background>background\back_wall_tiles</background>
+        <background>background\back_tiles_white</background>
+        <background>background\back_tiles_beije</background>
+        <background>background\back_soil</background>
+        <background>background\back_roadline</background>
+        <background>background\back_road</background>
+        <background>background\back_overlay_sand</background>
+        <background>background\back_overlay_grass</background>
+      </backgrounds>
+    </backgrounds>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\path0</path>
+  </paths>
   <scripts name="scripts">
+    <scripts name="Glare">
+      <script>scripts\glr_Documentation.gml</script>
+      <scripts name="Engine">
+        <script>scripts\glr_init.gml</script>
+        <script>scripts\glr_draw.gml</script>
+        <script>scripts\glr_draw_rot.gml</script>
+        <script>scripts\glr_clear_all.gml</script>
+        <script>scripts\glr_free.gml</script>
+        <script>scripts\glr_resize_event.gml</script>
+        <script>scripts\glr_render.gml</script>
+        <scripts name="Get">
+          <script>scripts\glr_get_surface.gml</script>
+          <script>scripts\glr_get_vertex_count.gml</script>
+          <script>scripts\glr_get_quality.gml</script>
+          <script>scripts\glr_get_illumination.gml</script>
+          <script>scripts\glr_get_illumination_update.gml</script>
+        </scripts>
+        <scripts name="Set">
+          <script>scripts\glr_enable_directional.gml</script>
+          <script>scripts\glr_enable_fxaa.gml</script>
+          <script>scripts\glr_enable_intensity.gml</script>
+          <script>scripts\glr_enable_occlusion.gml</script>
+          <script>scripts\glr_set_ambient_color.gml</script>
+          <script>scripts\glr_set_ambient_daytime.gml</script>
+          <script>scripts\glr_set_ambient_daytime_colors.gml</script>
+          <script>scripts\glr_set_directional_quality.gml</script>
+          <script>scripts\glr_set_intensity_quality.gml</script>
+          <script>scripts\glr_set_occlusion_quality.gml</script>
+          <script>scripts\glr_set_quality.gml</script>
+          <script>scripts\glr_set_view.gml</script>
+          <script>scripts\glr_set_size.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="Lights">
+        <script>scripts\glr_light_create.gml</script>
+        <script>scripts\glr_light_destroy.gml</script>
+        <script>scripts\glr_light_destroy_all.gml</script>
+        <script>scripts\glr_light_refresh.gml</script>
+        <script>scripts\glr_light_toggle.gml</script>
+        <scripts name="Set">
+          <script>scripts\glr_light_set_active.gml</script>
+          <script>scripts\glr_light_set_layer.gml</script>
+          <script>scripts\glr_light_set_position.gml</script>
+          <script>scripts\glr_light_set_rotation.gml</script>
+          <script>scripts\glr_light_set_scaling.gml</script>
+          <script>scripts\glr_light_set_shadow_strength.gml</script>
+          <script>scripts\glr_light_set_sprite.gml</script>
+          <script>scripts\glr_light_set_static.gml</script>
+          <script>scripts\glr_light_set_tolerance.gml</script>
+          <script>scripts\glr_light_set_intensity.gml</script>
+          <script>scripts\glr_light_set_color.gml</script>
+        </scripts>
+        <scripts name="Get">
+          <script>scripts\glr_light_get_count.gml</script>
+          <script>scripts\glr_light_get_active.gml</script>
+          <script>scripts\glr_light_get_color.gml</script>
+          <script>scripts\glr_light_get_layer.gml</script>
+          <script>scripts\glr_light_get_static.gml</script>
+          <script>scripts\glr_light_get_shadow_strength.gml</script>
+          <script>scripts\glr_light_get_tolerance.gml</script>
+        </scripts>
+        <scripts name="Simple">
+          <script>scripts\glr_lightsimple_create.gml</script>
+          <script>scripts\glr_lightsimple_destroy.gml</script>
+          <scripts name="Get">
+            <script>scripts\glr_lightsimple_get_count.gml</script>
+          </scripts>
+          <scripts name="Set">
+            <script>scripts\glr_lightsimple_set_active.gml</script>
+            <script>scripts\glr_lightsimple_set_alpha.gml</script>
+            <script>scripts\glr_lightsimple_set_intensity.gml</script>
+            <script>scripts\glr_lightsimple_set_color.gml</script>
+            <script>scripts\glr_lightsimple_set_position.gml</script>
+            <script>scripts\glr_lightsimple_set_rotation.gml</script>
+            <script>scripts\glr_lightsimple_set_scaling.gml</script>
+            <script>scripts\glr_lightsimple_set_sprite.gml</script>
+          </scripts>
+        </scripts>
+      </scripts>
+      <scripts name="Mesh">
+        <script>scripts\glr_mesh_create.gml</script>
+        <script>scripts\glr_mesh_create_from_tiles.gml</script>
+        <script>scripts\glr_mesh_update.gml</script>
+        <script>scripts\glr_mesh_draw.gml</script>
+        <script>scripts\glr_mesh_destroy.gml</script>
+        <script>scripts\glr_mesh_destroy_all.gml</script>
+        <scripts name="Set">
+          <script>scripts\glr_mesh_set_layer.gml</script>
+          <script>scripts\glr_mesh_set_active.gml</script>
+          <script>scripts\glr_mesh_set_shadow_strength.gml</script>
+          <script>scripts\glr_mesh_set_position.gml</script>
+          <script>scripts\glr_mesh_set_directional_mask.gml</script>
+          <script>scripts\glr_mesh_set_rotation.gml</script>
+          <script>scripts\glr_mesh_set_scaling.gml</script>
+          <script>scripts\glr_mesh_set_height.gml</script>
+          <script>scripts\glr_mesh_set_directional_shadow_length.gml</script>
+        </scripts>
+        <scripts name="Get">
+          <script>scripts\glr_mesh_get_transform.gml</script>
+          <script>scripts\glr_mesh_get_rotation.gml</script>
+          <script>scripts\glr_mesh_get_scaling.gml</script>
+          <script>scripts\glr_mesh_get_position.gml</script>
+          <script>scripts\glr_mesh_get_bcircle.gml</script>
+          <script>scripts\glr_mesh_get_bbox.gml</script>
+        </scripts>
+        <scripts name="Vertices">
+          <script>scripts\glr_mesh_vertex_add.gml</script>
+          <script>scripts\glr_mesh_vertex_add_from_path.gml</script>
+          <script>scripts\glr_mesh_vertex_add_json.gml</script>
+          <script>scripts\glr_mesh_vertex_set.gml</script>
+          <script>scripts\glr_mesh_vertex_get_count.gml</script>
+          <script>scripts\glr_mesh_vertex_delete.gml</script>
+          <script>scripts\glr_vertex_add_box.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="ShadowDepth">
+        <script>scripts\glr_shadowdepth_create.gml</script>
+        <script>scripts\glr_shadowdepth_destroy.gml</script>
+        <script>scripts\glr_shadowdepth_destroy_all.gml</script>
+        <script>scripts\glr_shadowdepth_update.gml</script>
+      </scripts>
+      <scripts name="ShadowDirectional">
+        <script>scripts\glr_shadowdir_create.gml</script>
+        <script>scripts\glr_shadowdir_destroy.gml</script>
+        <script>scripts\glr_shadowdir_destroy_all.gml</script>
+        <script>scripts\glr_shadowdir_update.gml</script>
+      </scripts>
+      <scripts name="ShadowOcclusion">
+        <script>scripts\glr_occlusion_add.gml</script>
+        <script>scripts\glr_occlusion_add_instance.gml</script>
+        <script>scripts\glr_occlusion_destroy.gml</script>
+        <script>scripts\glr_occlusion_destroy_instance.gml</script>
+        <script>scripts\glr_occlusion_destroy_all.gml</script>
+        <script>scripts\glr_occlusion_update.gml</script>
+      </scripts>
+      <scripts name="ShadowSprite">
+        <script>scripts\glr_shadowsprite_create.gml</script>
+        <script>scripts\glr_shadowsprite_create_from_instance.gml</script>
+        <script>scripts\glr_shadowsprite_destroy.gml</script>
+        <script>scripts\glr_shadowsprite_destroy_all.gml</script>
+        <script>scripts\glr_shadowsprite_set_layer.gml</script>
+        <script>scripts\glr_shadowsprite_set_static.gml</script>
+        <script>scripts\glr_shadowsprite_update.gml</script>
+        <script>scripts\glr_shadowsprite_update_instance.gml</script>
+      </scripts>
+      <scripts name="ShadowArea">
+        <script>scripts\glr_shadowarea_create.gml</script>
+        <script>scripts\glr_shadowarea_set_illumination.gml</script>
+        <script>scripts\glr_shadowarea_destroy.gml</script>
+        <script>scripts\glr_shadowarea_destroy_all.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="Glare demo">
+      <script>scripts\glrtest_gui_mobile.gml</script>
+      <script>scripts\glrtest_gui_desktop.gml</script>
+      <script>scripts\glrtest_get_illumination.gml</script>
+      <scripts name="misc">
+        <script>scripts\glrtest_string_onoff.gml</script>
+        <script>scripts\glrtest_text_pressed.gml</script>
+      </scripts>
+    </scripts>
     <script>scripts\select.gml</script>
     <script>scripts\assignChar.gml</script>
     <script>scripts\generateChar.gml</script>
@@ -82,6 +286,26 @@
     <script>scripts\getGenderedPosessive.gml</script>
     <script>scripts\getGenderedPronoun.gml</script>
   </scripts>
+  <shaders name="shaders">
+    <shaders name="Glare">
+      <shader type="GLSLES">shaders\glr_shader_ambient.shader</shader>
+      <shader type="GLSLES">shaders\glr_shader_ambient_occlusion.shader</shader>
+      <shader type="GLSLES">shaders\glr_shader_base.shader</shader>
+      <shader type="GLSLES">shaders\glr_shader_blur_hor.shader</shader>
+      <shader type="GLSLES">shaders\glr_shader_blur_ver.shader</shader>
+      <shader type="GLSLES">shaders\glr_shader_depth.shader</shader>
+      <shader type="GLSLES">shaders\glr_shader_directional.shader</shader>
+      <shader type="GLSLES">shaders\glr_shader_fxaa.shader</shader>
+      <shader type="GLSLES">shaders\glr_shader_intensity.shader</shader>
+      <shader type="GLSLES">shaders\glr_shader_shadow_sprite.shader</shader>
+    </shaders>
+  </shaders>
+  <fonts name="fonts">
+    <fonts name="Glare">
+      <font>fonts\font_glare2</font>
+      <font>fonts\font_glare</font>
+    </fonts>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_char</object>
     <object>objects\obj_debug_controller</object>
@@ -130,9 +354,45 @@
     <object>objects\obj_defend</object>
     <object>objects\obj_game_controller</object>
     <object>objects\obj_game_over</object>
+    <objects name="Glare demo">
+      <object>objects\obj_berrel</object>
+      <object>objects\obj_box</object>
+      <object>objects\obj_bug</object>
+      <object>objects\obj_bullet</object>
+      <object>objects\obj_camera</object>
+      <object>objects\obj_crate</object>
+      <object>objects\obj_demo_controller</object>
+      <object>objects\obj_light_mouse</object>
+      <object>objects\obj_light_path</object>
+      <object>objects\obj_light_spot</object>
+      <object>objects\obj_lightsimple</object>
+      <object>objects\obj_player</object>
+      <object>objects\obj_shadow_area</object>
+      <object>objects\obj_test_json</object>
+      <object>objects\obj_test_occlusion</object>
+      <object>objects\obj_test_shadowsprite</object>
+      <object>objects\obj_tiles_shadows_test</object>
+      <object>objects\obj_tree</object>
+      <object>objects\obj_wall</object>
+      <object>objects\par_solid</object>
+      <object>objects\obj_arrow</object>
+      <objects name="roof">
+        <object>objects\obj_roof</object>
+        <object>objects\obj_roof_shadow</object>
+        <object>objects\obj_roof_activator</object>
+      </objects>
+    </objects>
+    <objects name="Glare">
+      <object>objects\obj_light_static</object>
+      <object>objects\obj_light_point</object>
+      <object>objects\obj_glare_controller</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
+    <rooms name="Glare">
+      <room>rooms\room_glare_init</room>
+    </rooms>
     <room>rooms\rm_splash_screen</room>
     <room>rooms\rm_title_screen</room>
     <room>rooms\rm_opening_cutscene</room>
@@ -140,6 +400,14 @@
     <room>rooms\rm_worldmap_1</room>
     <room>rooms\rm_event_1</room>
     <room>rooms\House_Room</room>
+    <rooms name="Glare demo">
+      <room>rooms\room_daylight</room>
+      <room>rooms\room_game</room>
+      <room>rooms\room_shadowsprites</room>
+      <room>rooms\room_night</room>
+      <room>rooms\room_tiles_shadow_example</room>
+      <room>rooms\room_mobile_test</room>
+    </rooms>
     <room>rooms\rm_test_2</room>
     <room>rooms\rm_test_1</room>
     <room>rooms\rm_night_level1</room>

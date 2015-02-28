@@ -82,4 +82,3 @@ switch(x) {
         ds_list_add(char,ds_list_find_value(occupations4,irandom(ds_list_size(occupations4) - 1)));
         break;                 
 }
-
