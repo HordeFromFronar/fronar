@@ -390,15 +390,15 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
-    <rooms name="Glare">
-      <room>rooms\room_glare_init</room>
-    </rooms>
     <room>rooms\rm_splash_screen</room>
     <room>rooms\rm_title_screen</room>
     <room>rooms\rm_opening_cutscene</room>
     <room>rooms\rm_crew_select_1</room>
     <room>rooms\rm_worldmap_1</room>
     <room>rooms\rm_event_1</room>
+    <rooms name="Glare">
+      <room>rooms\room_glare_init</room>
+    </rooms>
     <room>rooms\House_Room</room>
     <rooms name="Glare demo">
       <room>rooms\room_daylight</room>
