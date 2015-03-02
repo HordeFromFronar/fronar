@@ -92,8 +92,13 @@ for (i = 0; i &lt; enemies; ++i) {
     }
     
     type = irandom(10);
-    
-    if type &lt;= 5 {
+     
+    //10% Tank Borgi 
+    //40% Laser Borgi
+    //50% Normal Borgi
+    if type == 0 {
+        instance_create(spawn_x, spawn_y, obj_enemy_tank);
+    } else if type &lt;= 4 {
         instance_create(spawn_x, spawn_y, obj_enemy_laser);
     } else {
         instance_create(spawn_x, spawn_y, obj_enemy);

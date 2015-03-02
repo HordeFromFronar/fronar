@@ -14,6 +14,7 @@
     <sprite>sprites\spr_grid</sprite>
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_enemy_laser</sprite>
+    <sprite>sprites\spr_enemy_tank</sprite>
     <sprite>sprites\spr_bullet_fronar</sprite>
     <sprite>sprites\spr_wall_inner</sprite>
     <sprite>sprites\spr_wall_outer</sprite>
@@ -313,6 +314,7 @@
     <object>objects\obj_start</object>
     <object>objects\obj_grid</object>
     <object>objects\obj_enemy</object>
+    <object>objects\obj_enemy_tank</object>
     <object>objects\obj_enemy_laser</object>
     <object>objects\obj_bullet_fronar</object>
     <object>objects\obj_turret</object>
