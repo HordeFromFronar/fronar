@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>///Init
-//show_debug_message("init a tank");
 //Initialize variables
 image_speed = 0;
 moveSpeed = 0.5;
@@ -51,8 +50,6 @@ alarm[3] = 8;
 e_gridSize = 16;
 e_grid = mp_grid_create(-40,-40,round(room_width/e_gridSize) + 6,
                         round(room_height/e_gridSize) + 6,e_gridSize,e_gridSize);
-show_debug_message("done initting a tank, hp is");
-show_debug_message(hp);
 </string>
           </argument>
         </arguments>
@@ -343,6 +340,8 @@ target = 0;
 getPriority(id);
 
 if (target &amp;&amp; attacking) {
+    show_debug_message("x is " + string(x) + " and xdest is " + string(xDest));
+    show_debug_message("y is " + string(y) + " and ydest is " + string(yDest));
     if (x == xDest &amp;&amp; y == yDest &amp;&amp; (lineOfSight(x, y, target.x, target.y, false) || ignoreSight)) {
         alarm[0] = 30 / rate;
         
@@ -412,6 +411,9 @@ target = 0;
 getPriority(id);
 
 if (target &amp;&amp; !attacking) {
+    
+    show_debug_message("x is " + string(x) + " and xdest is " + string(xDest));
+    show_debug_message("y is " + string(y) + " and ydest is " + string(yDest));
     if (x == xDest &amp;&amp; y == yDest &amp;&amp; distance_to_point(target.x, target.y) &lt;= 35 &amp;&amp; (lineOfSight(x, y, target.x, target.y, false) || ignoreSight)) {
         attacking = 1;
         alarm[0] = 30 / rate;
@@ -498,5 +500,8 @@ if (hp &lt; maxHealth) {
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>16,16</point>
+    <point>16,16</point>
+  </PhysicsShapePoints>
 </object>

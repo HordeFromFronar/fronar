@@ -102,7 +102,7 @@ switch(global.event_id){
         obj_event_option_3.text = "Give the bayonet to " +  ds_list_find_value(ds_list_find_value(global.charList, 2), 1);
         
         if(global.event_part2){
-            show_debug_message("i should be drawing p2");
+            //show_debug_message("i should be drawing p2");
             //Display the second part of the scenario
             depth = -1;
             draw_set_colour(c_white);

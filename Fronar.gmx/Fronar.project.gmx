@@ -314,7 +314,6 @@
     <object>objects\obj_start</object>
     <object>objects\obj_grid</object>
     <object>objects\obj_enemy</object>
-    <object>objects\obj_enemy_tank_buggy</object>
     <object>objects\obj_enemy_laser</object>
     <object>objects\obj_bullet_fronar</object>
     <object>objects\obj_turret</object>

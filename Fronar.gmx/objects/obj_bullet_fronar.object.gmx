@@ -68,6 +68,15 @@ if (place_meeting(x,y,obj_enemy_laser)) {
     instance_destroy(); 
 }
 
+if (place_meeting(x,y,obj_enemy_tank)) {
+    target = instance_nearest(x, y, obj_enemy_tank);
+    
+    damageObj(target, origin);
+    
+    instance_destroy(); 
+}
+
+
 if (place_meeting(x,y,obj_wall_inner) || place_meeting(x,y,obj_wall_outer)) {   
     instance_destroy(); 
 }
