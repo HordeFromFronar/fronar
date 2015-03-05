@@ -93,6 +93,7 @@ for (i = 0; i &lt; instance_number(obj_enemy); ++i) {
 }
 // Add collision detection to players, and walls
 // mp_grid_add_instances(e_grid, obj_char, false)
+mp_grid_add_instances(e_grid, obj_enemy_tank, false);
 mp_grid_add_instances(e_grid, obj_enemy_laser, false);
 mp_grid_add_instances(e_grid, obj_wall_inner, false);
 mp_grid_add_instances(e_grid, obj_wall_outer, false);
@@ -240,6 +241,14 @@ if (x != xDest || y != yDest) {
         }
         if (instance_place(x, y, obj_enemy_laser)) {
             if (instance_place(x, y, obj_enemy_laser) &lt; id) {
+                path_end()
+                move_snap(16,16); 
+                unstuck = 1;
+                alarm[2] = 30;
+            }
+        }
+        if (instance_place(x, y, obj_enemy_tank)) {
+            if (instance_place(x, y, obj_enemy_tank) &lt; id) {
                 path_end()
                 move_snap(16,16); 
                 unstuck = 1;

@@ -314,7 +314,7 @@
     <object>objects\obj_start</object>
     <object>objects\obj_grid</object>
     <object>objects\obj_enemy</object>
-    <object>objects\obj_enemy_tank</object>
+    <object>objects\obj_enemy_tank_buggy</object>
     <object>objects\obj_enemy_laser</object>
     <object>objects\obj_bullet_fronar</object>
     <object>objects\obj_turret</object>
@@ -392,6 +392,7 @@
       <object>objects\obj_light_point</object>
       <object>objects\obj_glare_controller</object>
     </objects>
+    <object>objects\obj_enemy_tank</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>

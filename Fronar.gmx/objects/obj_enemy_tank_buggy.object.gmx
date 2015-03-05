@@ -19,14 +19,14 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>obj_enemy</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
             <string>///Init
-//show_debug_message("init a tank");
+show_debug_message("init a tank");
 //Initialize variables
 image_speed = 0;
 moveSpeed = 0.5;
@@ -87,15 +87,14 @@ closest = target;
 
 // Add collision detection to all other enemies
 var i;
-for (i = 0; i &lt; instance_number(obj_enemy_tank); ++i) {
-    enemy_id = instance_find(obj_enemy_tank, i);
+for (i = 0; i &lt; instance_number(obj_enemy); ++i) {
+    enemy_id = instance_find(obj_enemy, i);
     if (enemy_id != id) {
         mp_grid_add_instances(e_grid, enemy_id, false);
     }
 }
 // Add collision detection to players, and walls
 // mp_grid_add_instances(e_grid, obj_char, false)
-mp_grid_add_instances(e_grid, obj_enemy, false);
 mp_grid_add_instances(e_grid, obj_enemy_laser, false);
 mp_grid_add_instances(e_grid, obj_wall_inner, false);
 mp_grid_add_instances(e_grid, obj_wall_outer, false);
@@ -243,14 +242,6 @@ if (x != xDest || y != yDest) {
         }
         if (instance_place(x, y, obj_enemy_laser)) {
             if (instance_place(x, y, obj_enemy_laser) &lt; id) {
-                path_end()
-                move_snap(16,16); 
-                unstuck = 1;
-                alarm[2] = 30;
-            }
-        }
-        if (instance_place(x, y, obj_enemy_tank)) {
-            if (instance_place(x, y, obj_enemy) &lt; id) {
                 path_end()
                 move_snap(16,16); 
                 unstuck = 1;
@@ -488,7 +479,7 @@ if (hp &lt; maxHealth) {
     </event>
   </events>
   <PhysicsObject>0</PhysicsObject>
-  <PhysicsObjectSensor>0</PhysicsObjectSensor>
+  <PhysicsObjectSensor>-1</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
@@ -497,6 +488,9 @@ if (hp &lt; maxHealth) {
   <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
-  <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsObjectKinematic>-1</PhysicsObjectKinematic>
+  <PhysicsShapePoints>
+    <point>16,16</point>
+    <point>16,16</point>
+  </PhysicsShapePoints>
 </object>
