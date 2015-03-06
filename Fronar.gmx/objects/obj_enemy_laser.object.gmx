@@ -126,7 +126,7 @@ if (lineOfSight(xTarget - 32, yTarget, xTarget, yTarget, false)) {
         dist = point_distance(xTarget - 32, yTarget, x, y);
     }
 }
-if (lineOfSight(xTarget, yTarget + 32, xTarget, yTarget, false) || ignoreSight) {
+if (lineOfSight(xTarget, yTarget + 32, xTarget, yTarget, false) ) {
     if (point_distance(xTarget, yTarget + 32, x, y) &lt; dist &amp;&amp;
         mp_grid_get_cell(e_grid, (xTarget) / 16 + 2 , (yTarget + 32) / 16 + 2) == 0) {
         xDest = xTarget;
@@ -163,15 +163,15 @@ if (lineOfSight(xTarget + 32, yTarget - 32, xTarget, yTarget, false)) {
         mp_grid_get_cell(e_grid, (xTarget + 32) / 16 + 2 , (yTarget - 32) / 16 + 2) == 0) {
         xDest = xTarget + 32;
         yDest = yTarget - 32;
-        dist = point_distance(xTarget + 32, yTarget + 32, x, y);
+        dist = point_distance(xTarget + 32, yTarget - 32, x, y);
     }
 }
 if (lineOfSight(xTarget - 32, yTarget + 32, xTarget, yTarget, false)) {
-    if (point_distance(xTarget - 32, yTarget - 32, x, y) &lt; dist &amp;&amp;
+    if (point_distance(xTarget - 32, yTarget + 32, x, y) &lt; dist &amp;&amp;
         mp_grid_get_cell(e_grid, (xTarget - 32) / 16 + 2 , (yTarget + 32) / 16 + 2) == 0) {
         xDest = xTarget - 32;
         yDest = yTarget + 32;
-        dist = point_distance(xTarget - 32, yTarget - 32, x, y);
+        dist = point_distance(xTarget - 32, yTarget + 32, x, y);
     }
 }
 

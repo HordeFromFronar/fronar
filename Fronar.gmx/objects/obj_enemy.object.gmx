@@ -151,13 +151,13 @@ if (lineOfSight(xTarget + 32, yTarget + 32, xTarget, yTarget, false) || ignoreSi
         mp_grid_get_cell(e_grid, (xTarget + 32) / 16 + 2 , (yTarget + 32) / 16 + 2) == 0) {
         if (ignoreSight) {
             xDest = xTarget;
-            yDest = yTarget + 32;;
+            yDest = yTarget;
             dist = point_distance(xTarget, yTarget, x, y);
         }
         else {
             xDest = xTarget + 32;
-            yDest = yTarget + 32;;
-            dist = point_distance(xTarget + 32, yTarget, x, y);
+            yDest = yTarget + 32;
+            dist = point_distance(xTarget + 32, yTarget + 32, x, y);
         }
     }
 }
@@ -174,13 +174,13 @@ if (lineOfSight(xTarget + 32, yTarget - 32, xTarget, yTarget, false) || ignoreSi
         mp_grid_get_cell(e_grid, (xTarget + 32) / 16 + 2 , (yTarget - 32) / 16 + 2) == 0) {
         if (ignoreSight) {
             xDest = xTarget;
-            yDest = yTarget + 32;;
+            yDest = yTarget;
             dist = point_distance(xTarget, yTarget, x, y);
         }
         else {
             xDest = xTarget + 32;
-            yDest = yTarget - 32;;
-            dist = point_distance(xTarget + 32, yTarget, x, y);
+            yDest = yTarget - 32;
+            dist = point_distance(xTarget + 32, yTarget - 32, x, y);
         }
     }
 }
@@ -189,7 +189,7 @@ if (lineOfSight(xTarget - 32, yTarget + 32, xTarget, yTarget, false) || ignoreSi
         mp_grid_get_cell(e_grid, (xTarget - 32) / 16 + 2 , (yTarget + 32) / 16 + 2) == 0) {
         xDest = xTarget - 32;
         yDest = yTarget + 32;
-        dist = point_distance(xTarget - 32, yTarget - 32, x, y);
+        dist = point_distance(xTarget - 32, yTarget + 32, x, y);
     }
 }
 
@@ -233,7 +233,7 @@ if (x != xDest || y != yDest) {
         }
         if (instance_place(x, y, obj_enemy)) {
             if (instance_place(x, y, obj_enemy) &lt; id) {
-                path_end()
+                path_end();
                 move_snap(16,16); 
                 unstuck = 1;
                 alarm[2] = 30;
@@ -241,7 +241,7 @@ if (x != xDest || y != yDest) {
         }
         if (instance_place(x, y, obj_enemy_laser)) {
             if (instance_place(x, y, obj_enemy_laser) &lt; id) {
-                path_end()
+                path_end();
                 move_snap(16,16); 
                 unstuck = 1;
                 alarm[2] = 30;
@@ -249,7 +249,7 @@ if (x != xDest || y != yDest) {
         }
         if (instance_place(x, y, obj_enemy_tank)) {
             if (instance_place(x, y, obj_enemy_tank) &lt; id) {
-                path_end()
+                path_end();
                 move_snap(16,16); 
                 unstuck = 1;
                 alarm[2] = 30;
