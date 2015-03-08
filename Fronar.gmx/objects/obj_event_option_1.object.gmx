@@ -76,6 +76,7 @@ charId = 0;
     case 0:
     //NOTE YOU MUST CHECK PART2 SO THAT PLAYERS CANT SPAM CLICK FOR MORE POWER
         if (!global.event_part2){
+        global.event_selected_option = 0;
         global.event_part2 = true;
         //Abadoned Shack bayonet powerup +3 melee
         //SWITCH THIS TO MELEE WHEN MELEE IMPLEMENTED
