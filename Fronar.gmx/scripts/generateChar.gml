@@ -16,6 +16,7 @@
 //12: evasion
 //13: critical
 //14: occupation
+//15: interest
 
 
 //Initialize variables
