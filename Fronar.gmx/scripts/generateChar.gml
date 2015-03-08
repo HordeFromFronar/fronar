@@ -34,6 +34,7 @@ cArmour = 0;
 cEvade = 10;
 cCrit = 10;
 occupation = "";
+interest = "";
 
 
 while (count) {
@@ -72,6 +73,9 @@ while (count) {
     
     //Get a random occupation
     generateOccupation(char);
+    
+    //Get a random interest
+    generateInterest(char);
     
     ds_list_add(global.charList, char);
     

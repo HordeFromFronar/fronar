@@ -269,6 +269,7 @@
     <script>scripts\assignChar.gml</script>
     <script>scripts\generateChar.gml</script>
     <script>scripts\generateOccupation.gml</script>
+    <script>scripts\generateInterest.gml</script>
     <script>scripts\generateName.gml</script>
     <script>scripts\generateResources.gml</script>
     <script>scripts\highlightRange.gml</script>
