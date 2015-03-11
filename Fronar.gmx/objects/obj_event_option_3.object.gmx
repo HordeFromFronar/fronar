@@ -49,7 +49,7 @@ charId=2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message("entered 3");
+            <string>//show_debug_message("entered 3");
 </string>
           </argument>
         </arguments>

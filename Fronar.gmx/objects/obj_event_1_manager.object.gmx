@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>///Generate an event 
 resetEventCharacters();
-global.event_id = 1;
-//global.event_id = generateEvent();
+//global.event_id = 1;
+global.event_id = generateEvent();
 ds_list_shuffle(global.charList);
 global.event_part2 = false;
 
