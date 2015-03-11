@@ -49,7 +49,7 @@ charId = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message("entered o1");
+            <string>show_debug_message("entered 1");
 </string>
           </argument>
         </arguments>
@@ -72,22 +72,22 @@ charId = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>switch(global.event_id){
-    case 0:
-    //NOTE YOU MUST CHECK PART2 SO THAT PLAYERS CANT SPAM CLICK FOR MORE POWER
-        if (!global.event_part2){
-        global.event_selected_option = 0;
-        global.event_part2 = true;
-        //Abadoned Shack bayonet powerup +3 melee
-        //SWITCH THIS TO MELEE WHEN MELEE IMPLEMENTED
-        ds_list_replace(ds_list_find_value(global.charList, charId), 9, ds_list_find_value(ds_list_find_value(global.charList, charId), 9) + 3);
-
-        //ds_list_find_value(ds_list_find_value(global.charList, charId), 9) 
-        //+= 3;
-        }
-        break;
+            <string>//NOTE YOU MUST CHECK PART2 SO THAT PLAYERS CANT SPAM CLICK FOR MORE POWER
+if (!global.event_part2){
+    global.event_selected_option = 0;
+    global.event_part2 = true;
+    switch(global.event_id){
+        case 0:         
+            //Abadoned Shack bayonet powerup +3 melee
+            //SWITCH THIS TO MELEE WHEN MELEE IMPLEMENTED
+            ds_list_replace(ds_list_find_value(global.charList, charId), 9, ds_list_find_value(ds_list_find_value(global.charList, charId), 9) + 3);      
+            break;
+        case 1:
+            //Spike Pit
+            //Nothing Happens
+            break;
+    }
 }
-
 </string>
           </argument>
         </arguments>
@@ -112,7 +112,7 @@ charId = 0;
             <kind>1</kind>
             <string>draw_set_colour(c_fuchsia);
 x1 = 6*32;
-y1 = 9*32;
+y1 = 10*32;
 depth = 0;
 draw_text(x1, y1, text);
 

@@ -38,6 +38,7 @@ globalvar event_part2;
 globalvar event_id;
 globalvar event_selected_option;
 globalvar overworld_step;
+globalvar event_subevent;
 
 selected = 0;
 eventNumber = 0;
@@ -48,6 +49,7 @@ event_part2 = false;
 event_id = 0;
 overworld_step = 0;
 event_selected_option = 0;
+event_subevent = 0;
 
 charList = ds_list_create();
 resourceList = ds_list_create();

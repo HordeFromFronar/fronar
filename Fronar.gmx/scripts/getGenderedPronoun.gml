@@ -1,4 +1,4 @@
-//getGenderedPossessive(gender)
+//getGenderedPronoun(gender)
 gender = argument[0];
 caps = argument[1];
 if(caps){

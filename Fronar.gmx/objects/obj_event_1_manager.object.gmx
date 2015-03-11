@@ -8,35 +8,6 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>
-//Generate an event (Only 1 right now)
-//resetEventCharacters();
-//eventId = irandom(0);
-
-//THIS IS TEMPORARY PLZ REMOVE WHEN EVENTS WORK
-//room_goto_next();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="7" enumb="4">
       <action>
         <libid>1</libid>
@@ -54,13 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Generate an event 
+            <string>///Generate an event 
 resetEventCharacters();
-global.event_id = generateEvent();
+global.event_id = 1;
+//global.event_id = generateEvent();
 ds_list_shuffle(global.charList);
 global.event_part2 = false;
-//THIS IS TEMPORARY PLZ REMOVE WHEN EVENTS WORK
-//room_goto_next();
+
 </string>
           </argument>
         </arguments>
@@ -96,13 +67,14 @@ draw_set_colour(c_white);
 switch(global.event_id){
     case 0:
         //Abandoned Shack        
-        draw_text(x1+32, y1+32, getEventText(0));
+        draw_text(x1+32, y1+32, getEventText());
         obj_event_option_1.text = "Give the bayonet to " +  ds_list_find_value(ds_list_find_value(global.charList, 0), 1);
         obj_event_option_2.text = "Give the bayonet to " +  ds_list_find_value(ds_list_find_value(global.charList, 1), 1);
         obj_event_option_3.text = "Give the bayonet to " +  ds_list_find_value(ds_list_find_value(global.charList, 2), 1);
-        
+        obj_event_option_1.charId = 0;
+        obj_event_option_2.charId = 1;
+        obj_event_option_3.charId = 2;
         if(global.event_part2){
-            //show_debug_message("i should be drawing p2");
             //Display the second part of the scenario
             depth = -1;
             draw_set_colour(c_white);
@@ -110,6 +82,21 @@ switch(global.event_id){
             obj_event_continue.visible = true;
         }
         break;
+    case 1:
+        //Spike Pit
+        draw_text(x1+32, y1+32, getEventText());
+        obj_event_option_1.text = "Leave the rations and continue on.";
+        obj_event_option_2.text = "Send " + ds_list_find_value(ds_list_find_value(global.charList, 0), 1) + " to retrieve the rations.";
+        obj_event_option_3.text = "Send " + ds_list_find_value(ds_list_find_value(global.charList, 1), 1) + " to retrieve the rations.";
+        obj_event_option_2.charId = 0;
+        obj_event_option_3.charId = 1;
+        if(global.event_part2){
+            //Display the second part of the scenario
+            depth = -1;
+            draw_set_colour(c_white);
+            draw_text(x1 + 32, y1 + 4*32 + 16, getEventTextPart2());
+            obj_event_continue.visible = true;
+        }
 }
 </string>
           </argument>
