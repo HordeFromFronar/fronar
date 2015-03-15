@@ -21,8 +21,8 @@ switch(x) {
 
     case 0:
         // hunter
-        ds_list_add(char, 10); // max health
-        ds_list_add(char, 10); // current health
+        ds_list_add(char, 7); // max health
+        ds_list_add(char, 7); // current health
         ds_list_add(char, 0);  // portrait id
         ds_list_add(char, 3);  // rande
         ds_list_add(char, 5);  // speed

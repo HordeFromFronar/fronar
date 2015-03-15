@@ -28,17 +28,6 @@ age = 18;
 occupation = "";
 interest = "";
 
-//Initialize class specific variables
-cHealth = 10;
-portraitId = 0;
-cRange = 3;
-cSpeed = 5;
-cDamage = 1;
-cRate = 2;
-cArmour = 0;
-cEvade = 10;
-cCrit = 10;
-
 while (count) {
     char = ds_list_create();
     //Randomly set gender & portrait

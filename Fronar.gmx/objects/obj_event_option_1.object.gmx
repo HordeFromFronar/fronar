@@ -80,7 +80,7 @@ if (!global.event_part2){
         case 0:         
             //Abadoned Shack bayonet powerup +3 melee
             //SWITCH THIS TO MELEE WHEN MELEE IMPLEMENTED
-            ds_list_replace(ds_list_find_value(global.charList, charId), 9, ds_list_find_value(ds_list_find_value(global.charList, charId), 9) + 3);      
+            ds_list_replace(ds_list_find_value(global.charList, charId), 11, ds_list_find_value(ds_list_find_value(global.charList, charId), 11) + 3);      
             break;
         case 1:
             //Spike Pit
