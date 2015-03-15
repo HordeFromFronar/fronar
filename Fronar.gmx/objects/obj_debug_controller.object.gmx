@@ -35,17 +35,17 @@ if (global.selected) {
         "#Gender: " + ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),0) +
         "#First: " + ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),1) +
         "#Last: " + ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),2) +
-        "#Age: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID), 7)) + 
-        "#Job: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),14)) +
-        "#Interest: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),15)) +   
-        "#HP: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),8)) +
-        "#Range: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),4)) +
-        "#Speed: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),5)) +
-        "#Damage: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),9)) +
-        "#Rate: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),10)) +
-        "#Armour: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),11)) +
-        "#Evade: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),12)) +
-        "#Crit: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),13))
+        "#Age: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID), 3)) + 
+        "#Job: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),4)) +
+        "#Interest: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),5)) +   
+        "#HP: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),7)) +
+        "#Range: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),9)) +
+        "#Speed: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),10)) +
+        "#Damage: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),11)) +
+        "#Rate: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),12)) +
+        "#Armour: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),13)) +
+        "#Evade: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),14)) +
+        "#Crit: " + string(ds_list_find_value(ds_list_find_value(global.charList, global.selected.charID),15))
         , c_white, c_white, c_white, c_white, 1);
     }
 }

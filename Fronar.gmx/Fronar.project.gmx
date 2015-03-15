@@ -268,6 +268,7 @@
     <script>scripts\select.gml</script>
     <script>scripts\assignChar.gml</script>
     <script>scripts\generateChar.gml</script>
+    <script>scripts\generateClass.gml</script>
     <script>scripts\generateOccupation.gml</script>
     <script>scripts\generateInterest.gml</script>
     <script>scripts\generateName.gml</script>

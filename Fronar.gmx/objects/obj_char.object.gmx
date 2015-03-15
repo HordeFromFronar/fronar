@@ -43,19 +43,20 @@ path = path_add();
 gender = ds_list_find_value(ds_list_find_value(global.charList, charID),0);
 first = ds_list_find_value(ds_list_find_value(global.charList, charID),1);
 last = ds_list_find_value(ds_list_find_value(global.charList, charID),2);
-maxHealth = ds_list_find_value(ds_list_find_value(global.charList, charID),3);
-range = ds_list_find_value(ds_list_find_value(global.charList, charID),4);
-moveSpeed = ds_list_find_value(ds_list_find_value(global.charList, charID),5);
-portraitId = ds_list_find_value(ds_list_find_value(global.charList, charID),6);
-age = ds_list_find_value(ds_list_find_value(global.charList, charID),7);
-hp = ds_list_find_value(ds_list_find_value(global.charList, charID),8);
-damage = ds_list_find_value(ds_list_find_value(global.charList, charID),9);
-rate = ds_list_find_value(ds_list_find_value(global.charList, charID),10);
-armour = ds_list_find_value(ds_list_find_value(global.charList, charID),11);
-evade = ds_list_find_value(ds_list_find_value(global.charList, charID),12);
-crit = ds_list_find_value(ds_list_find_value(global.charList, charID),13);
-occupation = ds_list_find_value(ds_list_find_value(global.charList, charID),14);
-interest = ds_list_find_value(ds_list_find_value(global.charList, charID),15);
+age = ds_list_find_value(ds_list_find_value(global.charList, charID),3);
+occupation = ds_list_find_value(ds_list_find_value(global.charList, charID),4);
+interest = ds_list_find_value(ds_list_find_value(global.charList, charID),5);
+maxHealth = ds_list_find_value(ds_list_find_value(global.charList, charID),6);
+hp = ds_list_find_value(ds_list_find_value(global.charList, charID),7);
+portraitId = ds_list_find_value(ds_list_find_value(global.charList, charID),8);
+range = ds_list_find_value(ds_list_find_value(global.charList, charID),9);
+moveSpeed = ds_list_find_value(ds_list_find_value(global.charList, charID),10);
+damage = ds_list_find_value(ds_list_find_value(global.charList, charID), 11);
+rate = ds_list_find_value(ds_list_find_value(global.charList, charID),12);
+armour = ds_list_find_value(ds_list_find_value(global.charList, charID),13);
+evade = ds_list_find_value(ds_list_find_value(global.charList, charID),14);
+crit = ds_list_find_value(ds_list_find_value(global.charList, charID),15);
+
 
 image_index = portraitId;
 

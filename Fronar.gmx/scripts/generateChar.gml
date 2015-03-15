@@ -4,39 +4,40 @@
 //0: gender
 //1: first name
 //2: last name
-//3: max health
-//4: range
-//5: speed
-//6: portrait id
-//7: age
-//8: current health
-//9: damage
-//10: fire rate
-//11: armour
-//12: evasion
-//13: critical
-//14: occupation
-//15: interest
+//3: age
+//4: occupation
+//5: interest
+//Below are class specific
+//6: max health
+//7: current health
+//8: portrait id
+//9: range
+//10: speed
+//11: damage
+//12: fire rate
+//13: armour
+//14: evasion
+//15: critical
 
-
-//Initialize variables
+//Initialize general variables
 count = argument[0];
 gender = "";
 firstName = "";
 lastName = "";
+age = 18;
+occupation = "";
+interest = "";
+
+//Initialize class specific variables
 cHealth = 10;
+portraitId = 0;
 cRange = 3;
 cSpeed = 5;
-portraitId = 0;
-age = 18;
 cDamage = 1;
 cRate = 2;
 cArmour = 0;
 cEvade = 10;
 cCrit = 10;
-occupation = "";
-interest = "";
-
 
 while (count) {
     char = ds_list_create();
@@ -57,26 +58,17 @@ while (count) {
     //Get a random name
     generateName(char, gender);
     
-    ds_list_add(char, cHealth);
-    ds_list_add(char, cRange);
-    ds_list_add(char, cSpeed);
-    ds_list_add(char, portraitId);
-    
     //Randomly set age
     ds_list_add(char, irandom(47) + 18);
-    
-    ds_list_add(char, cHealth);
-    ds_list_add(char, cDamage);
-    ds_list_add(char, cRate);
-    ds_list_add(char, cArmour);
-    ds_list_add(char, cEvade);
-    ds_list_add(char, cCrit);
     
     //Get a random occupation
     generateOccupation(char);
     
     //Get a random interest
     generateInterest(char);
+   
+    //Get class attributes
+    generateClass(char);
     
     ds_list_add(global.charList, char);
     
