@@ -30,17 +30,11 @@ interest = "";
 
 while (count) {
     char = ds_list_create();
-    //Randomly set gender & portrait
+    //Randomly set gender
     rand = irandom(1);
     switch(rand) {
-        case 0:
-            gender = "m";
-            portraitId = irandom(1);
-            break;
-        case 1:
-            gender = "f";
-            portraitId = irandom(1) + 2;
-            break;
+        case 0: gender = "m"; break;
+        default: gender = "f"; break;
     }
     ds_list_add(char, gender);
     
