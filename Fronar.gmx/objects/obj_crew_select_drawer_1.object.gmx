@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>for (i = 0; i &lt; 3; ++i){
     //Draw character portraits
-    pid = ds_list_find_value(ds_list_find_value(global.charList, i),6);
+    pid = ds_list_find_value(ds_list_find_value(global.charList, i),8);
+    pid = pid mod 4
     draw_sprite(spr_ally_portrait, pid, 290 + i*250, 100);
     
     draw_set_colour(c_white);
@@ -35,7 +36,7 @@
     draw_text(290 + i*250, 350, "Name: " + ds_list_find_value(ds_list_find_value(global.charList, i), 1) + 
     " " + ds_list_find_value(ds_list_find_value(global.charList, i), 2) +
     "#Gender: " + ds_list_find_value(ds_list_find_value(global.charList, i), 0) +
-    "#Age: " + string(ds_list_find_value(ds_list_find_value(global.charList, i), 7))
+    "#Age: " + string(ds_list_find_value(ds_list_find_value(global.charList, i), 3))
 );
 }
 
