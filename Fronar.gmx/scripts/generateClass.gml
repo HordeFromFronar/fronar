@@ -22,7 +22,8 @@ switch(x) {
     //13: armour
     //14: evasion
     //15: critical
-
+    //16: class
+    
     case 0:
         // hunter
         ds_list_add(char, 7); // max health
@@ -48,6 +49,7 @@ switch(x) {
         ds_list_add(char, 0);  // armour
         ds_list_add(char, 10); // evasion
         ds_list_add(char, 10); // critical
+        ds_list_add(char, "Hunter"); // class
         break;
     case 1:
         // grenadier
@@ -67,13 +69,14 @@ switch(x) {
             }
         }
         
-        ds_list_add(char, 2);  // range
+        ds_list_add(char, 3);  // range
         ds_list_add(char, 3);  // speed
         ds_list_add(char, 1);  // damage
         ds_list_add(char, 1);  // fire rate
         ds_list_add(char, 0);  // armour
         ds_list_add(char, 10); // evasion
         ds_list_add(char, 10); // critical
+        ds_list_add(char, "Grenadier") // class
         break;      
     default:
         // soldier
@@ -100,5 +103,6 @@ switch(x) {
         ds_list_add(char, 0);  // armour
         ds_list_add(char, 10); // evasion
         ds_list_add(char, 10); // critical
+        ds_list_add(char, "Soldier"); // class
         break;              
 }

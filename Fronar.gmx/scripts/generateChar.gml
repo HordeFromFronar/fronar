@@ -18,6 +18,7 @@
 //13: armour
 //14: evasion
 //15: critical
+//16: class
 
 //Initialize general variables
 count = argument[0];

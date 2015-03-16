@@ -56,6 +56,7 @@ rate = ds_list_find_value(ds_list_find_value(global.charList, charID),12);
 armour = ds_list_find_value(ds_list_find_value(global.charList, charID),13);
 evade = ds_list_find_value(ds_list_find_value(global.charList, charID),14);
 crit = ds_list_find_value(ds_list_find_value(global.charList, charID),15);
+class = ds_list_find_value(ds_list_find_value(global.charList, charID),16);
 
 
 image_index = portraitId;
