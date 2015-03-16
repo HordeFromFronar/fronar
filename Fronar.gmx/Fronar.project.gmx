@@ -289,6 +289,9 @@
     <script>scripts\getGenderedPosessive.gml</script>
     <script>scripts\getGenderedPronoun.gml</script>
     <script>scripts\getGenderedSelf.gml</script>
+    <script>scripts\modifyParts.gml</script>
+    <script>scripts\modifyMedicine.gml</script>
+    <script>scripts\modifyFood.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="Glare">
@@ -353,6 +356,7 @@
     <object>objects\obj_event_option_1</object>
     <object>objects\obj_event_option_2</object>
     <object>objects\obj_event_option_3</object>
+    <object>objects\obj_event_option_4</object>
     <object>objects\obj_event_continue</object>
     <object>objects\obj_current_location</object>
     <object>objects\obj_defend</object>
@@ -408,7 +412,6 @@
     <room>rooms\rm_test_2</room>
     <room>rooms\rm_test_1</room>
     <room>rooms\rm_night_level1</room>
-    <room>rooms\rm_win</room>
     <room>rooms\rm_game_win</room>
     <room>rooms\rm_game_lose</room>
     <rooms name="Glare">

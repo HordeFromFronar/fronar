@@ -2,12 +2,60 @@
 <object>
   <spriteName>spr_yellow_dot</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
-  <events/>
+  <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Show Current Location Piece
+visible = true;
+switch(global.overworld_step){
+    case 0: 
+        x = 96;
+        y = 256;
+        break;
+    case 1:
+        x = 96;
+        y = 384;        
+        break;
+    case 2: 
+        x = 224;
+        y = 416;   
+        break;
+    case 3:
+        x = 320;
+        y = 320;
+        break;
+    default:
+        visible = false;
+}
+    
+    
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>

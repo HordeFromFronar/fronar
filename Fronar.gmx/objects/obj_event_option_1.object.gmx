@@ -86,6 +86,11 @@ if (!global.event_part2){
             //Spike Pit
             //Nothing Happens
             break;
+        case 2:
+            //Wagon Lady
+            modifyFood(-10);
+            modifyParts(5);       
+            break;
     }
 }
 </string>
