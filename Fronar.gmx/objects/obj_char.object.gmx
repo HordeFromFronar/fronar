@@ -149,7 +149,12 @@ if (target &amp;&amp; attacking) {
     if (sight){
         alarm[0] = 30 / rate;
         
-        with(instance_create(x,y,obj_bullet_fronar)) {
+        bullet = obj_bullet_fronar;
+        if (class == "Grenadier") {
+            bullet = obj_grenade;
+        }
+        
+        with(instance_create(x,y,bullet)) {
             target_melee = instance_nearest(x, y, obj_enemy);
 
             nearest_laser = instance_nearest(x, y, obj_enemy_laser);
@@ -333,7 +338,12 @@ if (target &amp;&amp; !attacking) {
         orientation = point_direction(x, y, target.x, target.y);
         image_angle = orientation;
         
-        with(instance_create(x,y,obj_bullet_fronar)) {
+        bullet = obj_bullet_fronar;
+        if (class == "Grenadier") {
+            bullet = obj_grenade;
+        }
+        
+        with(instance_create(x,y,bullet)) {
             target_melee = instance_nearest(x, y, obj_enemy);
             
             nearest_laser = instance_nearest(x, y, obj_enemy_laser);
