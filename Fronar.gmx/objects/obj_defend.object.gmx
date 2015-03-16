@@ -27,8 +27,11 @@
             <kind>1</kind>
             <string>//based on current location go to the correct nighttime map
 switch (global.overworld_step){
-    case 2: 
+    case 3: 
         room_goto(House_Room);
+        break;
+    case 7:
+        room_goto(rm_game_win);
         break;
 }
 </string>

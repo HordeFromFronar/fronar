@@ -118,4 +118,45 @@ switch(global.event_id) {
             }
             return text;
             break;
+        case 2:
+            switch(global.event_selected_option){
+                case 0:
+                    text = '"Pleasure doin' + "' business with ye'." + '"#' +
+                    "#The party bids her farewell before she disappears into the distance." +
+                    "##-10 Food, +5 Parts";
+                    break;
+                case 1:
+                    text = '"I thought y' + "'might need em. You ain't lookin' so good." + '"#' + 
+                    "#The party bids her farewell before she disappears into the distance." +
+                    "##-10 Food, +5 Med Kits";
+                    break;
+                case 2:
+                    text = '"' + "That's all y'got, eh? Well alright then." + '"' + 
+                    "##The party bids her farewell before she disappears into the distance." + 
+                    "##-5 Parts, +3 Med Kits";
+                    break;
+                case 3:
+                    char = obj_event_option_4.charId;
+                    charname = ds_list_find_value(ds_list_find_value(global.charList, char), 1);
+                    chargender = ds_list_find_value(ds_list_find_value(global.charList, char), 0);
+                    charposessive = getGenderedPosessive(chargender, false);
+                    charpronoun = getGenderedPronoun(chargender, false);
+                    text = "Somewhere beneath the woman's hood, a chuckle escapes.#" + 
+                    '#"' + "Don't say I didn't warn ye'." + '"#' +
+                    "#Before anyone knows what's happened, " + charname + " is on the ground with a bullet through " +
+                    charposessive + 
+                    "#skull, a stream of blood pouring from the hole in " + 
+                    charposessive + 
+                    " forehead. The woman doesn't appear to be" + 
+                    "#holding a gun. " + charname + "'s lifeless eyes stare up at the sky, " +
+                    charposessive + " limbs perfectly spread-eagled, as " +
+                    "#though " + charpronoun + " were hit with a spell and not a bullet.#" +
+                    '#"' + "Though I s'pose y'won't be sayin' much of anything now. Pleasure doin' business with ye'." + '"#' +
+                    "#With a flash of lightning, the woman and her wagon are gone.#" +
+                    "#" + charname + " is dead."; 
+                    break;
+            }
+            return text;
+            break;
+        
 }

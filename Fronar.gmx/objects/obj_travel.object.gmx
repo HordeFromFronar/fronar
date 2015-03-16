@@ -51,39 +51,73 @@ room_goto(rm_event_1);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message("alarm 1 went off with step " + string(global.overworld_step));
+            <string>//show_debug_message("alarm 1 went off with step " + string(global.overworld_step));
 
 //Advance our step counter, reset curent location
-obj_current_location.visible = false;
 global.overworld_step += 1;
-//Determine if there will be an event!!!!, change this condition later to one that makes sense
-if(global.overworld_step == 1){
-    //Show the !!
-    obj_exclamation_1.x = getExclamationX();
-    obj_exclamation_1.y = getExclamationY();
-    obj_exclamation_1.visible = true;
-    alarm[2] = 60;
-}
-//No event
-else {
+show_debug_message("advanced step to " + string(global.overworld_step));
+//Determine if there will be an event
 //Check if we're at a night location
-    switch(global.overworld_step){
-        case 2:
-           //light up our location
-           obj_current_location.x = 255;
-           obj_current_location.y = 340;
-           obj_current_location.visible = true;
-           //display "Defend" button 
-           obj_travel.visible = false;
-           obj_defend.visible = true;
-           break;
-        default:
-            //If we're not at an event or a night time, restart the timer
-            alarm[1] = 60;
-    }
-    
-    
+switch(global.overworld_step){
+    case 1: 
+        //obj_current_location.visible = false; 
+        obj_current_location.x = 96
+        obj_current_location.y = 384       
+        //Not sure if we want this to always be visible
+        obj_exclamation_1.x = getExclamationX();
+        obj_exclamation_1.y = getExclamationY();
+        obj_exclamation_1.visible = true;
+        alarm[2] = 60;
+        break;
+    case 2: 
+        obj_current_location.x = 224;
+        obj_current_location.y = 416;   
+        obj_exclamation_1.x = getExclamationX();
+        obj_exclamation_1.y = getExclamationY();
+        obj_exclamation_1.visible = true;
+        alarm[2] = 60;
+        break;
+    case 3:
+       //light up our location
+       obj_current_location.x = 320;
+       obj_current_location.y = 320;
+       //obj_current_location.visible = true;
+       //display "Defend" button 
+       obj_travel.visible = false;
+       obj_defend.visible = true;
+       break;
+    case 5:
+        obj_current_location.x = 416;
+        obj_current_location.y = 288;   
+        obj_exclamation_1.x = getExclamationX();
+        obj_exclamation_1.y = getExclamationY();
+        obj_exclamation_1.visible = true;
+        alarm[2] = 60;
+        break;
+    case 6:
+        obj_current_location.x = 512;
+        obj_current_location.y = 320;   
+        obj_exclamation_1.x = getExclamationX();
+        obj_exclamation_1.y = getExclamationY();
+        obj_exclamation_1.visible = true;
+        alarm[2] = 60;
+        break;    
+    case 7:
+       //light up our location
+       obj_current_location.x = 544;
+       obj_current_location.y = 192;
+       //obj_current_location.visible = true;
+       //display "Defend" button 
+       obj_travel.visible = false;
+       obj_defend.visible = true;
+       break;
+    default:
+        //If we're not at an event or a night time, restart the timer
+        alarm[1] = 60;
 }
+    
+    
+
 </string>
           </argument>
         </arguments>

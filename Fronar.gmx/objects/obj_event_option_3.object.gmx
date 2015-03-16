@@ -108,6 +108,11 @@ if (!global.event_part2){
                 //Nothing happens
             }
             break;
+        case 2:
+            //Wagon Lady
+            modifyParts(-5);
+            modifyMedicine(3);
+            break;
     }
 }
 </string>

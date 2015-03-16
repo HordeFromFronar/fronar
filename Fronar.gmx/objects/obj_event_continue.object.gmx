@@ -37,6 +37,10 @@ switch(global.event_id){
         //Spike Pit
         //Everything in this event is choice dependant, nothing happens all the time so nothing goes here.  
         break;
+    case 2:
+        //Wagon Lady
+        //Everything in this event is choice dependant, nothing happens all the time so nothing goes here.  
+        break;
 }  
  
 //Update event specific values
