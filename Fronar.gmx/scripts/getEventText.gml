@@ -6,7 +6,7 @@ switch(global.event_id) {
             text =
             "Somewhere along the road the party finds an abandoned shack with the windows blown out. " +
             "#After poking around, " + 
-            ds_list_find_value(ds_list_find_value(global.charList, 1), 1) +
+            ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1) +
             " finds some duct tape and a kitchen knife that can be made into a bayonet," +
             "#and some fruits and vegetables growing in what's left of the garden out back." +
             "##+3 Food";
@@ -21,7 +21,7 @@ switch(global.event_id) {
             "#sides, an enormous sack marked 'RATIONS' hangs in the middle and dangling over the " +
             "#spikes below." + 
             '#"Alright, what asshole set this up?" ' + 
-            ds_list_find_value(ds_list_find_value(global.charList, 1), 1) +
+            ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1) +
             " says." +
             "#There's no guarantee that whatever's in the bag is actually edible, and retrieving it would be" +
             "#dangerous.";

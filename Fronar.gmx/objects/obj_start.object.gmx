@@ -41,6 +41,7 @@ globalvar overworld_step;
 globalvar event_subevent;
 globalvar completedEventList;
 globalvar next_event;
+globalvar eventCharList;
 
 selected = 0;
 eventNumber = 0;
