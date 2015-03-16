@@ -70,8 +70,8 @@ switch(x) {
         }
         
         ds_list_add(char, 3);  // range
-        ds_list_add(char, 3);  // speed
-        ds_list_add(char, 1);  // damage
+        ds_list_add(char, 2.5);  // speed
+        ds_list_add(char, 2);  // damage
         ds_list_add(char, 1);  // fire rate
         ds_list_add(char, 0);  // armour
         ds_list_add(char, 10); // evasion
@@ -86,13 +86,13 @@ switch(x) {
         //portrait id (index)
         if (gender == "f") {
             switch (irandom(1)) {
-                case 0: ds_list_add(char, 1); break;
-                default: ds_list_add(char, 2); break;
+                case 0: ds_list_add(char, 0); break;
+                default: ds_list_add(char, 1); break;
             }
         } else {
             switch (irandom(1)) {
-                case 0: ds_list_add(char, 3); break;
-                default: ds_list_add(char, 4); break;
+                case 0: ds_list_add(char, 2); break;
+                default: ds_list_add(char, 3); break;
             }
         }
         

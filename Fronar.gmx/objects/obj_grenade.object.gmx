@@ -52,36 +52,33 @@ damage = origin.damage;
             <kind>1</kind>
             <string>///On hitting enemy
 
-if (place_meeting(x,y,obj_enemy)) {
-    target = instance_nearest(x, y, obj_enemy);
-    
-    effect_create_above(ef_explosion, x, y, 10, c_gray);
-    damageObj(target, origin);
+splash_radius = 100;
+
+if (place_meeting(x,y,obj_enemy) || place_meeting(x,y,obj_enemy_laser) || place_meeting(x,y,obj_enemy_tank)) {
+    with (obj_enemy) {
+        if (point_distance(other.x,other.y,x,y) &lt;= other.splash_radius) {
+            damageObj(self, other.origin)
+        }
+    }
+    with (obj_enemy_laser) {
+        if (point_distance(other.x,other.y,x,y) &lt;= other.splash_radius) {
+            damageObj(self, other.origin)
+        }
+    }
+    with (obj_enemy_tank) {
+        if (point_distance(other.x,other.y,x,y) &lt;= other.splash_radius) {
+            damageObj(self, other.origin)
+        }
+    }
+            
+    effect_create_above(ef_explosion, x, y, 5, c_black);
     
     instance_destroy(); 
 }
-
-if (place_meeting(x,y,obj_enemy_laser)) {
-    target = instance_nearest(x, y, obj_enemy_laser);
-    
-    effect_create_above(ef_explosion, x, y, 10, c_gray);
-    damageObj(target, origin);
-    
-    instance_destroy(); 
-}
-
-if (place_meeting(x,y,obj_enemy_tank)) {
-    target = instance_nearest(x, y, obj_enemy_tank);
-
-    effect_create_above(ef_explosion, x, y, 10, c_gray);    
-    damageObj(target, origin);
-    
-    instance_destroy(); 
-}
-
 
 if (place_meeting(x,y,obj_wall_inner) || place_meeting(x,y,obj_wall_outer)) {   
-    effect_create_above(ef_explosion, x, y, 10, c_gray);
+    effect_create_above(ef_explosion, x, y, 3, c_black);
+    effect_create_above(ef_explosion, x, y, 7, c_gray);
     instance_destroy(); 
 }
 </string>
