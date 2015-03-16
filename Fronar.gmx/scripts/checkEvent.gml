@@ -18,4 +18,9 @@ switch(eventId){
         //Wagon Lady
         return true;
         break;
+    case 3:
+        //Box of heroin
+        //requires >= 2 chars
+        return ds_list_size(global.eventCharList) >= 2;
+        break;
 }

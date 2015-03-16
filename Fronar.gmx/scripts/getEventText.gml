@@ -38,4 +38,17 @@ switch(global.event_id) {
             "#but I got some fight in me yet. So no funny business, y'hear?" + '"';
             return text;
             break;
+        case 3:
+            //Box of heroin
+            char1 = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1);
+            char2 = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1);
+            text = 
+            "While passing through a junkyard, " + char1 + " trips on a plank of wood and falls into a box of what is" +
+            + "#unmistakably heroin." +
+            '##"' + "That's definitely heroin," + '"' + " " + char2 + "says. " + '"' + "Don't ask me how I know." + '"' + 
+            '##"' + "I couldn't help it, it got in my mouth! What am I supposed to do?" + '"' + 
+            '##"' + "Just ride it out, " + char1 + ".  Ride it out." + '"' +
+            "##+5 to " + char1 + "’s Movement Speed";
+            return text;
+            break;
 }

@@ -134,6 +134,11 @@ switch(global.event_id){
             obj_event_continue.visible = true;
         }
         break;
+    case 3:
+        //Box of heroin
+        draw_text(x1+32, y1+32, getEventText());
+        obj_event_continue.visible = true;
+        break;
 }
 </string>
           </argument>

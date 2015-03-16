@@ -41,6 +41,11 @@ switch(global.event_id){
         //Wagon Lady
         //Everything in this event is choice dependant, nothing happens all the time so nothing goes here.  
         break;
+    case 3: 
+        //Box of heroin
+        //+5 to char0s ms
+        ds_list_replace(ds_list_find_value(global.eventCharList, 0), 10,ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 10) + 5);      
+        break;    
 }  
  
 //Update event specific values
