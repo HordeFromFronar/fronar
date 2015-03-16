@@ -27,9 +27,21 @@
             <kind>1</kind>
             <string>///Generate an event 
 resetEventCharacters();
-//global.event_id = 1;
+//global.event_id = 2;
 global.event_id = generateEvent();
-ds_list_shuffle(global.charList);
+//ds_list_shuffle(global.charList);
+global.eventCharList = global.charList;
+i = 0;
+len = ds_list_size(global.eventCharList);
+
+for (i=0;i&lt;len;i++) {
+    if(ds_list_find_value(ds_list_find_value(global.eventCharList, i), 7) == 0) {
+        ds_list_delete(global.eventCharList, i);
+    }
+}
+
+ds_list_shuffle(global.eventCharList);
+
 global.event_part2 = false;
 
 </string>
@@ -68,9 +80,9 @@ switch(global.event_id){
     case 0:
         //Abandoned Shack        
         draw_text(x1+32, y1+32, getEventText());
-        obj_event_option_1.text = "Give the bayonet to " +  ds_list_find_value(ds_list_find_value(global.charList, 0), 1);
-        obj_event_option_2.text = "Give the bayonet to " +  ds_list_find_value(ds_list_find_value(global.charList, 1), 1);
-        obj_event_option_3.text = "Give the bayonet to " +  ds_list_find_value(ds_list_find_value(global.charList, 2), 1);
+        obj_event_option_1.text = "Give the bayonet to " +  ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1);
+        obj_event_option_2.text = "Give the bayonet to " +  ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1);
+        obj_event_option_3.text = "Give the bayonet to " +  ds_list_find_value(ds_list_find_value(global.eventCharList, 2), 1);
         obj_event_option_1.charId = 0;
         obj_event_option_2.charId = 1;
         obj_event_option_3.charId = 2;
@@ -86,8 +98,8 @@ switch(global.event_id){
         //Spike Pit
         draw_text(x1+32, y1+32, getEventText());
         obj_event_option_1.text = "Leave the rations and continue on.";
-        obj_event_option_2.text = "Send " + ds_list_find_value(ds_list_find_value(global.charList, 0), 1) + " to retrieve the rations.";
-        obj_event_option_3.text = "Send " + ds_list_find_value(ds_list_find_value(global.charList, 1), 1) + " to retrieve the rations.";
+        obj_event_option_2.text = "Send " + ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1) + " to retrieve the rations.";
+        obj_event_option_3.text = "Send " + ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1) + " to retrieve the rations.";
         obj_event_option_2.charId = 0;
         obj_event_option_3.charId = 1;
         if(global.event_part2){
@@ -97,6 +109,31 @@ switch(global.event_id){
             draw_text(x1 + 32, y1 + 4*32 + 16, getEventTextPart2());
             obj_event_continue.visible = true;
         }
+        break;
+    case 2:
+        //Wagon Lady
+        draw_text(x1+32, y1+32, getEventText());
+        //Only display if we have at least 10 food
+        if(ds_list_find_value(global.resourceList, 2)&gt;= 10){
+            obj_event_option_1.text = "The party trades 10 Food for 5 Parts.";
+            obj_event_option_2.text = "The party trades 10 Food for 5 Med Kits.";
+        }
+        if(ds_list_find_value(global.resourceList, 0) &gt;= 5){
+            obj_event_option_3.text = "The party trades 5 Parts for 3 Med Kits.";
+        }
+        obj_event_option_4.text = ds_list_find_value(ds_list_find_value(global.charList, 0), 1) + "'s feeling lucky and raises " + 
+        getGenderedPosessive(ds_list_find_value(ds_list_find_value(global.charList, 0), 0), false) + " weapon." +
+        '"Who' + "'" + 're you kidding, lady? Back away from#' + 
+        'the wagon."';
+        obj_event_option_4.charId = 0;
+        if(global.event_part2){
+            //Display the second part of the scenario
+            depth = -1;
+            draw_set_colour(c_white);
+            draw_text(x1 + 32, y1 + 5*32, getEventTextPart2());
+            obj_event_continue.visible = true;
+        }
+        break;
 }
 </string>
           </argument>
