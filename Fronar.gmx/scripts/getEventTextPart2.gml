@@ -4,8 +4,8 @@ switch(global.event_id) {
         case 0:
             //Abandoned Shack, Requires choice of 1 character
             char = global.event_selected_option;
-            chargender = ds_list_find_value(ds_list_find_value(global.charList, char), 0);
-            charname = ds_list_find_value(ds_list_find_value(global.charList, char), 1);
+            chargender = ds_list_find_value(ds_list_find_value(global.eventCharList, char), 0);
+            charname = ds_list_find_value(ds_list_find_value(global.eventCharList, char), 1);
             
             text = charname +
             " wraps duct tape around the knife and the end of " + 
@@ -23,12 +23,12 @@ switch(global.event_id) {
             if (option == 0){
                 text = 
                 "No way in hell am I falling for that again," +
-                ds_list_find_value(ds_list_find_value(global.charList, 1), 1) + " says.#" + 
+                ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1) + " says.#" + 
                 "The party leaves what is probably a trap and continues on through the trees.";
             } else  {
                 char = global.event_selected_option - 1;
-                chargender = ds_list_find_value(ds_list_find_value(global.charList, char), 0);
-                charname = ds_list_find_value(ds_list_find_value(global.charList, char), 1);
+                chargender = ds_list_find_value(ds_list_find_value(global.eventCharList, char), 0);
+                charname = ds_list_find_value(ds_list_find_value(global.eventCharList, char), 1);
                 charpronoun = getGenderedPronoun(chargender, false);
                 charposessive = getGenderedPosessive(chargender, false);
                 charpronounCaps = getGenderedPronoun(chargender, true);
@@ -137,8 +137,8 @@ switch(global.event_id) {
                     break;
                 case 3:
                     char = obj_event_option_4.charId;
-                    charname = ds_list_find_value(ds_list_find_value(global.charList, char), 1);
-                    chargender = ds_list_find_value(ds_list_find_value(global.charList, char), 0);
+                    charname = ds_list_find_value(ds_list_find_value(global.eventCharList, char), 1);
+                    chargender = ds_list_find_value(ds_list_find_value(global.eventCharList, char), 0);
                     charposessive = getGenderedPosessive(chargender, false);
                     charpronoun = getGenderedPronoun(chargender, false);
                     text = "Somewhere beneath the woman's hood, a chuckle escapes.#" + 
