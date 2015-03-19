@@ -14,6 +14,7 @@
 obj_exclamation_1.visible = false;
 obj_current_location.visible = true;
 
+//Position the Player Marker
 switch(global.overworld_step){
     case 0:
         obj_current_location.x = 96;
@@ -23,6 +24,20 @@ switch(global.overworld_step){
         obj_current_location.x = 320;
         obj_current_location.y = 320;
         break;
+}
+//Draw Previous Footsteps
+i = 0;
+show_debug_message("on create overworld step is "  + string(global.overworld_step));
+if(global.overworld_step &gt;= 1){
+    drawSteps(180, 1);
+}
+show_debug_message("now overworld step is "  + string(global.overworld_step));
+
+if(global.overworld_step &gt;= 2){
+    drawSteps(250, 2);
+}
+if(global.overworld_step &gt;= 3){
+    drawSteps(310, 3);
 }</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>

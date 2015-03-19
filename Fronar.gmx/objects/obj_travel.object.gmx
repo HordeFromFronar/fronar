@@ -8,6 +8,185 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Init footstep counter
+step = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw footsteps
+//show_debug_message(step);
+switch(global.overworld_step){
+    case 1:
+        switch(step){
+            case 0:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 180;
+                }   
+                break;
+            case 1:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 180;
+                }
+                break;
+            case 2:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 180;
+                }
+                break;
+            case 3:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 180;
+                }
+                break;
+            case 4:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 180;
+                }
+                break;
+            case 5:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 180;
+                }
+                break;
+        }
+        break;
+    case 2:
+        switch(step){
+            case 0:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 250;
+                }   
+                break;
+            case 1:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 250;
+                }
+                break;
+            case 2:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 250;
+                }
+                break;
+            case 3:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 250;
+                }
+                break;
+            case 4:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 250;
+                }
+                break;
+            case 5:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 250;
+                }
+                break;
+        }
+        break;
+    case 3:
+        switch(step){
+            case 0:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 310;
+                }   
+                break;
+            case 1:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 310;
+                }
+                break;
+            case 2:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 310;
+                }
+                break;
+            case 3:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 310;
+                }
+                break;
+            case 4:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 310;
+                }
+                break;
+            case 5:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 310;
+                }
+                break;
+        }
+        break;        
+    default:
+        //Nothing
+}
+show_debug_message("about to + step");
+step += 1;
+if(step == 6){
+    step = 0;
+} else {
+    alarm[3] = 14;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="2">
       <action>
         <libid>1</libid>
@@ -53,9 +232,7 @@ room_goto(rm_event_1);
             <kind>1</kind>
             <string>//show_debug_message("alarm 1 went off with step " + string(global.overworld_step));
 
-//Advance our step counter, reset curent location
-global.overworld_step += 1;
-show_debug_message("advanced step to " + string(global.overworld_step));
+
 //Determine if there will be an event
 //Check if we're at a night location
 switch(global.overworld_step){
@@ -140,11 +317,58 @@ switch(global.overworld_step){
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>60</string>
+            <string>90</string>
           </argument>
           <argument>
             <kind>4</kind>
             <string>1</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>301</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_set_alarm</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>15</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>3</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Advance our step counter
+global.overworld_step += 1;
+show_debug_message("advanced step to " + string(global.overworld_step));
+</string>
           </argument>
         </arguments>
       </action>

@@ -75,6 +75,7 @@
       <sprite>sprites\spr_light_mask_point_hd</sprite>
       <sprite>sprites\spr_light_mask_spot</sprite>
     </sprites>
+    <sprite>sprites\spr_footstep</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_title</background>
@@ -292,6 +293,8 @@
     <script>scripts\modifyParts.gml</script>
     <script>scripts\modifyMedicine.gml</script>
     <script>scripts\modifyFood.gml</script>
+    <script>scripts\getStep.gml</script>
+    <script>scripts\drawSteps.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="Glare">
@@ -400,6 +403,7 @@
       <object>objects\obj_glare_controller</object>
     </objects>
     <object>objects\obj_enemy_tank</object>
+    <object>objects\obj_footstep</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
