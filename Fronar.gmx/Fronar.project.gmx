@@ -336,6 +336,7 @@
     <object>objects\obj_grid</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_enemy_laser</object>
+    <object>objects\obj_enemy_tank</object>
     <object>objects\obj_bullet_fronar</object>
     <object>objects\obj_grenade</object>
     <object>objects\obj_turret</object>
@@ -414,7 +415,6 @@
       <object>objects\obj_light_point</object>
       <object>objects\obj_glare_controller</object>
     </objects>
-    <object>objects\obj_enemy_tank</object>
     <object>objects\obj_footstep</object>
     <object>objects\obj_alt_food</object>
     <object>objects\obj_alt_parts</object>
@@ -431,13 +431,13 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
+    <room>rooms\House_Room</room>
     <room>rooms\rm_splash_screen</room>
     <room>rooms\rm_title_screen</room>
     <room>rooms\rm_opening_cutscene</room>
     <room>rooms\rm_crew_select_1</room>
     <room>rooms\rm_worldmap_1</room>
     <room>rooms\rm_event_1</room>
-    <room>rooms\House_Room</room>
     <room>rooms\rm_test_2</room>
     <room>rooms\rm_test_1</room>
     <room>rooms\rm_night_level1</room>
