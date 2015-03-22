@@ -57,19 +57,51 @@ if(Xcoord) {
         case 5:
             switch(step){
                 case 0:
-                    return 370;
+                    return 402;
                 case 1:
-                    return 370;
+                    return 402;
                 case 2:
-                    return 408;
+                    return 440;
                 case 3:
-                    return 408;
+                    return 440;
                 case 4:
-                    return 432;
+                    return 464;
                 case 5:
-                    return 424;
+                    return 458;
             }   
-            break;             
+            break;  
+        case 6:
+            switch(step){
+                case 0:
+                    return 456;
+                case 1:
+                    return 480;
+                case 2:
+                    return 472;
+                case 3:
+                    return 496;
+                case 4:
+                    return 480;
+                case 5:
+                    return 512;
+            }   
+            break; 
+        case 7:
+            switch(step){
+                case 0:
+                    return 566;
+                case 1:
+                    return 582;
+                case 2:
+                    return 566;
+                case 3:
+                    return 582;
+                case 4:
+                    return 566;
+                case 5:
+                    return 582;
+            }   
+            break;                                    
     }
 } else {
     switch(over_step){
@@ -123,7 +155,38 @@ if(Xcoord) {
                 case 5:
                     return 288;
             }   
-            break;                       
+            break;
+        case 6:
+            switch(step){
+                case 0:
+                    return 288;
+                case 1:
+                    return 288;
+                case 2:
+                    return 304;
+                case 3:
+                    return 312;
+                case 4:
+                    return 328;
+                case 5:
+                    return 336;
+            }   
+            break; 
+        case 7:
+            switch(step){
+                case 0:
+                    return 336;
+                case 1:
+                    return 320;
+                case 2:
+                    return 304;
+                case 3:
+                    return 288;
+                case 4:
+                    return 272;
+                case 5:
+                    return 256;
+            }   
+            break;                                              
     }
 }
-

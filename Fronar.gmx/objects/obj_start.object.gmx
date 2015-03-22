@@ -42,6 +42,7 @@ globalvar event_subevent;
 globalvar completedEventList;
 globalvar next_event;
 globalvar eventCharList;
+globalvar travelling;
 
 selected = 0;
 eventNumber = 0;
@@ -54,6 +55,7 @@ overworld_step = 0;
 event_selected_option = 0;
 event_subevent = 0;
 next_event = -1;
+travelling = 0;
 
 charList = ds_list_create();
 resourceList = ds_list_create();

@@ -26,13 +26,15 @@
           <argument>
             <kind>1</kind>
             <string>//based on current location go to the correct nighttime map
-switch (global.overworld_step){
-    case 4: 
-        room_goto(House_Room);
-        break;
-    case 8:
-        room_goto(rm_game_win);
-        break;
+if(global.travelling == 0 &amp;&amp; visible){
+    switch (global.overworld_step){
+        case 4: 
+            room_goto(House_Room);
+            break;
+        case 7:
+            room_goto(rm_game_win);
+            break;
+    }
 }
 </string>
           </argument>

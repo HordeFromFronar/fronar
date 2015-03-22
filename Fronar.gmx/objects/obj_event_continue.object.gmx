@@ -54,6 +54,7 @@ global.event_part2 = false;
 global.event_id = -1;
 
 //Go back to the world map, and continue travelling
+global.travelling = 0;
 room_goto(rm_worldmap_1);
 </string>
           </argument>

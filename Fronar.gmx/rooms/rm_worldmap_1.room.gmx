@@ -39,6 +39,12 @@ if(global.overworld_step &gt; 2){
 }
 if(global.overworld_step &gt; 4){
     drawSteps(310, 5);
+}
+if(global.overworld_step &gt; 5){
+    drawSteps(210, 6);
+}
+if(global.overworld_step &gt; 6){
+    drawSteps(0, 7);
 }</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
@@ -82,8 +88,9 @@ if(global.overworld_step &gt; 4){
   <instances>
     <instance objName="obj_travel" x="576" y="672" name="inst_0ABF16D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_defend" x="576" y="672" name="inst_D798FBA9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_current_location" x="320" y="320" name="inst_8C70588B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_current_location" x="448" y="224" name="inst_8C70588B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_exclamation_1" x="256" y="416" name="inst_BA223DAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="0" y="0" name="inst_B13A5DE0" locked="0" code="" scaleX="0" scaleY="0" colour="0" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

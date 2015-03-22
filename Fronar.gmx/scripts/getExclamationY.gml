@@ -7,9 +7,9 @@ switch(global.eventNumber){
         return 416;
         break;
     case 2:
-        return 320;
+        return 226;
         break;
     case 3:
-        return 352;
+        return 322;
         break;
 }

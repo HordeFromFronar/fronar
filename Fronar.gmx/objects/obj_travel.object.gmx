@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///Init footstep counter
 step = 0;
+global.travelling = 0;
 </string>
           </argument>
         </arguments>
@@ -211,7 +212,87 @@ switch(global.overworld_step){
                 }
                 break;
         }
-        break;               
+        break;
+    case 6:
+        switch(step){
+            case 0:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 210;
+                }   
+                break;
+            case 1:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 210;
+                }
+                break;
+            case 2:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 210;
+                }
+                break;
+            case 3:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 210;
+                }
+                break;
+            case 4:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 210;
+                }
+                break;
+            case 5:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 210;
+                }
+                break;
+        }
+        break;
+    case 7:
+        switch(step){
+            case 0:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 0;
+                }   
+                break;
+            case 1:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 0;
+                }
+                break;
+            case 2:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 0;
+                }
+                break;
+            case 3:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 0;
+                }
+                break;
+            case 4:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 0;
+                }
+                break;
+            case 5:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 0;
+                }
+                break;
+        }
+        break;                                   
     default:
         //Nothing
 }
@@ -294,6 +375,13 @@ switch(global.overworld_step){
         alarm[2] = 60;
         break;
     case 3:
+       //THIS IS A HACK FOR LEGACY REASONS
+       //Overworld step 3 and 4 are the same, was an issue with clicking 
+       //the defend and travel buttons at same time
+       //That issue has been fixed, so step 3 and 4 could be amalgamated but 
+       //I don't want to renumber everything
+       //If you have questions ask Zak
+       global.overworld_step += 1;
        //light up our location
        obj_current_location.x = 320;
        obj_current_location.y = 320;
@@ -340,63 +428,14 @@ switch(global.overworld_step){
         //If we're not at an event or a night time, restart the timer
         alarm[1] = 60;
 }
-    
-    
 
+global.travelling = 0;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="6" enumb="7">
-      <action>
-        <libid>1</libid>
-        <id>301</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_alarm</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>90</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>1</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>301</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_alarm</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>15</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>3</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -413,9 +452,14 @@ switch(global.overworld_step){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Advance our step counter
-global.overworld_step += 1;
-show_debug_message("advanced step to " + string(global.overworld_step));
+            <string>///Travel!  Only if not already travelling
+if (global.travelling == 0 &amp;&amp; visible){
+    global.overworld_step += 1;
+    global.travelling = 1;
+    show_debug_message("advanced step to " + string(global.overworld_step));
+    alarm[1] = 90;
+    alarm[3] = 14;
+}
 </string>
           </argument>
         </arguments>
