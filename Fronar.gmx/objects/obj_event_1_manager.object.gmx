@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>///Generate an event 
 resetEventCharacters();
-//global.event_id = 2;
-global.event_id = generateEvent();
+global.event_id = 4;
+//global.event_id = generateEvent();
 //ds_list_shuffle(global.charList);
 global.eventCharList = global.charList;
 i = 0;
@@ -66,7 +66,8 @@ global.event_part2 = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Draw the Bakground for the event
+            <string>///Draw the event
+//Draw the Background for the event
 depth = 1;
 draw_set_colour(c_black);
 x1 = 5*32;
@@ -139,6 +140,13 @@ switch(global.event_id){
         draw_text(x1+32, y1+32, getEventText());
         obj_event_continue.visible = true;
         break;
+    case 4:
+        //Lightning
+        draw_text(x1+32, y1+32, getEventText());
+        obj_event_continue.visible = true;
+        break;
+        
+        
 }
 </string>
           </argument>

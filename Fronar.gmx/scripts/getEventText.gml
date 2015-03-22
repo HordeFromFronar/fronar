@@ -51,4 +51,13 @@ switch(global.event_id) {
             "##+5 to " + char1 + "’s Movement Speed";
             return text;
             break;
+        case 4:
+            text =
+            "There's not a cloud in the sky but lightning has struck the party. Be it a stroke of a good luck, a fickle" + 
+            "#god's caprice, or a Borgi airstrike gone horribly wrong, everyone feels bright, crispy, and very far from" + 
+            "#dead. #" + 
+            '#"' + "I've never felt better!" + '"' + 
+            "##+1 to Crew's Damage" +
+            "#The Party is fully healed.";
+            return text;
 }

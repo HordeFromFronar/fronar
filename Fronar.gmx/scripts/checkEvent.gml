@@ -23,4 +23,8 @@ switch(eventId){
         //requires >= 2 chars
         return ds_list_size(global.eventCharList) >= 2;
         break;
+    case 4:
+        //Lightning
+        return true;
+        break;
 }
