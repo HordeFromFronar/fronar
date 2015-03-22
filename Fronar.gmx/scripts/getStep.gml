@@ -54,6 +54,22 @@ if(Xcoord) {
                     return 336;
             }   
             break;    
+        case 5:
+            switch(step){
+                case 0:
+                    return 370;
+                case 1:
+                    return 370;
+                case 2:
+                    return 408;
+                case 3:
+                    return 408;
+                case 4:
+                    return 432;
+                case 5:
+                    return 424;
+            }   
+            break;             
     }
 } else {
     switch(over_step){
@@ -91,7 +107,23 @@ if(Xcoord) {
                 case 5:
                     return 400;
             }   
-            break;           
+            break; 
+        case 5:    
+            switch(step){
+                case 0:
+                    return 352;
+                case 1:
+                    return 340;
+                case 2:
+                    return 336;
+                case 3:
+                    return 312;
+                case 4:
+                    return 312;
+                case 5:
+                    return 288;
+            }   
+            break;                       
     }
 }
 

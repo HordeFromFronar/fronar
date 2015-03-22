@@ -76,6 +76,18 @@
       <sprite>sprites\spr_light_mask_spot</sprite>
     </sprites>
     <sprite>sprites\spr_footstep</sprite>
+    <sprite>sprites\spr_alt_food</sprite>
+    <sprite>sprites\spr_alt_parts</sprite>
+    <sprite>sprites\spr_alt_med</sprite>
+    <sprite>sprites\apr_alt_damage</sprite>
+    <sprite>sprites\spr_alt_defense</sprite>
+    <sprite>sprites\spr_alt_movespeed</sprite>
+    <sprite>sprites\spr_alt_atkspeed</sprite>
+    <sprite>sprites\spr_alt_turret</sprite>
+    <sprite>sprites\spr_alt_titanium</sprite>
+    <sprite>sprites\spr_alt_barricade</sprite>
+    <sprite>sprites\spr_alt_oilslick</sprite>
+    <sprite>sprites\spr_alt_usemedkit</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_title</background>
@@ -404,6 +416,18 @@
     </objects>
     <object>objects\obj_enemy_tank</object>
     <object>objects\obj_footstep</object>
+    <object>objects\obj_alt_food</object>
+    <object>objects\obj_alt_parts</object>
+    <object>objects\obj_alt_medkits</object>
+    <object>objects\obj_alt_damage</object>
+    <object>objects\obj_alt_defense</object>
+    <object>objects\obj_alt_movespeed</object>
+    <object>objects\obj_alt_atkspeed</object>
+    <object>objects\obj_alt_turret</object>
+    <object>objects\obj_alt_titanium</object>
+    <object>objects\obj_alt_barricade</object>
+    <object>objects\obj_alt_oilslick</object>
+    <object>objects\obj_alt_usemedkit</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>

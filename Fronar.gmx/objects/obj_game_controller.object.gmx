@@ -35,7 +35,7 @@ if (instance_number(obj_char)&lt;= 0) {
 enemy_manager = instance_find(obj_enemy_manager, 0)
 if (instance_number(obj_enemy) &lt;= 0 &amp;&amp; 
     enemy_manager.wave &gt; enemy_manager.last_wave) {
-    global.overworld_step += 1;
+    global.overworld_step = 4;
     room_goto(rm_worldmap_1);
 }
 
@@ -62,7 +62,7 @@ if (instance_number(obj_enemy) &lt;= 0 &amp;&amp;
           <argument>
             <kind>1</kind>
             <string>///Increment overworld step
-global.overworld_step += 1;
+global.overworld_step =4;
 
 </string>
           </argument>

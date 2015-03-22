@@ -171,11 +171,50 @@ switch(global.overworld_step){
                 }
                 break;
         }
-        break;        
+        break;  
+    case 5:
+        switch(step){
+            case 0:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 310;
+                }   
+                break;
+            case 1:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 310;
+                }
+                break;
+            case 2:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 310;
+                }
+                break;
+            case 3:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 310;
+                }
+                break;
+            case 4:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 310;
+                }
+                break;
+            case 5:
+                stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
+                with(stepobj){
+                    image_angle = 310;
+                }
+                break;
+        }
+        break;               
     default:
         //Nothing
 }
-show_debug_message("about to + step");
 step += 1;
 if(step == 6){
     step = 0;
@@ -263,9 +302,18 @@ switch(global.overworld_step){
        obj_travel.visible = false;
        obj_defend.visible = true;
        break;
+    case 4:
+       //light up our location
+       obj_current_location.x = 320;
+       obj_current_location.y = 320;
+       //obj_current_location.visible = true;
+       //display "Defend" button 
+       obj_travel.visible = true;
+       obj_defend.visible = false;
+       break;
     case 5:
-        obj_current_location.x = 416;
-        obj_current_location.y = 288;   
+        obj_current_location.x = 428;
+        obj_current_location.y = 224;   
         obj_exclamation_1.x = getExclamationX();
         obj_exclamation_1.y = getExclamationY();
         obj_exclamation_1.visible = true;

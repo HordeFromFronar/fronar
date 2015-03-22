@@ -49,8 +49,8 @@ switch(global.overworld_step){
         y = 320;
         break;
     case 5: 
-        x = 416;
-        y = 288;
+        x = 448;
+        y = 224;
         break;
     case 6: 
         x = 512;
