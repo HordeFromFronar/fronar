@@ -430,6 +430,7 @@
     <object>objects\obj_alt_barricade</object>
     <object>objects\obj_alt_oilslick</object>
     <object>objects\obj_alt_usemedkit</object>
+    <object>objects\obj_pause_controller</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>

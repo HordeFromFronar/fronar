@@ -91,99 +91,104 @@ p_grid = mp_grid_create(-8,-8,round(room_width/p_gridSize) + 10,
           <argument>
             <kind>1</kind>
             <string>///Firing code
-target_melee = instance_nearest(x, y, obj_enemy);
 
-nearest_laser = instance_nearest(x, y, obj_enemy_laser);
-nearest_tank = instance_nearest(x, y, obj_enemy_tank);
-
-if (point_distance(x, y, nearest_laser.x, nearest_laser.y) &lt; 
-    point_distance(x, y, nearest_tank.x, nearest_tank.y)){
-    target_ranged = instance_nearest(x, y, obj_enemy_laser);
-} else {
-    target_ranged = instance_nearest(x, y, obj_enemy_tank);
-}
-
-
-if (distance_to_object(target_melee) &lt;= distance_to_object(target_ranged)) {
-    target = target_melee;
-} else {
-    target = target_ranged;
-}
-
-if (target &amp;&amp; attacking) {    
-    sight = 0;
+if (!global.tacPause) {
+    target_melee = instance_nearest(x, y, obj_enemy);
     
-    xOrigin = x - (x % 32) + 16;
-    yOrigin = y - (y % 32) + 16;
+    nearest_laser = instance_nearest(x, y, obj_enemy_laser);
+    nearest_tank = instance_nearest(x, y, obj_enemy_tank);
     
-    xTarget = target.x - (target.x % 32) + 16;
-    yTarget = target.y - (target.y % 32) + 16;
-    
-    for (i = 1; i &lt; range + 1; i++) {
-        offset = i * 32;
-        if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin) {
-            sight = 1;
-        }
-        if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin) {
-            sight = 1;
-        }
-        if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin + offset, true) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin + offset) {
-            sight = 1;
-        }
-        if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin - offset, true) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin - offset) {
-            sight = 1;
-        }
-        for (j = range - i; j &gt; 0; j--) {
-            offset2 = j * 32;
-            if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin + offset2, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin + offset2) {
-                sight = 1;
-            }
-            if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin - offset2, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin - offset2) {
-                sight = 1;
-            }
-            if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin + offset2, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin + offset2) {
-                sight = 1;
-            }
-            if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin - offset2, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin - offset2) {
-                sight = 1;
-            } 
-        }
+    if (point_distance(x, y, nearest_laser.x, nearest_laser.y) &lt; 
+        point_distance(x, y, nearest_tank.x, nearest_tank.y)){
+        target_ranged = instance_nearest(x, y, obj_enemy_laser);
+    } else {
+        target_ranged = instance_nearest(x, y, obj_enemy_tank);
     }
-    if (sight){
-        alarm[0] = 30 / rate;
+    
+    
+    if (distance_to_object(target_melee) &lt;= distance_to_object(target_ranged)) {
+        target = target_melee;
+    } else {
+        target = target_ranged;
+    }
+    
+    if (target &amp;&amp; attacking) {    
+        sight = 0;
         
-        bullet = obj_bullet_fronar;
-        if (class == "Grenadier") {
-            bullet = obj_grenade;
+        xOrigin = x - (x % 32) + 16;
+        yOrigin = y - (y % 32) + 16;
+        
+        xTarget = target.x - (target.x % 32) + 16;
+        yTarget = target.y - (target.y % 32) + 16;
+        
+        for (i = 1; i &lt; range + 1; i++) {
+            offset = i * 32;
+            if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin) {
+                sight = 1;
+            }
+            if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin) {
+                sight = 1;
+            }
+            if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin + offset, true) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin + offset) {
+                sight = 1;
+            }
+            if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin - offset, true) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin - offset) {
+                sight = 1;
+            }
+            for (j = range - i; j &gt; 0; j--) {
+                offset2 = j * 32;
+                if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin + offset2, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin + offset2) {
+                    sight = 1;
+                }
+                if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin - offset2, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin - offset2) {
+                    sight = 1;
+                }
+                if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin + offset2, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin + offset2) {
+                    sight = 1;
+                }
+                if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin - offset2, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin - offset2) {
+                    sight = 1;
+                } 
+            }
         }
-        
-        with(instance_create(x,y,bullet)) {
-            target_melee = instance_nearest(x, y, obj_enemy);
-
-            nearest_laser = instance_nearest(x, y, obj_enemy_laser);
-            nearest_tank = instance_nearest(x, y, obj_enemy_tank);
-
-            if (point_distance(x, y, nearest_laser.x, nearest_laser.y) &lt; 
-                point_distance(x, y, nearest_tank.x, nearest_tank.y)){
-                target_ranged = instance_nearest(x, y, obj_enemy_laser);
-            } else {
-                target_ranged = instance_nearest(x, y, obj_enemy_tank);
+        if (sight){
+            alarm[0] = 30 / rate;
+            
+            bullet = obj_bullet_fronar;
+            if (class == "Grenadier") {
+                bullet = obj_grenade;
             }
             
-            if (distance_to_object(target_melee) &lt;= distance_to_object(target_ranged)) {
-                target = target_melee;
-            } else {
-                target = target_ranged;
-            } 
-            move_towards_point(target.x,target.y,5); 
+            with(instance_create(x,y,bullet)) {
+                target_melee = instance_nearest(x, y, obj_enemy);
+    
+                nearest_laser = instance_nearest(x, y, obj_enemy_laser);
+                nearest_tank = instance_nearest(x, y, obj_enemy_tank);
+    
+                if (point_distance(x, y, nearest_laser.x, nearest_laser.y) &lt; 
+                    point_distance(x, y, nearest_tank.x, nearest_tank.y)){
+                    target_ranged = instance_nearest(x, y, obj_enemy_laser);
+                } else {
+                    target_ranged = instance_nearest(x, y, obj_enemy_tank);
+                }
+                
+                if (distance_to_object(target_melee) &lt;= distance_to_object(target_ranged)) {
+                    target = target_melee;
+                } else {
+                    target = target_ranged;
+                } 
+                move_towards_point(target.x,target.y,5); 
+            }
+        } else {
+            target = 0;
+            attacking = 0;
         }
     } else {
         target = 0;
         attacking = 0;
     }
 } else {
-    target = 0;
-    attacking = 0;
+    alarm[0] = 30 / rate;
 }
 </string>
           </argument>
@@ -208,54 +213,58 @@ if (target &amp;&amp; attacking) {
           <argument>
             <kind>1</kind>
             <string>/// Pathfinding Player
-
-// Add collision to other players
-var i;
-for (i = 0; i &lt; instance_number(obj_char); ++i) {
-    player_id = instance_find(obj_char, i)
-    if (player_id != id) {
-        mp_grid_add_instances(p_grid, player_id, false);
-    }
-}
-
-// Add collision detection to enemies, and walls
-mp_grid_add_instances(p_grid, obj_enemy, false);
-mp_grid_add_instances(p_grid, obj_enemy_laser, false);
-mp_grid_add_instances(p_grid, obj_wall_inner, false);
-mp_grid_add_instances(p_grid, obj_wall_outer, false);
-mp_grid_add_instances(p_grid, obj_wall_window, false);
-mp_grid_add_instances(p_grid, obj_crate_fronar, false);
-mp_grid_add_instances(p_grid, obj_turret, false);
-mp_grid_add_instances(p_grid, obj_barricade, false);
-
-// Move towards the dest
-if (x != xDest || y != yDest) {
-    path_delete(path);
-    path = path_add();
-    if (mp_grid_path(p_grid, path, x, y, xDest, yDest, true)) {
-        path_start(path, moveSpeed, 0, true);
-        //image_angle = point_direction(x, y, xDest, yDest);
-        //image_angle = direction;
-    } else if (instance_place(x, y, obj_enemy) != noone || instance_place(x, y, obj_enemy_laser) != noone) {
-        // Check the odd case that we do end up on an enemy, and get stuck
-        mp_grid_clear_all(p_grid);
-        mp_grid_add_instances(p_grid, obj_wall_inner, false);
-        mp_grid_add_instances(p_grid, obj_wall_outer, false);
-        var i;
-        for (i = 0; i &lt; instance_number(obj_char); ++i) {
-            player_id = instance_find(obj_char, i)
-            if (player_id != id) {
-                mp_grid_add_instances(p_grid, player_id, false);
-            }
+if (!global.tacPause) {
+    // Add collision to other players
+    var i;
+    for (i = 0; i &lt; instance_number(obj_char); ++i) {
+        player_id = instance_find(obj_char, i)
+        if (player_id != id) {
+            mp_grid_add_instances(p_grid, player_id, false);
         }
+    }
+    
+    // Add collision detection to enemies, and walls
+    mp_grid_add_instances(p_grid, obj_enemy, false);
+    mp_grid_add_instances(p_grid, obj_enemy_laser, false);
+    mp_grid_add_instances(p_grid, obj_wall_inner, false);
+    mp_grid_add_instances(p_grid, obj_wall_outer, false);
+    mp_grid_add_instances(p_grid, obj_wall_window, false);
+    mp_grid_add_instances(p_grid, obj_crate_fronar, false);
+    mp_grid_add_instances(p_grid, obj_turret, false);
+    mp_grid_add_instances(p_grid, obj_barricade, false);
+    
+    // Move towards the dest
+    if (x != xDest || y != yDest) {
+        path_delete(path);
         path = path_add();
         if (mp_grid_path(p_grid, path, x, y, xDest, yDest, true)) {
             path_start(path, moveSpeed, 0, true);
+            //image_angle = point_direction(x, y, xDest, yDest);
+            //image_angle = direction;
+        } else if (instance_place(x, y, obj_enemy) != noone || instance_place(x, y, obj_enemy_laser) != noone) {
+            // Check the odd case that we do end up on an enemy, and get stuck
+            mp_grid_clear_all(p_grid);
+            mp_grid_add_instances(p_grid, obj_wall_inner, false);
+            mp_grid_add_instances(p_grid, obj_wall_outer, false);
+            var i;
+            for (i = 0; i &lt; instance_number(obj_char); ++i) {
+                player_id = instance_find(obj_char, i)
+                if (player_id != id) {
+                    mp_grid_add_instances(p_grid, player_id, false);
+                }
+            }
+            path = path_add();
+            if (mp_grid_path(p_grid, path, x, y, xDest, yDest, true)) {
+                path_start(path, moveSpeed, 0, true);
+            }
         }
     }
+    
+    mp_grid_clear_all(p_grid)
 }
-
-mp_grid_clear_all(p_grid)
+else {
+    path_end();
+}
 </string>
           </argument>
         </arguments>
@@ -277,102 +286,102 @@ mp_grid_clear_all(p_grid)
           <argument>
             <kind>1</kind>
             <string>///Start auto firing
-if (!healing) {
+if (!healing &amp;&amp; !global.tacPause) {
 
-target_melee = instance_nearest(x, y, obj_enemy);
-
-nearest_laser = instance_nearest(x, y, obj_enemy_laser);
-nearest_tank = instance_nearest(x, y, obj_enemy_tank);
-
-if (point_distance(x, y, nearest_laser.x, nearest_laser.y) &lt; 
-    point_distance(x, y, nearest_tank.x, nearest_tank.y)){
-    target_ranged = instance_nearest(x, y, obj_enemy_laser);
-} else {
-    target_ranged = instance_nearest(x, y, obj_enemy_tank);
-}
-
-if (distance_to_object(target_melee) &lt;= distance_to_object(target_ranged)) {
-    target = target_melee;
-} else {
-    target = target_ranged;
-}
-
-if (target &amp;&amp; !attacking) {
-    sight = 0;
+    target_melee = instance_nearest(x, y, obj_enemy);
     
-    xOrigin = x - (x % 32) + 16;
-    yOrigin = y - (y % 32) + 16;
+    nearest_laser = instance_nearest(x, y, obj_enemy_laser);
+    nearest_tank = instance_nearest(x, y, obj_enemy_tank);
     
-    xTarget = target.x - (target.x % 32) + 16;
-    yTarget = target.y - (target.y % 32) + 16;
-    
-    for (i = 1; i &lt; range + 1; i++) {
-        offset = i * 32;
-        if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin) {
-            sight = 1;
-        }
-        if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin) {
-            sight = 1;
-        }
-        if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin + offset, true) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin + offset) {
-            sight = 1;
-        }
-        if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin - offset, true) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin - offset) {
-            sight = 1;
-        }
-        for (j = range - i; j &gt; 0; j--) {
-            offset2 = j * 32;
-            if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin + offset2, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin + offset2) {
-                sight = 1;
-            }
-            if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin - offset2, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin - offset2) {
-                sight = 1;
-            }
-            if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin + offset2, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin + offset2) {
-                sight = 1;
-            }
-            if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin - offset2, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin - offset2) {
-                sight = 1;
-            } 
-        }
-    }
-    if (sight){
-        attacking = 1;
-        alarm[0] = 30 / rate;
-        
-        orientation = point_direction(x, y, target.x, target.y);
-        image_angle = orientation;
-        
-        bullet = obj_bullet_fronar;
-        if (class == "Grenadier") {
-            bullet = obj_grenade;
-        }
-        
-        with(instance_create(x,y,bullet)) {
-            target_melee = instance_nearest(x, y, obj_enemy);
-            
-            nearest_laser = instance_nearest(x, y, obj_enemy_laser);
-            nearest_tank = instance_nearest(x, y, obj_enemy_tank);
-
-            if (point_distance(x, y, nearest_laser.x, nearest_laser.y) &lt; 
-                point_distance(x, y, nearest_tank.x, nearest_tank.y)){
-                target_ranged = instance_nearest(x, y, obj_enemy_laser);
-            } else {
-                target_ranged = instance_nearest(x, y, obj_enemy_tank);
-            }
-            
-            if (distance_to_object(target_melee) &lt;= distance_to_object(target_ranged)) {
-                target = target_melee;
-            } else {
-                target = target_ranged;
-            }
- 
-            move_towards_point(target.x,target.y,5); 
-        }
+    if (point_distance(x, y, nearest_laser.x, nearest_laser.y) &lt; 
+        point_distance(x, y, nearest_tank.x, nearest_tank.y)){
+        target_ranged = instance_nearest(x, y, obj_enemy_laser);
     } else {
-        target = 0;
+        target_ranged = instance_nearest(x, y, obj_enemy_tank);
     }
-}
+    
+    if (distance_to_object(target_melee) &lt;= distance_to_object(target_ranged)) {
+        target = target_melee;
+    } else {
+        target = target_ranged;
+    }
+    
+    if (target &amp;&amp; !attacking) {
+        sight = 0;
+        
+        xOrigin = x - (x % 32) + 16;
+        yOrigin = y - (y % 32) + 16;
+        
+        xTarget = target.x - (target.x % 32) + 16;
+        yTarget = target.y - (target.y % 32) + 16;
+        
+        for (i = 1; i &lt; range + 1; i++) {
+            offset = i * 32;
+            if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin) {
+                sight = 1;
+            }
+            if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin) {
+                sight = 1;
+            }
+            if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin + offset, true) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin + offset) {
+                sight = 1;
+            }
+            if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin - offset, true) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin - offset) {
+                sight = 1;
+            }
+            for (j = range - i; j &gt; 0; j--) {
+                offset2 = j * 32;
+                if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin + offset2, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin + offset2) {
+                    sight = 1;
+                }
+                if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin - offset2, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin - offset2) {
+                    sight = 1;
+                }
+                if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin + offset2, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin + offset2) {
+                    sight = 1;
+                }
+                if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin - offset2, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin - offset2) {
+                    sight = 1;
+                } 
+            }
+        }
+        if (sight){
+            attacking = 1;
+            alarm[0] = 30 / rate;
+            
+            orientation = point_direction(x, y, target.x, target.y);
+            image_angle = orientation;
+            
+            bullet = obj_bullet_fronar;
+            if (class == "Grenadier") {
+                bullet = obj_grenade;
+            }
+            
+            with(instance_create(x,y,bullet)) {
+                target_melee = instance_nearest(x, y, obj_enemy);
+                
+                nearest_laser = instance_nearest(x, y, obj_enemy_laser);
+                nearest_tank = instance_nearest(x, y, obj_enemy_tank);
+    
+                if (point_distance(x, y, nearest_laser.x, nearest_laser.y) &lt; 
+                    point_distance(x, y, nearest_tank.x, nearest_tank.y)){
+                    target_ranged = instance_nearest(x, y, obj_enemy_laser);
+                } else {
+                    target_ranged = instance_nearest(x, y, obj_enemy_tank);
+                }
+                
+                if (distance_to_object(target_melee) &lt;= distance_to_object(target_ranged)) {
+                    target = target_melee;
+                } else {
+                    target = target_ranged;
+                }
+     
+                move_towards_point(target.x,target.y,5); 
+            }
+        } else {
+            target = 0;
+        }
+    }
 
 }
 

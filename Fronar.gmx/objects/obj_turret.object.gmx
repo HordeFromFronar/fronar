@@ -62,75 +62,79 @@ instance_create(x, y, obj_turret_base);
           <argument>
             <kind>1</kind>
             <string>///Firing code
-target_melee = instance_nearest(x, y, obj_enemy);
-target_ranged = instance_nearest(x, y, obj_enemy_laser);
-
-if (distance_to_object(target_melee) &lt;= distance_to_object(target_ranged)) {
-    target = target_melee;
-} else {
-    target = target_ranged;
-}
-
-if (target &amp;&amp; attacking) {    
-    sight = 0;
+if (!global.tacPause) {
+    target_melee = instance_nearest(x, y, obj_enemy);
+    target_ranged = instance_nearest(x, y, obj_enemy_laser);
     
-    xOrigin = x - (x % 32) + 16;
-    yOrigin = y - (y % 32) + 16;
-    
-    xTarget = target.x - (target.x % 32) + 16;
-    yTarget = target.y - (target.y % 32) + 16;
-    
-    for (i = 1; i &lt; range + 1; i++) {
-        offset = i * 32;
-        if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin) {
-            sight = 1;
-        }
-        if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin) {
-            sight = 1;
-        }
-        if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin + offset, true) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin + offset) {
-            sight = 1;
-        }
-        if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin - offset, true) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin - offset) {
-            sight = 1;
-        }
-        for (j = range - i; j &gt; 0; j--) {
-            offset2 = j * 32;
-            if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin + offset2, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin + offset2) {
-                sight = 1;
-            }
-            if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin - offset2, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin - offset2) {
-                sight = 1;
-            }
-            if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin + offset2, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin + offset2) {
-                sight = 1;
-            }
-            if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin - offset2, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin - offset2) {
-                sight = 1;
-            } 
-        }
+    if (distance_to_object(target_melee) &lt;= distance_to_object(target_ranged)) {
+        target = target_melee;
+    } else {
+        target = target_ranged;
     }
-    if (sight){
-        alarm[0] = 30 / rate;
+    
+    if (target &amp;&amp; attacking) {    
+        sight = 0;
         
-        with(instance_create(x,y,obj_bullet_fronar)) {
-            target_melee = instance_nearest(x, y, obj_enemy);
-            target_ranged = instance_nearest(x, y, obj_enemy_laser);
+        xOrigin = x - (x % 32) + 16;
+        yOrigin = y - (y % 32) + 16;
+        
+        xTarget = target.x - (target.x % 32) + 16;
+        yTarget = target.y - (target.y % 32) + 16;
+        
+        for (i = 1; i &lt; range + 1; i++) {
+            offset = i * 32;
+            if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin) {
+                sight = 1;
+            }
+            if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin) {
+                sight = 1;
+            }
+            if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin + offset, true) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin + offset) {
+                sight = 1;
+            }
+            if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin - offset, true) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin - offset) {
+                sight = 1;
+            }
+            for (j = range - i; j &gt; 0; j--) {
+                offset2 = j * 32;
+                if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin + offset2, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin + offset2) {
+                    sight = 1;
+                }
+                if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin - offset2, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin - offset2) {
+                    sight = 1;
+                }
+                if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin + offset2, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin + offset2) {
+                    sight = 1;
+                }
+                if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin - offset2, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin - offset2) {
+                    sight = 1;
+                } 
+            }
+        }
+        if (sight){
+            alarm[0] = 30 / rate;
             
-            if (distance_to_object(target_melee) &lt;= distance_to_object(target_ranged)) {
-                target = target_melee;
-            } else {
-                target = target_ranged;
-            } 
-            move_towards_point(target.x,target.y,5); 
+            with(instance_create(x,y,obj_bullet_fronar)) {
+                target_melee = instance_nearest(x, y, obj_enemy);
+                target_ranged = instance_nearest(x, y, obj_enemy_laser);
+                
+                if (distance_to_object(target_melee) &lt;= distance_to_object(target_ranged)) {
+                    target = target_melee;
+                } else {
+                    target = target_ranged;
+                } 
+                move_towards_point(target.x,target.y,5); 
+            }
+        } else {
+            target = 0;
+            attacking = 0;
         }
     } else {
         target = 0;
         attacking = 0;
     }
 } else {
-    target = 0;
-    attacking = 0;
+    alarm[0] = 30 / rate;
 }
 </string>
           </argument>
@@ -155,75 +159,77 @@ if (target &amp;&amp; attacking) {
           <argument>
             <kind>1</kind>
             <string>///Start auto firing
-target_melee = instance_nearest(x, y, obj_enemy);
-target_ranged = instance_nearest(x, y, obj_enemy_laser);
-
-if (distance_to_object(target_melee) &lt;= distance_to_object(target_ranged)) {
-    target = target_melee;
-} else {
-    target = target_ranged;
-}
-
-if (target &amp;&amp; !attacking) {
-    sight = 0;
+if (!global.tacPause) {
+    target_melee = instance_nearest(x, y, obj_enemy);
+    target_ranged = instance_nearest(x, y, obj_enemy_laser);
     
-    xOrigin = x - (x % 32) + 16;
-    yOrigin = y - (y % 32) + 16;
-    
-    xTarget = target.x - (target.x % 32) + 16;
-    yTarget = target.y - (target.y % 32) + 16;
-    
-    for (i = 1; i &lt; range + 1; i++) {
-        offset = i * 32;
-        if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin) {
-            sight = 1;
-        }
-        if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin) {
-            sight = 1;
-        }
-        if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin + offset, true) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin + offset) {
-            sight = 1;
-        }
-        if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin - offset, true) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin - offset) {
-            sight = 1;
-        }
-        for (j = range - i; j &gt; 0; j--) {
-            offset2 = j * 32;
-            if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin + offset2, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin + offset2) {
-                sight = 1;
-            }
-            if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin - offset2, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin - offset2) {
-                sight = 1;
-            }
-            if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin + offset2, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin + offset2) {
-                sight = 1;
-            }
-            if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin - offset2, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin - offset2) {
-                sight = 1;
-            } 
-        }
-    }
-    if (sight){
-        attacking = 1;
-        alarm[0] = 30 / rate;
-        
-        orientation = point_direction(x, y, target.x, target.y);
-        image_angle = orientation;
-        
-        with(instance_create(x,y,obj_bullet_fronar)) {
-            target_melee = instance_nearest(x, y, obj_enemy);
-            target_ranged = instance_nearest(x, y, obj_enemy_laser);
-            
-            if (distance_to_object(target_melee) &lt;= distance_to_object(target_ranged)) {
-                target = target_melee;
-            } else {
-                target = target_ranged;
-            }
- 
-            move_towards_point(target.x,target.y,5); 
-        }
+    if (distance_to_object(target_melee) &lt;= distance_to_object(target_ranged)) {
+        target = target_melee;
     } else {
-        target = 0;
+        target = target_ranged;
+    }
+    
+    if (target &amp;&amp; !attacking) {
+        sight = 0;
+        
+        xOrigin = x - (x % 32) + 16;
+        yOrigin = y - (y % 32) + 16;
+        
+        xTarget = target.x - (target.x % 32) + 16;
+        yTarget = target.y - (target.y % 32) + 16;
+        
+        for (i = 1; i &lt; range + 1; i++) {
+            offset = i * 32;
+            if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin) {
+                sight = 1;
+            }
+            if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin) {
+                sight = 1;
+            }
+            if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin + offset, true) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin + offset) {
+                sight = 1;
+            }
+            if (lineOfSight(xOrigin, yOrigin, xOrigin, yOrigin - offset, true) &amp;&amp; xTarget == xOrigin &amp;&amp; yTarget == yOrigin - offset) {
+                sight = 1;
+            }
+            for (j = range - i; j &gt; 0; j--) {
+                offset2 = j * 32;
+                if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin + offset2, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin + offset2) {
+                    sight = 1;
+                }
+                if (lineOfSight(xOrigin, yOrigin, xOrigin + offset, yOrigin - offset2, true) &amp;&amp; xTarget == xOrigin + offset &amp;&amp; yTarget == yOrigin - offset2) {
+                    sight = 1;
+                }
+                if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin + offset2, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin + offset2) {
+                    sight = 1;
+                }
+                if (lineOfSight(xOrigin, yOrigin, xOrigin - offset, yOrigin - offset2, true) &amp;&amp; xTarget == xOrigin - offset &amp;&amp; yTarget == yOrigin - offset2) {
+                    sight = 1;
+                } 
+            }
+        }
+        if (sight){
+            attacking = 1;
+            alarm[0] = 30 / rate;
+            
+            orientation = point_direction(x, y, target.x, target.y);
+            image_angle = orientation;
+            
+            with(instance_create(x,y,obj_bullet_fronar)) {
+                target_melee = instance_nearest(x, y, obj_enemy);
+                target_ranged = instance_nearest(x, y, obj_enemy_laser);
+                
+                if (distance_to_object(target_melee) &lt;= distance_to_object(target_ranged)) {
+                    target = target_melee;
+                } else {
+                    target = target_ranged;
+                }
+     
+                move_towards_point(target.x,target.y,5); 
+            }
+        } else {
+            target = 0;
+        }
     }
 }
 </string>
