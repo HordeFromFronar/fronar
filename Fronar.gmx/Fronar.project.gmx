@@ -303,6 +303,7 @@
     <script>scripts\getGenderedPosessive.gml</script>
     <script>scripts\getGenderedPronoun.gml</script>
     <script>scripts\getGenderedSelf.gml</script>
+    <script>scripts\getGenderedObjective.gml</script>
     <script>scripts\modifyParts.gml</script>
     <script>scripts\modifyMedicine.gml</script>
     <script>scripts\modifyFood.gml</script>

@@ -58,6 +58,26 @@ switch(global.event_id) {
             "#dead. #" + 
             '#"' + "I've never felt better!" + '"' + 
             "##+1 to Crew's Damage" +
-            "#The Party is fully healed.";
+            "#The Crew is fully healed.";
             return text;
+            break;
+        case 5:
+            char1 = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1);
+            char2 = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1);
+            char1gender = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 0);
+            char2gender = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 0);
+            char1pronoun = getGenderedPronoun(char1gender, false);
+            char2pronoun = getGenderedPronoun(char2gender, false);
+            text = 
+            "A gust of wind, and a cloud of dust and trash fly through the air - along with it, an old flyer that blows " +
+            "#up against " + char1 + "'s foot.   Scooping it up, " + char1pronoun + " sees a Ferris wheel and a clown on the front." +
+            '##"' + "It's dated September 8. That's the day before the Borgis hit. Think it might still be around?" + '"' + 
+            '##"' + "Not sure." + '" ' + char2 + " sighs. " + '"' + "But I haven't been to a circus since I was a kid. Might be nice, and we" +
+            "#could use the break. No harm in checking." + '"' +
+            "##The party follows the directions on the flyer and arrives at a fenced off field with colourful arches " +
+            "#above the turnstile. Within, they find a deserted area populated with carnival booths, a moldy dunk" + 
+            "#tank, and empty animal cages. A big top stands at the end of the row. There is no Ferris wheel in sight." +
+            '##"' + "Guess we'll look around and report back? Might find some supplies, at least." + '"';
+            return text;
+            break;
 }

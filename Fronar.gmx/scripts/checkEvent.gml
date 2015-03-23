@@ -27,4 +27,9 @@ switch(eventId){
         //Lightning
         return true;
         break;
+    case 5:
+        //Circus
+        //requires >= 2 chars
+        return ds_list_size(global.eventCharList) >= 2;
+        break;
 }

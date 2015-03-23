@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>///Generate an event 
 resetEventCharacters();
-global.event_id = 4;
-//global.event_id = generateEvent();
+//global.event_id = 5;
+global.event_id = generateEvent();
 //ds_list_shuffle(global.charList);
 global.eventCharList = global.charList;
 i = 0;
@@ -73,7 +73,7 @@ draw_set_colour(c_black);
 x1 = 5*32;
 y1 = 5*32;
 x2 = 1280-5*32;
-y2 = 720-5*32;
+y2 = 720-3*32;
 draw_rectangle(x1, y1, x2, y2, false);
 
 draw_set_colour(c_white);
@@ -87,6 +87,9 @@ switch(global.event_id){
         obj_event_option_1.charId = 0;
         obj_event_option_2.charId = 1;
         obj_event_option_3.charId = 2;
+        obj_event_option_1.y1 = 10*32;
+        obj_event_option_2.y1 = 11*32;
+        obj_event_option_3.y1 = 12*32;
         if(global.event_part2){
             //Display the second part of the scenario
             depth = -1;
@@ -103,6 +106,9 @@ switch(global.event_id){
         obj_event_option_3.text = "Send " + ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1) + " to retrieve the rations.";
         obj_event_option_2.charId = 0;
         obj_event_option_3.charId = 1;
+        obj_event_option_1.y1 = 10*32;
+        obj_event_option_2.y1 = 11*32;
+        obj_event_option_3.y1 = 12*32;
         if(global.event_part2){
             //Display the second part of the scenario
             depth = -1;
@@ -127,6 +133,10 @@ switch(global.event_id){
         '"Who' + "'" + 're you kidding, lady? Back away from#' + 
         'the wagon."';
         obj_event_option_4.charId = 0;
+        obj_event_option_1.y1 = 10*32;
+        obj_event_option_2.y1 = 11*32;
+        obj_event_option_3.y1 = 12*32;
+        obj_event_option_4.y1 = 13*32;
         if(global.event_part2){
             //Display the second part of the scenario
             depth = -1;
@@ -145,6 +155,26 @@ switch(global.event_id){
         draw_text(x1+32, y1+32, getEventText());
         obj_event_continue.visible = true;
         break;
+    case 5:
+        //Circus
+        show_debug_message("drawing text at " + string(x1 + 32) + " " + string(y1 + 32));
+        draw_text(x1+32, y1+32, getEventText());
+        obj_event_option_1.text = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1) + " heads off in the direction of the big top.";
+        obj_event_option_2.text = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1) + " checks out the carnival booths.";
+        obj_event_option_1.charId = 0;
+        obj_event_option_2.charId = 1;
+        obj_event_option_1.y1 = 13*32;
+        obj_event_option_2.y1 = 14*32;
+        if(global.event_part2){
+            show_debug_message("drawing text 2 at " + string(x1 + 32) + " " + string(y1 + 32));
+            //Display the second part of the scenario
+            depth = -40;
+            draw_set_colour(c_white);
+            show_debug_message("event is " + getEventTextPart2());
+            draw_text(x1 + 32, 13*32, getEventTextPart2());
+            obj_event_continue.visible = true;
+        }
+        
         
         
 }

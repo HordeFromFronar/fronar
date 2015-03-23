@@ -158,5 +158,39 @@ switch(global.event_id) {
             }
             return text;
             break;
+        case 5:
+            text = "";
+            char1 = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1);
+            char2 = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1);
+            char1gender = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 0);
+            char2gender = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 0);
+            char1pronoun = getGenderedPronoun(char1gender, false);
+            char2pronoun = getGenderedPronoun(char2gender, false);
+            char1posessive = getGenderedPosessive(char1gender, false);
+            char1objective = getGenderedObjective(char1gender);
+            show_debug_message("event text being generated option " + string(global.event_selected_option));
+            switch(global.event_selected_option){
+                case 0:
+                    text += "Inside, " + char1 + " sits down on one of the benches and stares into the empty ring. " + char1pronoun + 
+                    "#imagines " + char1pronoun + " can see elephants jumping. Since the Borgis attacked there hasn't been much time" +
+                    "#for daydreaming and " + char1pronoun + " relishes  the opportunity, but " + char1posessive + "conscience quickly wears on" + 
+                    "#" + char1objective + ": there's still a long way to go before sundown. So " + char1pronoun + " stands and brushes off the thin" +
+                    "#layer of dust already accumulated on " + char1posessive + " pants and gets to searching." +
+                    "##In a hidden trapdoor in the middle of the ring, " + char1 + " finds a cache of first aid supplies. " + char1pronoun +
+                    "#then returns to the group." +
+                    "##+5 Med Kits";
+                    break;
+                case 1:
+                    text += '"' + "There's bound to be food stashed around here somewhere." + '"' +
+                    "##With the desperation of a starving person, " + char2 + " moves methodically through each and every" + 
+                    "#booth, opening cupboards, flipping tables, even going so far as to dismantle a food truck " + char2pronoun + 
+                    "#thinks might be hiding Twinkies. At the end of it, " + char2 + " has amassed a sizeable stack of " + 
+                    "#non-perishables which " + char2pronoun + " carries back to the group." +
+                    "##+12 Food";
+                    break;
+            }    
+            show_debug_message("generated as " + text);
+            return text;
+            break;
         
 }

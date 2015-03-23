@@ -1,7 +1,7 @@
 //generateEvent()
 //Returns an integer corresponding to an event id based on current state
 global.event_subevent = 0;
-var numEvents = 5;
+var numEvents = 6;
 //If the event has been predetermined by a previous event, make sure we do that one
 if(global.next_event != -1) {
     return global.next_event;
