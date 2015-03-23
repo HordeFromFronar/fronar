@@ -389,6 +389,7 @@ switch(global.overworld_step){
        //display "Defend" button 
        obj_travel.visible = false;
        obj_defend.visible = true;
+       global.travelling = 0;
        break;
     case 4:
        //light up our location

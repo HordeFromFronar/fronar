@@ -26,7 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>//based on current location go to the correct nighttime map
+show_debug_message("defend clicked");
+show_debug_message(global.travelling);
 if(global.travelling == 0 &amp;&amp; visible){
+    show_debug_message("succesfully defend clicked with " + string(global.overworld_step));
     switch (global.overworld_step){
         case 4: 
             room_goto(House_Room);
