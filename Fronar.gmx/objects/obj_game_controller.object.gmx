@@ -84,7 +84,7 @@ global.overworld_step =4;
         <arguments>
           <argument>
             <kind>11</kind>
-            <room>-100</room>
+            <room>rm_worldmap_1</room>
           </argument>
         </arguments>
       </action>

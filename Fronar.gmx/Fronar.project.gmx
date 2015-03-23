@@ -297,7 +297,6 @@
     <script>scripts\getEventText.gml</script>
     <script>scripts\getEventTextPart2.gml</script>
     <script>scripts\checkEvent.gml</script>
-    <script>scripts\resetEventCharacters.gml</script>
     <script>scripts\getExclamationX.gml</script>
     <script>scripts\getExclamationY.gml</script>
     <script>scripts\getGenderedPosessive.gml</script>

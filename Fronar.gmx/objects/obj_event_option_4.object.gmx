@@ -96,7 +96,7 @@ if (!global.event_part2){
         case 2:
             //Wagon Lady
             //Set health to 0.  This kills the character.
-            ds_list_replace(ds_list_find_value(global.charList, charId), 7, 0);      
+            ds_list_replace(ds_list_find_value(global.eventCharList, charId), 7, 0);      
             break;
     }
 }

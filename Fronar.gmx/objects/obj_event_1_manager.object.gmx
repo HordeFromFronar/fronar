@@ -26,22 +26,23 @@
           <argument>
             <kind>1</kind>
             <string>///Generate an event 
-resetEventCharacters();
-//global.event_id = 5;
+//global.event_id = 6;
 global.event_id = generateEvent();
-//ds_list_shuffle(global.charList);
-global.eventCharList = global.charList;
-i = 0;
-len = ds_list_size(global.eventCharList);
 
-for (i=0;i&lt;len;i++) {
-    if(ds_list_find_value(ds_list_find_value(global.eventCharList, i), 7) == 0) {
-        ds_list_delete(global.eventCharList, i);
+//Don't shuffle if we're on a continuing event
+if(global.next_event == -1) {
+    global.eventCharList = global.charList;
+    i = 0;
+    len = ds_list_size(global.eventCharList);
+    
+    for (i=0;i&lt;len;i++) {
+        if(ds_list_find_value(ds_list_find_value(global.eventCharList, i), 7) == 0) {
+            ds_list_delete(global.eventCharList, i);
+        }
     }
+    
+    ds_list_shuffle(global.eventCharList);
 }
-
-ds_list_shuffle(global.eventCharList);
-
 global.event_part2 = false;
 
 </string>
@@ -157,7 +158,6 @@ switch(global.event_id){
         break;
     case 5:
         //Circus
-        show_debug_message("drawing text at " + string(x1 + 32) + " " + string(y1 + 32));
         draw_text(x1+32, y1+32, getEventText());
         obj_event_option_1.text = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1) + " heads off in the direction of the big top.";
         obj_event_option_2.text = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1) + " checks out the carnival booths.";
@@ -166,16 +166,42 @@ switch(global.event_id){
         obj_event_option_1.y1 = 13*32;
         obj_event_option_2.y1 = 14*32;
         if(global.event_part2){
-            show_debug_message("drawing text 2 at " + string(x1 + 32) + " " + string(y1 + 32));
             //Display the second part of the scenario
-            depth = -40;
+            depth = -1;
             draw_set_colour(c_white);
             show_debug_message("event is " + getEventTextPart2());
             draw_text(x1 + 32, 13*32, getEventTextPart2());
             obj_event_continue.visible = true;
         }
-        
-        
+        break;
+    case 6:
+        //Forgotten Weapon
+        draw_text(x1+32, y1+32, getEventText());
+        char = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1);
+        charposessive = getGenderedPosessive(ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 0), false);
+        obj_event_option_1.text = "Have " + char + " go back on " + charposessive + " own, then hurry and catch up with the group.";
+        obj_event_option_2.text = "Kill " + char + " for being an idiot.";
+        obj_event_option_3.text = "Continue on, and hope " + char + " finds a weapon soon.";
+        obj_event_option_1.charId = 0;
+        obj_event_option_2.charId = 0;
+        obj_event_option_3.charId = 0;
+        obj_event_option_1.y1 = 10*32;
+        obj_event_option_2.y1 = 11*32;
+        obj_event_option_3.y1 = 12*32;
+        if(global.event_part2){
+            //Display the second part of the scenario
+            depth = -1;
+            draw_set_colour(c_white);
+            show_debug_message("event is " + getEventTextPart2());
+            draw_text(x1 + 32, 10*32, getEventTextPart2());
+            obj_event_continue.visible = true;
+        }
+        break;
+    case 7:
+        //Found Weapon
+        draw_text(x1+32, y1+32, getEventText());
+        obj_event_continue.visible = true;
+        break;
         
 }
 </string>

@@ -98,7 +98,7 @@ if (!global.event_part2){
         case 0:         
             //Abadoned Shack bayonet powerup +3 melee
             //SWITCH THIS TO MELEE WHEN MELEE IMPLEMENTED
-            ds_list_replace(ds_list_find_value(global.charList, charId), 11, ds_list_find_value(ds_list_find_value(global.charList, charId), 11) + 3);      
+            ds_list_replace(ds_list_find_value(global.eventCharList, charId), 11, ds_list_find_value(ds_list_find_value(global.charList, charId), 11) + 3);      
             break;
         case 1:
             //Spike Pit
@@ -112,6 +112,11 @@ if (!global.event_part2){
         case 5:
             //Circus
             modifyMedicine(5);
+            break;
+        case 6:
+            //Forgotten Weapon
+            //Set health to 0.  This kills the character.
+            ds_list_replace(ds_list_find_value(global.eventCharList, 0), 7, 0);      
             break;
     }
 }

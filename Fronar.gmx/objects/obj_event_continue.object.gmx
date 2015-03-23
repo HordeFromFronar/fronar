@@ -60,6 +60,18 @@ switch(global.event_id){
         //Circus
         //Everything in this event is choice dependant, nothing happens all the time so nothing goes here.  
         break;        
+    case 6:
+        //Forgotten Weapon
+        //Everything in this event is choice dependant, nothing happens all the time so nothing goes here.  
+        break; 
+    case 7:
+        //Found Weapon
+        ds_list_replace(ds_list_find_value(global.eventCharList, 0), 11 ,ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 11) + 1);
+        global.next_event = -1;
+        global.event_char1 = -1;
+        break;      
+            
+        
 }  
  
 //Update event specific values

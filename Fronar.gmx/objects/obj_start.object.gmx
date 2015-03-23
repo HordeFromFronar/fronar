@@ -47,9 +47,9 @@ globalvar tacPause;
 
 selected = 0;
 eventNumber = 0;
-event_char1 = 0;
-event_char2 = 0;
-event_char3 = 0;
+event_char1 = -1;
+event_char2 = -1;
+event_char3 = -1;
 event_part2 = false;
 event_id = 0;
 overworld_step = 0;

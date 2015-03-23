@@ -1,10 +1,16 @@
 //generateEvent()
 //Returns an integer corresponding to an event id based on current state
 global.event_subevent = 0;
-var numEvents = 6;
+var numEvents = 8;
 //If the event has been predetermined by a previous event, make sure we do that one
-if(global.next_event != -1) {
+//But only if that person is still alive
+if(global.next_event != -1 && 
+   global.event_char1 != -1 && 
+   ds_list_find_value(ds_list_find_value(global.eventCharList, global.event_char1), 7) > 0) {
     return global.next_event;
+} else {
+    global.next_event = -1;
+    global.event_char1 = -1;
 }
 
 var event = irandom(numEvents-1);

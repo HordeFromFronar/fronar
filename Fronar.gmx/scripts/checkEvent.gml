@@ -32,4 +32,14 @@ switch(eventId){
         //requires >= 2 chars
         return ds_list_size(global.eventCharList) >= 2;
         break;
+    case 6: 
+        //Forgotten Weapon
+        //requires >= 2 chars and early game
+        return ds_list_size(global.eventCharList) >= 2 && global.overworld_step < 3;
+        break;
+    case 7:
+        //Found Weapon
+        //only happens if set to next event, not randomly generatable
+        return false;
+        break;
 }

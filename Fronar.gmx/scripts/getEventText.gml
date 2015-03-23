@@ -80,4 +80,31 @@ switch(global.event_id) {
             '##"' + "Guess we'll look around and report back? Might find some supplies, at least." + '"';
             return text;
             break;
+        case 6:
+            char1 = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1);
+            char2 = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1);
+            char1gender = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 0);
+            char2gender = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 0);
+            char1pronoun = getGenderedPronoun(char1gender, false);
+            char2pronoun = getGenderedPronoun(char2gender, false);
+            char1posessive = getGenderedPronoun(char1gender, false);
+            text = "Upon reaching the outskirts of a nearby town, " + char1 + " realizes " + char1pronoun + " forgot " + 
+            char1posessive +
+            "#weapon at last night's camp. Without a weapon " + char1pronoun + "'ll be no good in a fight." +
+            '##"' + "I'm really sorry, guys. Should I go back and get it?" + '"' +
+            "#" + char2 + " insists that the group keep moving. " + '"' + "We can't afford to backtrack," + '"' + char2pronoun +
+            "#says.";
+            return text;
+            break;
+        case 7:
+            char1 = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1);
+            char1gender = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 0);
+            char1pronoun = getGenderedPronoun(char1gender, false);
+            char1posessive = getGenderedPosessive(char1gender, false);
+            text = "After taking a piss in the bush, " + char1 + " notices something at " + char1posessive + " feet partially" + 
+            "#hidden behind a bush: an old black duffel bag covered in mud. Opening it up, " + char1pronoun + 
+            "#finds a weapon almost identical to the one " + char1pronoun + " lost!" +
+            "##" + char1 + "'s Attack increases by 1.";
+            return text;
+            break;
 }

@@ -189,7 +189,43 @@ switch(global.event_id) {
                     "##+12 Food";
                     break;
             }    
-            show_debug_message("generated as " + text);
+            return text;
+            break;
+        case 6:
+            //Forgotten Weapon
+            text = "";
+            char1 = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1);
+            char2 = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1);
+            char1gender = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 0);
+            char2gender = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 0);
+            char1pronoun = getGenderedPronoun(char1gender, false);
+            char2pronoun = getGenderedPronoun(char2gender, false);
+            char1posessive = getGenderedPosessive(char1gender, false);   
+            char2posessive = getGenderedPosessive(char2gender, false); 
+            switch(global.event_selected_option){   
+                case 0:
+                    text += '"' + "I'll be back as soon as I can." + '"' + 
+                    "##" + char1 + " throws " + char1pronoun + " backpack over " + char1posessive + " shoulder and runs back the way the" +
+                    "#group came. Here's hoping " + char1pronoun + " makes it back alive." +
+                    "##If they don’t, that’s one less mouth to feed." + 
+                    "##" + char1 + " dies.";
+
+                case 1:
+                    text += '"' + "I've had enough of your bullshit, " + char1 + ". You're always pulling shit like this, but not" +
+                    '#anymore."' + 
+                    "##" + char2 + " loads " + char2posessive + " weapon and fires one off into " + char1 + "'s head. " + char1posessive +
+                    "#body and what's left of " + char1posessive + " skull fall to the ground, the bloody mess pooling around" +
+                    "#the party's feet." +
+                    '##"' + "Good riddance," + '"' + char1pronoun + " says." +
+                    "##" + char1 + " dies.";
+                    break;
+                case 2:
+                    text += '"' + "You know, I've had just about enough of you," + '" ' + char2 + " says. " + '"' + "You'd better pray to" +
+                    "#God we don't need you tonight, " + char1 + ", or else find a weapon quick, 'cause if the " +
+                    "#Borgis don't kill you... I just might." + '"' + 
+                    "##" + char1 + "'s Attack decreases to 0."; 
+                    break;
+            }
             return text;
             break;
         
