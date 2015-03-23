@@ -27,6 +27,7 @@
     <sprite>sprites\spr_turret_base</sprite>
     <sprite>sprites\spr_button_turret</sprite>
     <sprite>sprites\spr_button_barricade</sprite>
+    <sprite>sprites\spr_button_medkit</sprite>
     <sprite>sprites\spr_title</sprite>
     <sprite>sprites\spr_title_borgi</sprite>
     <sprite>sprites\spr_title_continue</sprite>
@@ -350,6 +351,7 @@
     <object>objects\obj_barricade</object>
     <object>objects\obj_button_turret</object>
     <object>objects\obj_button_barricade</object>
+    <object>objects\obj_button_medkit</object>
     <object>objects\obj_set_char</object>
     <object>objects\obj_enemy_manager</object>
     <object>objects\obj_title_manager</object>
@@ -431,13 +433,13 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
-    <room>rooms\House_Room</room>
     <room>rooms\rm_splash_screen</room>
     <room>rooms\rm_title_screen</room>
     <room>rooms\rm_opening_cutscene</room>
     <room>rooms\rm_crew_select_1</room>
     <room>rooms\rm_worldmap_1</room>
     <room>rooms\rm_event_1</room>
+    <room>rooms\House_Room</room>
     <room>rooms\rm_test_2</room>
     <room>rooms\rm_test_1</room>
     <room>rooms\rm_night_level1</room>

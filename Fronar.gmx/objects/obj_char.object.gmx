@@ -39,6 +39,9 @@ xBuild = 0;
 yBuild = 0;
 path = path_add();
 
+healing = false;
+healedAmount = 0;
+
 //Initialize character info
 gender = ds_list_find_value(ds_list_find_value(global.charList, charID),0);
 first = ds_list_find_value(ds_list_find_value(global.charList, charID),1);
@@ -274,6 +277,8 @@ mp_grid_clear_all(p_grid)
           <argument>
             <kind>1</kind>
             <string>///Start auto firing
+if (!healing) {
+
 target_melee = instance_nearest(x, y, obj_enemy);
 
 nearest_laser = instance_nearest(x, y, obj_enemy_laser);
@@ -369,6 +374,7 @@ if (target &amp;&amp; !attacking) {
     }
 }
 
+}
 
 </string>
           </argument>
@@ -402,6 +408,22 @@ if (hp &lt;= 0) {
 
     instance_destroy();
 }
+
+if (healing) {
+    heal = 1 / room_speed;
+
+    hp += heal;
+    healedAmount += heal;
+    if hp &gt;= maxHealth {
+        hp = maxHealth
+        healing = false;   
+        healedAmount = 0;
+    } else if (healedAmount == 10) {
+        healing = false;
+        healedAmount = 0;
+    }
+}
+
 </string>
           </argument>
         </arguments>

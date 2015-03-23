@@ -60,4 +60,3 @@ while (count) {
 }
 
 global.eventCharList = global.charList;
-
