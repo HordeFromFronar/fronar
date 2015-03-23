@@ -87,7 +87,7 @@ switch(global.event_id) {
             char2gender = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 0);
             char1pronoun = getGenderedPronoun(char1gender, false);
             char2pronoun = getGenderedPronoun(char2gender, false);
-            char1posessive = getGenderedPronoun(char1gender, false);
+            char1posessive = getGenderedPosessive(char1gender, false);
             text = "Upon reaching the outskirts of a nearby town, " + char1 + " realizes " + char1pronoun + " forgot " + 
             char1posessive +
             "#weapon at last night's camp. Without a weapon " + char1pronoun + "'ll be no good in a fight." +
@@ -105,6 +105,26 @@ switch(global.event_id) {
             "#hidden behind a bush: an old black duffel bag covered in mud. Opening it up, " + char1pronoun + 
             "#finds a weapon almost identical to the one " + char1pronoun + " lost!" +
             "##" + char1 + "'s Attack increases by 1.";
+            return text;
+            break;
+        case 8:
+            char1 = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1);
+            char2 = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1);
+            char1gender = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 0);
+            char2gender = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 0);
+            char1pronoun = getGenderedPronoun(char1gender, false);
+            char2pronoun = getGenderedPronoun(char2gender, false);
+            char1posessive = getGenderedPosessive(char1gender, false);
+            text = char1 + " opens the door and a shower of dust falls from the doorframe. Blown-out, ceiling-high" + 
+            "#windows shine daylight on rows and rows of books, each covered in its own coat of dust. By the" + 
+            "#thickness of it, this library was abandoned long before the Borgis hit." +
+            "##" + char2 + " picks up a copy of " + '"Huckleberry Finn"' + " someone has left on the table. A book-shaped" +
+            "#outline marks where it might have been sitting for years. " + char2 + " flips it open and stares at the" +
+            "#pages without reading them." + 
+            '##"' + "Do you think we'll get it all back someday?" + '"' + 
+            '##"' + "Say again?" + '" ' + char1 + " calls from two rows over." + 
+            "##" + char2 + 'finds a spot on the shelf and puts the book away. "Nevermind," ' + char2pronoun + " mumbles, and" +
+            "#continues down the line.";
             return text;
             break;
 }

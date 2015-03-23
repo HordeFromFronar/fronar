@@ -42,4 +42,9 @@ switch(eventId){
         //only happens if set to next event, not randomly generatable
         return false;
         break;
+    case 8:
+        //Library
+        //requires >= 2 chars
+        return ds_list_size(global.eventCharList) >= 2;
+        break;
 }

@@ -308,6 +308,7 @@
     <script>scripts\modifyFood.gml</script>
     <script>scripts\getStep.gml</script>
     <script>scripts\drawSteps.gml</script>
+    <script>scripts\healevent.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="Glare">

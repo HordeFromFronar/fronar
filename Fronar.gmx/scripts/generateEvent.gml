@@ -1,7 +1,7 @@
 //generateEvent()
 //Returns an integer corresponding to an event id based on current state
 global.event_subevent = 0;
-var numEvents = 8;
+var numEvents = 9;
 //If the event has been predetermined by a previous event, make sure we do that one
 //But only if that person is still alive
 if(global.next_event != -1 && 

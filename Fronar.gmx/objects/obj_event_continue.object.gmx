@@ -48,7 +48,7 @@ switch(global.event_id){
         break;    
     case 4: 
         //Lightning
-        //+1 to all crew damage
+        //+1 to all crew damage + full heal
         var i;
         for(i = 0; i &lt; ds_list_size(global.eventCharList); ++i){
             //Damage Boost
@@ -69,7 +69,11 @@ switch(global.event_id){
         ds_list_replace(ds_list_find_value(global.eventCharList, 0), 11 ,ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 11) + 1);
         global.next_event = -1;
         global.event_char1 = -1;
-        break;      
+        break;  
+    case 8:
+        //Library
+        //Everything in this event is choice dependant, nothing happens all the time so nothing goes here.  
+        break;  
             
         
 }  

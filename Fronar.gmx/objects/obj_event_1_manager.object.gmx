@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Generate an event 
-//global.event_id = 6;
-global.event_id = generateEvent();
+global.event_id = 8;
+//global.event_id = generateEvent();
 
 //Don't shuffle if we're on a continuing event
 if(global.next_event == -1) {
@@ -169,7 +169,6 @@ switch(global.event_id){
             //Display the second part of the scenario
             depth = -1;
             draw_set_colour(c_white);
-            show_debug_message("event is " + getEventTextPart2());
             draw_text(x1 + 32, 13*32, getEventTextPart2());
             obj_event_continue.visible = true;
         }
@@ -192,7 +191,6 @@ switch(global.event_id){
             //Display the second part of the scenario
             depth = -1;
             draw_set_colour(c_white);
-            show_debug_message("event is " + getEventTextPart2());
             draw_text(x1 + 32, 10*32, getEventTextPart2());
             obj_event_continue.visible = true;
         }
@@ -202,6 +200,34 @@ switch(global.event_id){
         draw_text(x1+32, y1+32, getEventText());
         obj_event_continue.visible = true;
         break;
+    case 8:
+        //Library
+        draw_text(x1+32, y1+32, getEventText());
+        char1 = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1);
+        char2 = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1);
+        char3id = 0;
+        //Event is not generated if we dont have at least 2 chars so this is safe
+        if (ds_list_size(global.eventCharList) &gt; 2){
+            char3id = 2;
+        }
+        char3 = ds_list_find_value(ds_list_find_value(global.eventCharList, 2), char3id);
+        
+        obj_event_option_1.text = char1 + " picks up a book on robotics.";
+        obj_event_option_2.text = char2 + " swipes a first aid manual that's probably up to date.";
+        obj_event_option_3.text = char3 + " finds an 80's military training manual.";
+        obj_event_option_1.charId = 0;
+        obj_event_option_2.charId = 1;
+        obj_event_option_3.charId = char3id;
+        obj_event_option_1.y1 = 13*32;
+        obj_event_option_2.y1 = 14*32;
+        obj_event_option_3.y1 = 15*32;
+        if(global.event_part2){
+            //Display the second part of the scenario
+            depth = -1;
+            draw_set_colour(c_white);
+            draw_text(x1 + 32, 13*32, getEventTextPart2());
+            obj_event_continue.visible = true;
+        }
         
 }
 </string>

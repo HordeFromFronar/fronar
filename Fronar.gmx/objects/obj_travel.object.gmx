@@ -429,7 +429,6 @@ switch(global.overworld_step){
         alarm[1] = 60;
 }
 
-global.travelling = 0;
 </string>
           </argument>
         </arguments>

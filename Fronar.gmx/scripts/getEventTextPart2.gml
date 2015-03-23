@@ -56,7 +56,7 @@ switch(global.event_id) {
                         charself + " and crawl out of the pit, but " + charpronoun + "is bleeding profusely.#" + 
                         "#Turns out the sack is chock-full of non-perishable foodstuffs. Still, someone has a sick sense of humour.#" + 
                         "#+10 Food" + 
-                        "#-10 to " + charname + "'s health, and " + charpronoun + " movement speed is decreased to 1.";
+                        "#-10 to " + charname + "'s health, and " + charposessive + " movement speed is decreased to 1.";
                         break;
                     case 1:
                         text = charname + 
@@ -78,7 +78,7 @@ switch(global.event_id) {
                         "#the spikes. With a scream that sends a flock of birds flying " + charpronoun + " manages to free#" +
                         charself + " and crawl out of the pit, but " + charpronoun + " is bleeding profusely.#" + 
                         "#Turns out the sack is chock-full of horse manure. Someone has a sick sense of humour.#" + 
-                        "#-10 to " + charname + "'s health, and " + charpronoun + " movement speed is decreased to 1.";
+                        "#-10 to " + charname + "'s health, and " + charposessive + " movement speed is decreased to 1.";
                         break;
                     case 2:
                         text = charname + 
@@ -209,7 +209,7 @@ switch(global.event_id) {
                     "#group came. Here's hoping " + char1pronoun + " makes it back alive." +
                     "##If they don’t, that’s one less mouth to feed." + 
                     "##" + char1 + " dies.";
-
+                    break;
                 case 1:
                     text += '"' + "I've had enough of your bullshit, " + char1 + ". You're always pulling shit like this, but not" +
                     '#anymore."' + 
@@ -228,5 +228,43 @@ switch(global.event_id) {
             }
             return text;
             break;
+        case 8:
+            //Library
+            text = "";
+            char3id = 0;
+            if(ds_list_size(global.eventCharList) > 2) {
+                char3id = 2;
+            }
+            char1 = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1);
+            char2 = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1);
+            char3 = ds_list_find_value(ds_list_find_value(global.eventCharList, char3id), 1);
+            char1gender = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 0);
+            char2gender = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 0);
+            char3gender = ds_list_find_value(ds_list_find_value(global.eventCharList, char3id), 0);
+            char1pronoun = getGenderedPronoun(char1gender, false);
+            char1pronouncaps = getGenderedPronoun(char1gender, true);
+            char2pronoun = getGenderedPronoun(char2gender, true);
+            char3pronoun = getGenderedPronoun(char3gender, false); 
+            char1posessive = getGenderedPosessive(char1gender, false);   
+            char2posessive = getGenderedPosessive(char2gender, false); 
+            char3posessive = getGenderedPosessive(char3gender, false); 
+            char1self = getGenderedSelf(char1gender, false);
+            switch(global.event_selected_option){ 
+                case 0:
+                    text += char1pronouncaps + " takes the book to the front desk and reaches for " + char1posessive + " library card" +
+                    "#inside, and stops." +
+                    '##"Force of habit," ' + char1pronoun + " laughs to " + char1self + "." +
+                    "##+5 to Crew's Damage";
+                    break;
+                case 1:
+                    text += char2pronoun + " opens it up to the chapter on bandages and gets to reading." + 
+                    "##+10 to Crew's Health";
+                    break;
+                case 2:
+                    text += '"' + "Woah. I didn't know libraries kept this sort of thing," + '" ' + char3pronoun + " says." +
+                    "##+5 to Party's Defense";
+                    break;
+            }
+            return text;
         
 }
