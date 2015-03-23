@@ -49,7 +49,7 @@
           <argument>
             <kind>1</kind>
             <string>///Go to overworld
-room_goto(rm_title_screen)
+room_goto(rm_start);
 </string>
           </argument>
         </arguments>

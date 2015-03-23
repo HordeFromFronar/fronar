@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Generate an event 
-global.event_id = 8;
-//global.event_id = generateEvent();
+//global.event_id = 8;
+global.event_id = generateEvent();
 
 //Don't shuffle if we're on a continuing event
 if(global.next_event == -1) {
@@ -210,7 +210,7 @@ switch(global.event_id){
         if (ds_list_size(global.eventCharList) &gt; 2){
             char3id = 2;
         }
-        char3 = ds_list_find_value(ds_list_find_value(global.eventCharList, 2), char3id);
+        char3 = ds_list_find_value(ds_list_find_value(global.eventCharList, char3id), 1);
         
         obj_event_option_1.text = char1 + " picks up a book on robotics.";
         obj_event_option_2.text = char2 + " swipes a first aid manual that's probably up to date.";
