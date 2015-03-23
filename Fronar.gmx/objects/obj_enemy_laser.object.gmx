@@ -320,7 +320,11 @@ if (!global.tacPause) {
           <argument>
             <kind>1</kind>
             <string>///End attack animation
-laser = 0;
+if (!global.tacPause) {
+    laser = 0;
+} else {
+    alarm[1] = 1;
+}
 
 </string>
           </argument>

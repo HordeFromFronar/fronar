@@ -338,7 +338,11 @@ if (!global.tacPause) {
           <argument>
             <kind>1</kind>
             <string>///End attack animation
-image_index = 0;
+if (!global.tacPause) {
+    image_index = 0;
+} else {
+    alarm[1] = 1;
+}
 
 </string>
           </argument>
