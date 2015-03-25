@@ -53,11 +53,38 @@ alarm[4] = 1;
 
 healing = false;   
 healedAmount = 0;
-        
+
+originalSpeed = moveSpeed;
+slowed = false;
+slowTime = 0;
+
 //Each enemy requires its own grid for collision reasons.
 e_gridSize = 16;
 e_grid = mp_grid_create(-40,-40,round(room_width/e_gridSize) + 10,
                         round(room_height/e_gridSize) + 10,e_gridSize,e_gridSize);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>moveSpeed = originalSpeed;
 </string>
           </argument>
         </arguments>
@@ -543,6 +570,30 @@ if (target) {
     }
 } else {
     image_angle = direction;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Slowing movement
+if (slowed) {
+    alarm[5] = slowTime * room_speed;
 }
 </string>
           </argument>

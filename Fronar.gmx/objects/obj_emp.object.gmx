@@ -28,11 +28,14 @@
             <string>///Init
 image_speed = 0;
 
-damage = 5;
+damage = 2;
 splash_radius = 100;
 evade = 0;
 crit = 0;
+slow_down_time = 5;
+slow_down_speed = 0;
 
+step_count = 0;
 alarm[0] = 5*room_speed;
 </string>
           </argument>
@@ -63,21 +66,51 @@ effect_create_above(ef_cloud, x, y, irandom(splash_radius), c_gray);
 with (obj_enemy) {
     if (point_distance(other.x,other.y,x,y) &lt;= other.splash_radius) {
         damageObj(self, other)
+        slowObj(self, other.slow_down_speed, other.slow_down_time)
     }
 }
 with (obj_enemy_laser) {
     if (point_distance(other.x,other.y,x,y) &lt;= other.splash_radius) {
         damageObj(self, other)
+        slowObj(self, other.slow_down_speed, other.slow_down_time)
     }
 }
 with (obj_enemy_tank) {
     if (point_distance(other.x,other.y,x,y) &lt;= other.splash_radius) {
         damageObj(self, other)
+        slowObj(self, other.slow_down_speed, other.slow_down_time)
     }
 } 
 
 
 with self instance_destroy()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if step_count mod 20 = 0
+{
+    effect_create_above(ef_ellipse, x, y, 0, c_red);
+}
+step_count++;
 </string>
           </argument>
         </arguments>
