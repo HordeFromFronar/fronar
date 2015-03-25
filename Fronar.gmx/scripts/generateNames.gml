@@ -51,19 +51,19 @@ ds_list_add(lastNames,
 names[] = 0;
 
 for (i = 0; i < 7; ++i) {
-    idx = irandom(ds_list_size(firstNamesFemale));
+    idx = irandom(ds_list_size(firstNamesFemale) - 1);
     names[i, 0] = ds_list_find_value(firstNamesFemale, idx);
     ds_list_delete(firstNamesFemale, idx);
 }
 
 for (i = 7; i < 14; ++i) {
-    idx = irandom(ds_list_size(firstNamesMale));
+    idx = irandom(ds_list_size(firstNamesMale) - 1);
     names[i, 0] = ds_list_find_value(firstNamesMale, idx);
     ds_list_delete(firstNamesMale, idx);
 }
 
 for (i = 0; i < 14; ++i) {
-    idx = irandom(ds_list_size(lastNames));
+    idx = irandom(ds_list_size(lastNames) - 1);
     names[i, 1] = ds_list_find_value(lastNames, idx);
     ds_list_delete(lastNames, idx);
 }
