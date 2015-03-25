@@ -29,6 +29,17 @@ age = 18;
 occupation = "";
 interest = "";
 
+// Randomly generate the names once so we can eliminate duplicates
+// This is a bit hacky and generates 14 names. kind of makes sense
+// since we only have 7 female names, though.
+// First 7 are female, remaining 7 are male. This will be a big
+// enough pool of names for the purposes of this demo.
+// Alternatively, we can split the scripts into generateFemaleNames
+// and generateMale names so we're not limited to 7 each, but I'm
+// not going to bother with this for now. - Jess
+names = generateNames()
+name_idx = 0;
+
 while (count) {
     char = ds_list_create();
     //Randomly set gender
@@ -40,8 +51,15 @@ while (count) {
     ds_list_add(char, gender);
     
     //Get a random name
-    generateName(char, gender);
-    
+    if gender == "f" {
+        ds_list_add(char, names[name_idx, 0]);
+        ds_list_add(char, names[name_idx, 1]);
+    } else {
+        ds_list_add(char, names[7+name_idx, 0]);
+        ds_list_add(char, names[7+name_idx, 1]);
+    }
+    ++name_idx;
+
     //Randomly set age
     ds_list_add(char, irandom(47) + 18);
     

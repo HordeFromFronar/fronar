@@ -285,7 +285,7 @@
     <script>scripts\generateClass.gml</script>
     <script>scripts\generateOccupation.gml</script>
     <script>scripts\generateInterest.gml</script>
-    <script>scripts\generateName.gml</script>
+    <script>scripts\generateNames.gml</script>
     <script>scripts\generateResources.gml</script>
     <script>scripts\highlightRange.gml</script>
     <script>scripts\unHighlightRange.gml</script>
