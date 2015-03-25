@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///Init
 image_speed = 0;
+depth = -10
 
 damage = 2;
 splash_radius = 100;
@@ -66,19 +67,19 @@ effect_create_above(ef_cloud, x, y, irandom(splash_radius), c_gray);
 with (obj_enemy) {
     if (point_distance(other.x,other.y,x,y) &lt;= other.splash_radius) {
         damageObj(self, other)
-        slowObj(self, other.slow_down_speed, other.slow_down_time)
+        slowObj(self, other.slow_down_speed, other.slow_down_time);
     }
 }
 with (obj_enemy_laser) {
     if (point_distance(other.x,other.y,x,y) &lt;= other.splash_radius) {
         damageObj(self, other)
-        slowObj(self, other.slow_down_speed, other.slow_down_time)
+        slowObj(self, other.slow_down_speed, other.slow_down_time);
     }
 }
 with (obj_enemy_tank) {
     if (point_distance(other.x,other.y,x,y) &lt;= other.splash_radius) {
         damageObj(self, other)
-        slowObj(self, other.slow_down_speed, other.slow_down_time)
+        slowObj(self, other.slow_down_speed, other.slow_down_time);
     }
 } 
 
