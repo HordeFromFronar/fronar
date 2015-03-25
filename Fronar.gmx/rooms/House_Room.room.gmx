@@ -176,6 +176,7 @@
     <instance objName="obj_light_static" x="400" y="320" name="inst_AE511EAE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_button_medkit" x="1232" y="528" name="inst_2BD99064" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pause_controller" x="304" y="288" name="inst_A6CF71A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_button_emp" x="1216" y="432" name="inst_A00CD220" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_tileset_main" x="0" y="0" w="32" h="32" xo="256" yo="64" id="10001788" name="inst_A8710BAD" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

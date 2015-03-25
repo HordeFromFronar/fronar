@@ -28,6 +28,7 @@
             <string>///Init
 turretCost = 10;
 barricadeCost = 5;
+empCost = 5;
 
 selectedPlc = 0;
 
@@ -133,6 +134,13 @@ switch (selectedPlc) {
     case 2:
         draw_set_alpha(0.5);
         draw_sprite(spr_barricade, 0, 
+        mouse_x - (mouse_x % 32) + 16, 
+        mouse_y - (mouse_y % 32) + 16);
+        draw_set_alpha(1);
+        break;
+    case 3:
+        draw_set_alpha(0.5);
+        draw_sprite(spr_emp, 0, 
         mouse_x - (mouse_x % 32) + 16, 
         mouse_y - (mouse_y % 32) + 16);
         draw_set_alpha(1);
