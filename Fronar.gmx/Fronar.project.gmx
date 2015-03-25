@@ -22,12 +22,14 @@
     <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_crate_fronar</sprite>
     <sprite>sprites\spr_crate_destroyed_fronar</sprite>
+    <sprite>sprites\spr_oil</sprite>
     <sprite>sprites\spr_emp</sprite>
     <sprite>sprites\spr_barricade</sprite>
     <sprite>sprites\spr_turret_gun</sprite>
     <sprite>sprites\spr_turret_base</sprite>
     <sprite>sprites\spr_button_turret</sprite>
     <sprite>sprites\spr_button_barricade</sprite>
+    <sprite>sprites\spr_button_oil</sprite>
     <sprite>sprites\spr_button_emp</sprite>
     <sprite>sprites\spr_button_medkit</sprite>
     <sprite>sprites\spr_title</sprite>
@@ -346,6 +348,7 @@
     <object>objects\obj_grenade</object>
     <object>objects\obj_turret</object>
     <object>objects\obj_turret_base</object>
+    <object>objects\obj_oil</object>
     <object>objects\obj_emp</object>
     <object>objects\obj_wall_inner</object>
     <object>objects\obj_wall_outer</object>
@@ -355,6 +358,7 @@
     <object>objects\obj_crate_destroyed_fronar</object>
     <object>objects\obj_barricade</object>
     <object>objects\obj_button_turret</object>
+    <object>objects\obj_button_oil</object>
     <object>objects\obj_button_emp</object>
     <object>objects\obj_button_barricade</object>
     <object>objects\obj_button_medkit</object>

@@ -592,7 +592,7 @@ if (target) {
           <argument>
             <kind>1</kind>
             <string>///Slowing movement
-if (slowed) {
+if (slowed &amp;&amp; slowTime &gt; 0) {
     alarm[5] = slowTime * room_speed;
 }
 </string>
