@@ -51,6 +51,9 @@ path = path_add();
 alarm[3] = 10;
 alarm[4] = 1;
 
+healing = false;   
+healedAmount = 0;
+        
 //Each enemy requires its own grid for collision reasons.
 e_gridSize = 16;
 e_grid = mp_grid_create(-40,-40,round(room_width/e_gridSize) + 10,

@@ -19,4 +19,7 @@ if (instance_exists(target) && instance_exists(origin)) {
     }
     
     target.hp -= damage;
+    
+    target.healing = false;
+    target.healedAmount = 0;
 }
