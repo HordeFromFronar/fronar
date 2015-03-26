@@ -1,10 +1,10 @@
 //getGenderedSelf(gender)
 gender = argument[0];
 
-if (gender == "m"){
+if (gender == "M"){
     return "himself";
 }
-if (gender == "f"){
+if (gender == "F"){
     return "herself"
 }
 //I DONT KNOW WHAT THIS SHOULD BE/IF WE HAVE TRANS PEOPLE

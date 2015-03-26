@@ -45,13 +45,13 @@ while (count) {
     //Randomly set gender
     rand = irandom(1);
     switch(rand) {
-        case 0: gender = "m"; break;
-        default: gender = "f"; break;
+        case 0: gender = "M"; break;
+        default: gender = "F"; break;
     }
     ds_list_add(char, gender);
     
     //Get a random name
-    if gender == "f" {
+    if gender == "F" {
         ds_list_add(char, names[name_idx, 0]);
         ds_list_add(char, names[name_idx, 1]);
     } else {

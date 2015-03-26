@@ -30,7 +30,7 @@ switch(x) {
         ds_list_add(char, 7); // current health
         
         //portrait id (index)
-        if (gender == "f") {
+        if (gender == "F") {
             switch (irandom(1)) {
                 case 0: ds_list_add(char, 4); break;
                 default: ds_list_add(char, 5); break;
