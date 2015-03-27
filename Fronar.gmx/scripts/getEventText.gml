@@ -45,10 +45,9 @@ switch(global.event_id) {
             text = 
             "While passing through a junkyard, " + char1 + " trips on a plank of wood and falls into a box of what is" +
             + "#unmistakably heroin." +
-            '##"' + "That's definitely heroin," + '"' + " " + char2 + "says. " + '"' + "Don't ask me how I know." + '"' + 
+            '##"' + "That's definitely heroin," + '"' + " " + char2 + " says. " + '"' + "Don't ask me how I know." + '"' + 
             '##"' + "I couldn't help it, it got in my mouth! What am I supposed to do?" + '"' + 
-            '##"' + "Just ride it out, " + char1 + ".  Ride it out." + '"' +
-            "##+5 to " + char1 + "’s Movement Speed";
+            '##"' + "Just ride it out, " + char1 + ".  Ride it out." + '"';
             return text;
             break;
         case 4:

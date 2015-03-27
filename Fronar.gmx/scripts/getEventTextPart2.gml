@@ -158,6 +158,29 @@ switch(global.event_id) {
             }
             return text;
             break;
+        case 3:
+            text = "";
+            char1 = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1);
+            char2 = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1);
+            char1gender = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 0);
+            char1pronoun = getGenderedPronoun(char1gender, false);
+            char1posessive = getGenderedPosessive(char1gender, false);
+            switch(global.event_selected_option){
+                case 0:
+                    text += '"' + "Ugh. I couldn’t get all of it. Am I going to be okay?" + '"' + 
+                    '##"' + "I guess we’ll find out," + '" ' + char2 + " says." + 
+                    "##+1 to " + char1 + "'s Movement Speed."; 
+                    break;
+                case 1:
+                    text += '"' + "Hmm. Tastes kind of… salty. Is it supposed to be salty?" + '" ' + char1 + " asks. " + char1pronoun + " licks" + 
+                    "#" + char1posessive + " lips." + 
+                    '##"' + "I wouldn't know anything about it," + '" ' + char2 + " says." + 
+                    "##-30 to " + char1 + "'s Health." + 
+                    "#+2 to " + char1 + "'s Movement Speed.";                
+                    break;
+            }
+            return text;
+            break;
         case 5:
             text = "";
             char1 = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1);
@@ -168,7 +191,6 @@ switch(global.event_id) {
             char2pronoun = getGenderedPronoun(char2gender, false);
             char1posessive = getGenderedPosessive(char1gender, false);
             char1objective = getGenderedObjective(char1gender);
-            show_debug_message("event text being generated option " + string(global.event_selected_option));
             switch(global.event_selected_option){
                 case 0:
                     text += "Inside, " + char1 + " sits down on one of the benches and stares into the empty ring. " + char1pronoun + 

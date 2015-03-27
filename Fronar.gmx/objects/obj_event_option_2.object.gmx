@@ -129,6 +129,13 @@ if (!global.event_part2){
             modifyFood(-10);
             modifyMedicine(5);
             break;
+        case 3:
+            //Box of Heroin
+            //-30 Health
+            ds_list_replace(ds_list_find_value(global.eventCharList, charId), 7 ,ds_list_find_value(ds_list_find_value(global.eventCharList, charId), 7) - 30);      
+            //+2 Movespeed
+            ds_list_replace(ds_list_find_value(global.eventCharList, charId), 10,ds_list_find_value(ds_list_find_value(global.eventCharList, charId), 10) + 2);
+            break;
         case 5:
             //Circus
             modifyFood(12);
