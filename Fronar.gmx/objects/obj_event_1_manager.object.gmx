@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Generate an event 
-global.event_id = 4;
-//global.event_id = generateEvent();
+//global.event_id = 4;
+global.event_id = generateEvent();
 
 //Don't shuffle if we're on a continuing event
 if(global.next_event == -1) {
@@ -83,14 +83,19 @@ switch(global.event_id){
         //Abandoned Shack        
         draw_text(x1+32, y1+32, getEventText());
         obj_event_option_1.text = "Give the bayonet to " +  ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1);
-        obj_event_option_2.text = "Give the bayonet to " +  ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1);
-        obj_event_option_3.text = "Give the bayonet to " +  ds_list_find_value(ds_list_find_value(global.eventCharList, 2), 1);
         obj_event_option_1.charId = 0;
-        obj_event_option_2.charId = 1;
-        obj_event_option_3.charId = 2;
-        obj_event_option_1.y1 = 10*32;
-        obj_event_option_2.y1 = 11*32;
-        obj_event_option_3.y1 = 12*32;
+        obj_event_option_1.y1 = 10*32;       
+        if(ds_list_size(global.eventCharList) &gt;= 2){
+            obj_event_option_2.text = "Give the bayonet to " +  ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1);
+            obj_event_option_2.charId = 1;
+            obj_event_option_2.y1 = 11*32;
+        }
+        if(ds_list_size(global.eventCharList) &gt;= 3) {
+            obj_event_option_3.text = "Give the bayonet to " +  ds_list_find_value(ds_list_find_value(global.eventCharList, 2), 1);
+            obj_event_option_3.charId = 2;
+            obj_event_option_3.y1 = 12*32;
+        }
+
         if(global.event_part2){
             //Display the second part of the scenario
             depth = -1;
