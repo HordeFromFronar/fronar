@@ -114,6 +114,24 @@ if (!global.event_part2){
             //+1 Movespeed
             ds_list_replace(ds_list_find_value(global.eventCharList, charId), 10,ds_list_find_value(ds_list_find_value(global.eventCharList, charId), 10) + 1);
             break;
+        case 4:
+            //Lightning
+            subevent = irandom(2);
+            if(subevent &lt;= 1) {
+                //2/3rds chance
+                //+1 Crew Attack Speed
+                global.event_subevent = 0;
+                var i;
+                for(i = 0; i &lt; ds_list_size(global.eventCharList); ++i){
+                    ds_list_replace(ds_list_find_value(global.eventCharList, i), 12 ,ds_list_find_value(ds_list_find_value(global.eventCharList, i), 12) + 1);      
+                }
+            } else {
+                //1/3rd chance
+                //-1 Character Attack Speed
+                global.event_subevent = 1;
+                ds_list_replace(ds_list_find_value(global.eventCharList, 0), 12 ,ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 12) - 1);      
+            }
+            break;
         case 5:
             //Circus
             modifyMedicine(5);

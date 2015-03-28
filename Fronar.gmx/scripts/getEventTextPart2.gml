@@ -159,6 +159,7 @@ switch(global.event_id) {
             return text;
             break;
         case 3:
+            //Box of Heroin
             text = "";
             char1 = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1);
             char2 = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1);
@@ -177,6 +178,39 @@ switch(global.event_id) {
                     '##"' + "I wouldn't know anything about it," + '" ' + char2 + " says." + 
                     "##-30 to " + char1 + "'s Health." + 
                     "#+2 to " + char1 + "'s Movement Speed.";                
+                    break;
+            }
+            return text;
+            break;
+        case 4:
+            //Lightning
+            text = "";
+            char = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1);
+            gender = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 0);
+            charpronoun = getGenderedPronoun(gender, true);
+            charself = getGenderedSelf(gender, false);
+            charposessive = getGenderedPosessive(gender, false); 
+            switch(global.event_selected_option){
+                case 0:
+                    if (global.event_subevent == 0) {
+                        text += '"' + "We're so lucky!" + '" ' + char + ' says. "' + charpronoun + " throws " + charself + " into a bush of flowers that pillows" +
+                        "#" + charposessive + 'fall. "' + "Who’d have thought getting struck by lightning would be such a good thing!" + '"' +
+                        "##+1 to Crew's Attack Speed";
+                    }
+                    else {
+                        text += '"' + "We’re so lucky! " + char + " says. " + '"' + "Who’d have thought getting struck by lightning would be such a" + 
+                        "#good thing!" + '" ' + charpronoun + " throw " + charself + " into a pile of tall grass, then immediately shrieks." +
+                        '##"' + "What the hell is that!" + '"' +
+                        "##" + char + " climbs out of the grass pile on all fours, an empty syringe sticking out of " + charposessive + 
+                        "#backside." + 
+                        '##"Sonofabitch," ' + char + ' says.  "' + "There's the other shoe." + '"' +
+                        "##-1 to " + char + "'s Attack Speed.";
+                    }
+                    break;
+                case 1:
+                    text += '"' + "Let’s just be thankful we’re not burned to a crisp," + '" ' + char + " says. " + charpronoun + 
+                    " hefts " + charposessive + " weapon" +
+                    "#back onto " + char1posessive + " shoulder, and the crew keeps moving.";
                     break;
             }
             return text;
