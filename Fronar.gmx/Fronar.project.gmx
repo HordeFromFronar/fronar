@@ -334,6 +334,7 @@
       <font>fonts\font_glare2</font>
       <font>fonts\font_glare</font>
     </fonts>
+    <font>fonts\ArcadeClassic</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_char</object>
