@@ -451,6 +451,7 @@
     <room>rooms\rm_worldmap_1</room>
     <room>rooms\rm_event_1</room>
     <room>rooms\House_Room</room>
+    <room>rooms\House_Room2</room>
     <room>rooms\rm_test_2</room>
     <room>rooms\rm_test_1</room>
     <room>rooms\rm_night_level1</room>
@@ -467,6 +468,7 @@
       <room>rooms\room_daylight</room>
       <room>rooms\room_mobile_test</room>
     </rooms>
+    <room>rooms\template_doNOTdelete</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
