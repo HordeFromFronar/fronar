@@ -134,20 +134,20 @@ if (global.selected &amp;&amp; medkits &gt; 0) {
             <kind>1</kind>
             <string>if (global.selected) {
     if (instance_exists(global.selected)) {
+        depth = -7;
         draw_self();
+        if (alt) {
+            draw_set_color(c_black);
+            //Draw some sort of background
+            draw_rectangle (x - 475, y , x, y + 80, false);
+            //Draw the alt text
+            draw_set_color(c_white);
+            draw_text(x - 459, y + 8, "3##Replenishes the selected character's health by 50 #over 10 seconds.");
+            draw_sprite( spr_icon_medkit, 0, x - 445, y );  
+        }        
     }
 }
-depth = -7;
-draw_self();
-if (alt) {
-    draw_set_color(c_black);
-    //Draw some sort of background
-    draw_rectangle (x - 475, y , x, y + 80, false);
-    //Draw the alt text
-    draw_set_color(c_white);
-    draw_text(x - 459, y + 8, "3##Replenishes the selected character's health by 50 #over 10 seconds.");
-    draw_sprite( spr_icon_medkit, 0, x - 445, y );  
-}
+
 
 </string>
           </argument>

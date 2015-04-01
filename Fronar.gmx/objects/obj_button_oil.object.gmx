@@ -126,22 +126,21 @@ if (global.selected) {
             <kind>1</kind>
             <string>if (global.selected) {
     if (instance_exists(global.selected)) {
+        depth = -8;
         draw_self();
+        if (alt) {
+            draw_set_color(c_black);
+            //Draw some sort of background
+            draw_rectangle (x - 495, y - 48, x, y + 32, false);
+            //Draw the alt text
+            draw_set_color(c_white);
+            draw_text(x - 480, y - 38, "4##Permanently slows Borgis that pass through it, and#deals a small amount of damage. Disappears over time.
+        ");
+            draw_sprite( spr_icon_parts, 0, x - 465, y - 48 );  
+        }        
     }
 }
-///Handle alt text
-depth = -8;
-draw_self();
-if (alt) {
-    draw_set_color(c_black);
-    //Draw some sort of background
-    draw_rectangle (x - 495, y - 48, x, y + 32, false);
-    //Draw the alt text
-    draw_set_color(c_white);
-    draw_text(x - 480, y - 38, "4##Permanently slows Borgis that pass through it, and#deals a small amount of damage. Disappears over time.
-");
-    draw_sprite( spr_icon_parts, 0, x - 465, y - 48 );  
-}
+
 
 </string>
           </argument>
