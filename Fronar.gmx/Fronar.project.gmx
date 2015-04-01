@@ -81,18 +81,20 @@
       <sprite>sprites\spr_light_mask_spot</sprite>
     </sprites>
     <sprite>sprites\spr_footstep</sprite>
-    <sprite>sprites\spr_alt_food</sprite>
     <sprite>sprites\spr_alt_parts</sprite>
     <sprite>sprites\spr_alt_med</sprite>
     <sprite>sprites\apr_alt_damage</sprite>
-    <sprite>sprites\spr_alt_defense</sprite>
-    <sprite>sprites\spr_alt_movespeed</sprite>
-    <sprite>sprites\spr_alt_atkspeed</sprite>
-    <sprite>sprites\spr_alt_turret</sprite>
-    <sprite>sprites\spr_alt_titanium</sprite>
-    <sprite>sprites\spr_alt_barricade</sprite>
     <sprite>sprites\spr_alt_oilslick</sprite>
-    <sprite>sprites\spr_alt_usemedkit</sprite>
+    <sprite>sprites\spr_button_menu</sprite>
+    <sprite>sprites\spr_button_tactical</sprite>
+    <sprite>sprites\spr_sm_portrait</sprite>
+    <sprite>sprites\spr_icon_damage</sprite>
+    <sprite>sprites\spr_icon_defense</sprite>
+    <sprite>sprites\spr_icon_atkspd</sprite>
+    <sprite>sprites\spr_icon_speed</sprite>
+    <sprite>sprites\spr_icon_parts</sprite>
+    <sprite>sprites\spr_icon_food</sprite>
+    <sprite>sprites\spr_icon_medkit</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_title</background>
@@ -429,19 +431,17 @@
       <object>objects\obj_glare_controller</object>
     </objects>
     <object>objects\obj_footstep</object>
-    <object>objects\obj_alt_food</object>
-    <object>objects\obj_alt_parts</object>
-    <object>objects\obj_alt_medkits</object>
-    <object>objects\obj_alt_damage</object>
-    <object>objects\obj_alt_defense</object>
-    <object>objects\obj_alt_movespeed</object>
-    <object>objects\obj_alt_atkspeed</object>
-    <object>objects\obj_alt_turret</object>
-    <object>objects\obj_alt_titanium</object>
-    <object>objects\obj_alt_barricade</object>
-    <object>objects\obj_alt_oilslick</object>
-    <object>objects\obj_alt_usemedkit</object>
     <object>objects\obj_pause_controller</object>
+    <object>objects\obj_night_ui_manager</object>
+    <object>objects\obj_button_menu</object>
+    <object>objects\obj_button_tactical</object>
+    <object>objects\obj_icon_damage</object>
+    <object>objects\obj_icon_defense</object>
+    <object>objects\obj_icon_speed</object>
+    <object>objects\obj_icon_atkspd</object>
+    <object>objects\obj_icon_parts</object>
+    <object>objects\obj_icon_medkit</object>
+    <object>objects\obj_icon_food</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
@@ -450,9 +450,9 @@
     <room>rooms\rm_opening_cutscene</room>
     <room>rooms\rm_crew_select_1</room>
     <room>rooms\rm_worldmap_1</room>
-    <room>rooms\rm_event_1</room>
     <room>rooms\House_Room</room>
     <room>rooms\House_Room2</room>
+    <room>rooms\rm_event_1</room>
     <room>rooms\rm_test_2</room>
     <room>rooms\rm_test_1</room>
     <room>rooms\rm_night_level1</room>

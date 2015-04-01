@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>//Draw debug info
-
-if (global.selected) {
+debug = false;
+if(debug) {
     if (instance_exists(global.selected)) {
         draw_text_color(x,y,"Selected ID: " + string(global.selected) +
         "#X: " + string(global.selected.x) +
