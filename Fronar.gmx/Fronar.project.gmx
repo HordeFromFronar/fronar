@@ -450,7 +450,8 @@
     <room>rooms\rm_opening_cutscene</room>
     <room>rooms\rm_crew_select_1</room>
     <room>rooms\rm_worldmap_1</room>
-    <room>rooms\House_Room</room>
+    <room>rooms\House_RoomOLD</room>
+    <room>rooms\House_RoomNEW</room>
     <room>rooms\House_Room2</room>
     <room>rooms\rm_event_1</room>
     <room>rooms\rm_test_2</room>
