@@ -94,16 +94,17 @@ p_grid = mp_grid_create(-8,-8,round(room_width/p_gridSize) + 10,
 
 if (!global.tacPause) {
     target_melee = instance_nearest(x, y, obj_enemy);
+    target_ranged = instance_nearest(x, y, obj_enemy_laser);
     
-    nearest_laser = instance_nearest(x, y, obj_enemy_laser);
-    nearest_tank = instance_nearest(x, y, obj_enemy_tank);
+//    nearest_laser = instance_nearest(x, y, obj_enemy_laser);
+//    nearest_tank = instance_nearest(x, y, obj_enemy_tank);
     
-    if (point_distance(x, y, nearest_laser.x, nearest_laser.y) &lt; 
-        point_distance(x, y, nearest_tank.x, nearest_tank.y)){
-        target_ranged = instance_nearest(x, y, obj_enemy_laser);
-    } else {
-        target_ranged = instance_nearest(x, y, obj_enemy_tank);
-    }
+//    if (point_distance(x, y, nearest_laser.x, nearest_laser.y) &lt; 
+//        point_distance(x, y, nearest_tank.x, nearest_tank.y)){
+//        target_ranged = instance_nearest(x, y, obj_enemy_laser);
+//    } else {
+//        target_ranged = instance_nearest(x, y, obj_enemy_tank);
+//    }
     
     
     if (distance_to_object(target_melee) &lt;= distance_to_object(target_ranged)) {
@@ -161,16 +162,17 @@ if (!global.tacPause) {
             
             with(instance_create(x,y,bullet)) {
                 target_melee = instance_nearest(x, y, obj_enemy);
+                target_ranged = instance_nearest(x, y, obj_enemy_laser);
     
-                nearest_laser = instance_nearest(x, y, obj_enemy_laser);
-                nearest_tank = instance_nearest(x, y, obj_enemy_tank);
+//                nearest_laser = instance_nearest(x, y, obj_enemy_laser);
+//                nearest_tank = instance_nearest(x, y, obj_enemy_tank);
     
-                if (point_distance(x, y, nearest_laser.x, nearest_laser.y) &lt; 
-                    point_distance(x, y, nearest_tank.x, nearest_tank.y)){
-                    target_ranged = instance_nearest(x, y, obj_enemy_laser);
-                } else {
-                    target_ranged = instance_nearest(x, y, obj_enemy_tank);
-                }
+//                if (point_distance(x, y, nearest_laser.x, nearest_laser.y) &lt; 
+//                    point_distance(x, y, nearest_tank.x, nearest_tank.y)){
+//                    target_ranged = instance_nearest(x, y, obj_enemy_laser);
+//                } else {
+//                    target_ranged = instance_nearest(x, y, obj_enemy_tank);
+//                }
                 
                 if (distance_to_object(target_melee) &lt;= distance_to_object(target_ranged)) {
                     target = target_melee;
@@ -289,16 +291,17 @@ else {
 if (!healing &amp;&amp; !global.tacPause) {
 
     target_melee = instance_nearest(x, y, obj_enemy);
+    target_ranged = instance_nearest(x, y, obj_enemy_laser);
     
-    nearest_laser = instance_nearest(x, y, obj_enemy_laser);
-    nearest_tank = instance_nearest(x, y, obj_enemy_tank);
+//    nearest_laser = instance_nearest(x, y, obj_enemy_laser);
+//    nearest_tank = instance_nearest(x, y, obj_enemy_tank);
     
-    if (point_distance(x, y, nearest_laser.x, nearest_laser.y) &lt; 
-        point_distance(x, y, nearest_tank.x, nearest_tank.y)){
-        target_ranged = instance_nearest(x, y, obj_enemy_laser);
-    } else {
-        target_ranged = instance_nearest(x, y, obj_enemy_tank);
-    }
+//    if (point_distance(x, y, nearest_laser.x, nearest_laser.y) &lt; 
+//        point_distance(x, y, nearest_tank.x, nearest_tank.y)){
+//        target_ranged = instance_nearest(x, y, obj_enemy_laser);
+//    } else {
+//        target_ranged = instance_nearest(x, y, obj_enemy_tank);
+//    }
     
     if (distance_to_object(target_melee) &lt;= distance_to_object(target_ranged)) {
         target = target_melee;
@@ -359,16 +362,17 @@ if (!healing &amp;&amp; !global.tacPause) {
             
             with(instance_create(x,y,bullet)) {
                 target_melee = instance_nearest(x, y, obj_enemy);
+                target_ranged = instance_nearest(x, y, obj_enemy_laser);
                 
-                nearest_laser = instance_nearest(x, y, obj_enemy_laser);
-                nearest_tank = instance_nearest(x, y, obj_enemy_tank);
+//                nearest_laser = instance_nearest(x, y, obj_enemy_laser);
+//                nearest_tank = instance_nearest(x, y, obj_enemy_tank);
     
-                if (point_distance(x, y, nearest_laser.x, nearest_laser.y) &lt; 
-                    point_distance(x, y, nearest_tank.x, nearest_tank.y)){
-                    target_ranged = instance_nearest(x, y, obj_enemy_laser);
-                } else {
-                    target_ranged = instance_nearest(x, y, obj_enemy_tank);
-                }
+//                if (point_distance(x, y, nearest_laser.x, nearest_laser.y) &lt; 
+//                    point_distance(x, y, nearest_tank.x, nearest_tank.y)){
+//                    target_ranged = instance_nearest(x, y, obj_enemy_laser);
+//                } else {
+//                    target_ranged = instance_nearest(x, y, obj_enemy_tank);
+//                }
                 
                 if (distance_to_object(target_melee) &lt;= distance_to_object(target_ranged)) {
                     target = target_melee;
