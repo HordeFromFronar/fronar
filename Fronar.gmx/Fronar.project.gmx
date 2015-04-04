@@ -307,6 +307,7 @@
     <script>scripts\getExclamationX.gml</script>
     <script>scripts\getExclamationY.gml</script>
     <script>scripts\getGenderedPosessive.gml</script>
+    <script>scripts\getGenderWord.gml</script>
     <script>scripts\getGenderedPronoun.gml</script>
     <script>scripts\getGenderedSelf.gml</script>
     <script>scripts\getGenderedObjective.gml</script>
@@ -442,6 +443,7 @@
     <object>objects\obj_icon_parts</object>
     <object>objects\obj_icon_medkit</object>
     <object>objects\obj_icon_food</object>
+    <object>objects\obj_small_portrait</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
