@@ -35,7 +35,7 @@ if(global.travelling == 0 &amp;&amp; visible){
             room_goto(House_Room);
             break;
         case 7:
-            room_goto(rm_game_win);
+            room_goto(House_Room2);
             break;
     }
 }

@@ -428,6 +428,7 @@ switch(global.overworld_step){
        //display "Defend" button 
        obj_travel.visible = false;
        obj_defend.visible = true;
+       global.travelling = 0;
        break;
     default:
         //If we're not at an event or a night time, restart the timer
