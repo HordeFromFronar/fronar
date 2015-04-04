@@ -64,6 +64,8 @@ wave_frequency = 10; // seconds between waves
             <string>///DO SPAWN
 // Right now it's room specific, this will need to change if we do procedural gen.
 
+audio_play_sound(snd_Borgi_Howl, 1, false);
+
 alarm[0] = room_speed * wave_frequency;
 
 ++wave;

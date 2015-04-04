@@ -423,6 +423,7 @@ if (!global.tacPause) {
             }
         }
         if (sight){
+            audio_play_sound(snd_Laser, 1, false);
             attacking = 1;
             alarm[0] = 30 / rate;
             drawTarget = target;
@@ -540,6 +541,7 @@ if (target &amp;&amp; !attacking) {
             <kind>1</kind>
             <string>///Health management
 if (hp &lt;= 0) {
+    audio_play_sound(snd_Borgi_Die, 1, false);
     instance_destroy();
 }
 </string>

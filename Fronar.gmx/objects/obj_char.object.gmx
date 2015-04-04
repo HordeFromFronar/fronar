@@ -158,6 +158,9 @@ if (!global.tacPause) {
             bullet = obj_bullet_fronar;
             if (class == "Grenadier") {
                 bullet = obj_grenade;
+                audio_play_sound(snd_Grenade_Launch, 1, false);
+            } else {
+                audio_play_sound(snd_Gunshot, 1, false);
             }
             
             with(instance_create(x,y,bullet)) {
@@ -418,7 +421,20 @@ if (hp &lt;= 0) {
     if (global.selected = id) {
         global.selected = 0;
     }
-
+    switch(portraitId mod 4) {
+        case 0: 
+            audio_play_sound(snd_Scream_f1, 1, false);
+            break;
+        case 1:
+            audio_play_sound(snd_Scream_f2, 1, false);
+            break;
+        case 2:
+            audio_play_sound(snd_Scream_m1, 1, false);
+            break;
+        case 3:
+            audio_play_sound(snd_Scream_m2, 1, false);
+            break;
+    }
     instance_destroy();
 }
 

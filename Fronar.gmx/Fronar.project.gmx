@@ -8,6 +8,21 @@
   </NewExtensions>
   <sounds name="sound">
     <sound>sound\snd_title</sound>
+    <sound>sound\snd_Night</sound>
+    <sound>sound\snd_Horn</sound>
+    <sound>sound\snd_Start</sound>
+    <sound>sound\snd_Menu</sound>
+    <sound>sound\snd_Event</sound>
+    <sound>sound\snd_Scream_m1</sound>
+    <sound>sound\snd_Scream_m2</sound>
+    <sound>sound\snd_Scream_f1</sound>
+    <sound>sound\snd_Scream_f2</sound>
+    <sound>sound\snd_Borgi_Die</sound>
+    <sound>sound\snd_Borgi_Howl</sound>
+    <sound>sound\snd_Gunshot</sound>
+    <sound>sound\snd_Grenade_Launch</sound>
+    <sound>sound\snd_Grenade_Explode</sound>
+    <sound>sound\snd_Laser</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_char</sprite>
@@ -447,12 +462,12 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
+    <room>rooms\House_Room</room>
     <room>rooms\rm_splash_screen</room>
     <room>rooms\rm_title_screen</room>
     <room>rooms\rm_opening_cutscene</room>
     <room>rooms\rm_crew_select_1</room>
     <room>rooms\rm_worldmap_1</room>
-    <room>rooms\House_Room</room>
     <room>rooms\House_RoomT</room>
     <room>rooms\House_Room2</room>
     <room>rooms\rm_event_1</room>

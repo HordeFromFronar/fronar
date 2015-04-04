@@ -81,6 +81,7 @@ if (global.tacPause) {
 splash_radius = 100;
 
 if (place_meeting(x,y,obj_enemy) || place_meeting(x,y,obj_enemy_laser) || place_meeting(x,y,obj_enemy_tank)) {
+    audio_play_sound(snd_Grenade_Explode, 1, false);
     with (obj_enemy) {
         if (point_distance(other.x,other.y,x,y) &lt;= other.splash_radius) {
             damageObj(self, other.origin)
@@ -102,7 +103,8 @@ if (place_meeting(x,y,obj_enemy) || place_meeting(x,y,obj_enemy_laser) || place_
     instance_destroy(); 
 }
 
-if (place_meeting(x,y,obj_wall_inner) || place_meeting(x,y,obj_wall_outer)) {   
+if (place_meeting(x,y,obj_wall_inner) || place_meeting(x,y,obj_wall_outer)) {
+    audio_play_sound(snd_Grenade_Explode, 1, false);   
     effect_create_above(ef_explosion, x, y, 3, c_black);
     effect_create_above(ef_explosion, x, y, 7, c_gray);
     instance_destroy(); 
