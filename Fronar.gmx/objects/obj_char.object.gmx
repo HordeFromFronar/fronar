@@ -625,6 +625,7 @@ if (x == xDest &amp;&amp; y == yDest &amp;&amp; buildOrder) {
             <string>///Select call
 
 select(id);
+//select(charID);
 </string>
           </argument>
         </arguments>

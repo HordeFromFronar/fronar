@@ -120,6 +120,17 @@ for (i = 0; i &lt; ds_list_size(global.charList); ++i){
         draw_text_transformed(portrait_x, 114, string(10*ds_list_find_value(char, 10)), 2, 2, 0);
         draw_text_transformed(portrait_x, 146, string(10*ds_list_find_value(char, 12)), 2, 2, 0);
     }
+    
+    if(selected &amp;&amp; i == selected.charID){
+        //show_debug_message(string(i) + " is selected");
+        //olddepth = depth;
+        depth = -15;
+        draw_set_color(c_gray);
+        draw_rectangle(portrait_x, 0, portrait_x + 50, 49, true);
+        //draw_rectangle(0,0,50,50,true);
+        draw_set_color(c_white);
+       //depth = olddepth;
+    }
 }
 
 //Draw Resource Totals
