@@ -50,6 +50,7 @@
           <argument>
             <kind>1</kind>
             <string>///Play horn
+audio_stop_all();
 audio_play_sound(snd_Horn, 1, false);
 </string>
           </argument>
