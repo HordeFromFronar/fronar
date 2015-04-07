@@ -40,11 +40,11 @@ movespeed = instance_create(xmax - 96 - ds_list_size(charList), 114, obj_icon_sp
 atkspeed = instance_create(xmax - 96 - ds_list_size(charList), 146, obj_icon_atkspd); 
 
 //Draw bottom right corner buttons
-instance_create(1152, 544, obj_button_medkit);
-instance_create(1104, 560, obj_button_turret);
-instance_create(1104, 624, obj_button_barricade);
-instance_create(1168, 688, obj_button_emp);
-instance_create(1232, 688, obj_button_oil);
+instance_create(1152, 512, obj_button_medkit);
+instance_create(1088, 512, obj_button_turret);
+instance_create(1088, 576, obj_button_barricade);
+instance_create(1216, 640, obj_button_emp);
+instance_create(1152, 640, obj_button_oil);
 
 //Draw Top Left Icons
 instance_create(32, 32, obj_icon_food);
