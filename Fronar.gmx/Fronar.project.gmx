@@ -110,6 +110,7 @@
     <sprite>sprites\spr_icon_parts</sprite>
     <sprite>sprites\spr_icon_food</sprite>
     <sprite>sprites\spr_icon_medkit</sprite>
+    <sprite>sprites\spr_event_border</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_title</background>
