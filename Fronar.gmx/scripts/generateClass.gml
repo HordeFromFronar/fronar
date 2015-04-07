@@ -57,15 +57,15 @@ switch(x) {
         ds_list_add(char, 8); // current health
         
         //portrait id (index) --- TODO currently all v1 female grenadiers because that's all we have
-        if (gender == "f") {
+        if (gender == "F") {
             switch (irandom(1)) {
                 case 0: ds_list_add(char, 12); break;
-                default: ds_list_add(char, 12); break;
+                default: ds_list_add(char, 13); break;
             }
         } else {
             switch (irandom(1)) {
-                case 0: ds_list_add(char, 12); break;
-                default: ds_list_add(char, 12); break;
+                case 0: ds_list_add(char, 14); break;
+                default: ds_list_add(char, 15); break;
             }
         }
         
@@ -84,7 +84,7 @@ switch(x) {
         ds_list_add(char, 10); // current health
         
         //portrait id (index)
-        if (gender == "f") {
+        if (gender == "F") {
             switch (irandom(1)) {
                 case 0: ds_list_add(char, 0); break;
                 default: ds_list_add(char, 1); break;
