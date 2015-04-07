@@ -92,6 +92,7 @@ if(global.overworld_step &gt; 6){
     <instance objName="obj_defend" x="640" y="608" name="inst_D798FBA9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_current_location" x="448" y="224" name="inst_8C70588B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_exclamation_1" x="256" y="352" name="inst_BA223DAF" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_event_ui_manager" x="0" y="0" name="inst_41AB93C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

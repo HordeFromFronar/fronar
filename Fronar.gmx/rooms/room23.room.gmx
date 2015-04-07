@@ -171,7 +171,6 @@ audio_play_sound(snd_Night_Theme,10,1);</code>
     <instance objName="obj_light_static" x="368" y="320" name="inst_D8C330A2" locked="0" code="" scaleX="0.100000001490116" scaleY="0.100000001490116" colour="4294967295" rotation="0"/>
     <instance objName="obj_light_static" x="864" y="416" name="inst_5C263260" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light_static" x="224" y="400" name="inst_AC80BF75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="784" y="224" name="inst_FD690978" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_outer" x="752" y="416" name="inst_CC530510" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall_outer" x="752" y="416" name="inst_7C4F128F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall_outer" x="752" y="384" name="inst_19DCC49F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>

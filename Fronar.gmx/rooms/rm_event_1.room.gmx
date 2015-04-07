@@ -55,8 +55,11 @@
     <instance objName="obj_event_option_1" x="192" y="320" name="inst_E082E899" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_event_option_2" x="192" y="352" name="inst_45A3F0DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_event_option_3" x="192" y="384" name="inst_E7FFB274" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_event_continue" x="640" y="672" name="inst_3102482B" locked="0" code="" scaleX="0.575999975204468" scaleY="0.512000024318695" colour="4294967295" rotation="0"/>
+    <instance objName="obj_event_continue" x="608" y="672" name="inst_3102482B" locked="0" code="" scaleX="0.575999975204468" scaleY="0.512000024318695" colour="4294967295" rotation="0"/>
     <instance objName="obj_event_option_4" x="192" y="416" name="inst_B1E887FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_event_ui_manager" x="32" y="0" name="inst_B9CA06B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_event_ui_manager" x="736" y="640" name="inst_8D0629F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_event_ui_manager" x="512" y="768" name="inst_6B42D186" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

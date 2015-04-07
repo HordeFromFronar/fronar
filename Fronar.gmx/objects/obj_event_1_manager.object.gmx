@@ -71,7 +71,7 @@ global.event_part2 = false;
 //Draw the Background for the event
 depth = 1;
 draw_set_colour(c_black);
-x1 = 5*32;
+x1 = 4*32;
 y1 = 3*32;
 x2 = 1280-5*32;
 y2 = 720-3*32;
@@ -94,7 +94,7 @@ switch(global.event_id){
         if(ds_list_size(global.eventCharList) &gt;= 3) {
             obj_event_option_3.text = "Give the bayonet to " +  ds_list_find_value(ds_list_find_value(global.eventCharList, 2), 1);
             obj_event_option_3.charId = 2;
-            obj_event_option_3.y1 = 11*32;
+            obj_event_option_3.y1 = 10*32;
         }
 
         if(global.event_part2){

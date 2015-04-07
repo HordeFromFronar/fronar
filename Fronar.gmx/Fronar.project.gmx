@@ -476,6 +476,7 @@
     <object>objects\obj_footstep</object>
     <object>objects\obj_pause_controller</object>
     <object>objects\obj_night_ui_manager</object>
+    <object>objects\obj_event_ui_manager</object>
     <object>objects\obj_button_menu</object>
     <object>objects\obj_button_tactical</object>
     <object>objects\obj_icon_damage</object>
@@ -515,7 +516,6 @@
     <room>rooms\House_RoomT</room>
     <room>rooms\room23</room>
     <room>rooms\House_Room</room>
-    <room>rooms\House_Room2</room>
     <room>rooms\rm_event_1</room>
     <room>rooms\rm_test_2</room>
     <room>rooms\rm_test_1</room>

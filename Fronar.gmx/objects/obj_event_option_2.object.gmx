@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x1 = 6*32;
+            <string>x1 = 5*32;
 y1 = 11*32;
 x = x1;
 y = y1;
