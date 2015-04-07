@@ -143,7 +143,7 @@ if (!global.event_part2){
             break;
         case 8:
             //Library
-            ds_list_replace(ds_list_find_value(global.eventCharList, i), 11 ,ds_list_find_value(ds_list_find_value(global.eventCharList, i), 11) + 5);      
+            ds_list_replace(ds_list_find_value(global.eventCharList, charId), 11 ,ds_list_find_value(ds_list_find_value(global.eventCharList, i), 11) + 5);      
             break;
     }
 }
