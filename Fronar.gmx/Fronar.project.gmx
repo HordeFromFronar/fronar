@@ -23,6 +23,9 @@
     <sound>sound\snd_Grenade_Launch</sound>
     <sound>sound\snd_Grenade_Explode</sound>
     <sound>sound\snd_Laser</sound>
+    <sound>sound\snd_Title_Theme</sound>
+    <sound>sound\snd_Map_Theme</sound>
+    <sound>sound\snd_Night_Theme</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_char</sprite>
