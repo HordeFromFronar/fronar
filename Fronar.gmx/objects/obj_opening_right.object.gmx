@@ -51,7 +51,7 @@
             <string>//Go to crew screen if "See Crew" is displayed
 if(image_index == 1){
     //audio_stop_sound(snd_title);
-    room_goto(4)
+    room_goto(4);
 } else {
     //Advance the cutscene frame
     inst_C2478C8C.image_index++;
