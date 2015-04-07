@@ -141,7 +141,6 @@
   </backgrounds>
   <paths name="paths">
     <path>paths\path0</path>
-    <path>paths\path1</path>
   </paths>
   <scripts name="scripts">
     <scripts name="Glare">
