@@ -57,6 +57,8 @@ if (instance_number(obj_char)&lt;= 0) {
 
 enemy_manager = instance_find(obj_enemy_manager, 0)
 if (instance_number(obj_enemy) &lt;= 0 &amp;&amp; 
+    instance_number(obj_enemy_laser) &lt;= 0 &amp;&amp;
+    instance_number(obj_enemy_tank) &lt;= 0 &amp;&amp;
     enemy_manager.wave &gt; enemy_manager.last_wave) {
     if(room == House_Room){
         global.overworld_step = 4;
