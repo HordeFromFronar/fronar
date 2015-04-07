@@ -69,8 +69,8 @@ audio_play_sound(snd_Night_Theme,10,1);</code>
     <instance objName="obj_wall_window" x="816" y="480" name="inst_C5267079" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall_window" x="848" y="480" name="inst_FD0743CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light_static" x="736" y="304" name="inst_9B1B6605" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_crate_fronar" x="608" y="400" name="inst_0653A9F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_crate_fronar" x="576" y="400" name="inst_BA2620CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate_fronar" x="624" y="352" name="inst_0653A9F4" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate_fronar" x="560" y="352" name="inst_BA2620CF" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_outer" x="592" y="288" name="inst_BB573915" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_outer" x="464" y="448" name="inst_2DFFA27D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_outer" x="528" y="416" name="inst_1DFD3683" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -135,7 +135,7 @@ audio_play_sound(snd_Night_Theme,10,1);</code>
     <instance objName="obj_wall_outer" x="304" y="448" name="inst_DA75A88F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall_outer" x="304" y="352" name="inst_54425B79" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_light_static" x="448" y="400" name="inst_15FDE4D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_door" x="752" y="400" name="inst_68B37327" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="816" y="400" name="inst_68B37327" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_outer" x="432" y="512" name="inst_04026E87" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall_outer" x="400" y="512" name="inst_735649E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall_outer" x="816" y="544" name="inst_448A6385" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
@@ -172,6 +172,11 @@ audio_play_sound(snd_Night_Theme,10,1);</code>
     <instance objName="obj_light_static" x="864" y="416" name="inst_5C263260" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light_static" x="224" y="400" name="inst_AC80BF75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="&lt;undefined&gt;" x="784" y="224" name="inst_FD690978" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_outer" x="752" y="416" name="inst_CC530510" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_wall_outer" x="752" y="416" name="inst_7C4F128F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_wall_outer" x="752" y="384" name="inst_19DCC49F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_wall_outer" x="784" y="384" name="inst_AB27B0B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_wall_outer" x="784" y="416" name="inst_A796E1E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
   </instances>
   <tiles>
     <tile bgName="bg_tileset_main" x="0" y="0" w="32" h="32" xo="256" yo="64" id="10001788" name="inst_A8710BAD" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
