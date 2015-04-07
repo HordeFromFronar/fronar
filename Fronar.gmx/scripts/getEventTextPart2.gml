@@ -210,7 +210,7 @@ switch(global.event_id) {
                 case 1:
                     text += '"' + "Let’s just be thankful we’re not burned to a crisp," + '" ' + char + " says. " + charpronoun + 
                     " hefts " + charposessive + " weapon" +
-                    "#back onto " + char1posessive + " shoulder, and the crew keeps moving.";
+                    "#back onto " + charposessive + " shoulder, and the crew keeps moving.";
                     break;
             }
             return text;
