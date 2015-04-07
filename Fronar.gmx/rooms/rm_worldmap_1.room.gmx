@@ -10,7 +10,9 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>audio_stop_sound(snd_title);
+  <code>//play sound
+audio_stop_all();
+audio_play_sound(snd_Map_Theme,10,1);
 obj_exclamation_1.visible = false;
 obj_current_location.visible = true;
 
