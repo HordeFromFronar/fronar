@@ -361,8 +361,8 @@ switch(global.overworld_step){
         obj_current_location.x = 96
         obj_current_location.y = 384       
         //Not sure if we want this to always be visible
-        obj_exclamation_1.x = getExclamationX();
-        obj_exclamation_1.y = getExclamationY();
+        obj_exclamation_1.x = obj_current_location.x + 25;
+        obj_exclamation_1.y = obj_current_location.y - 32;
         obj_exclamation_1.visible = true;
         audio_play_sound(snd_Event, 1, false);
         alarm[2] = 60;
@@ -370,8 +370,8 @@ switch(global.overworld_step){
     case 2: 
         obj_current_location.x = 224;
         obj_current_location.y = 416;   
-        obj_exclamation_1.x = getExclamationX();
-        obj_exclamation_1.y = getExclamationY();
+        obj_exclamation_1.x = obj_current_location.x + 25;
+        obj_exclamation_1.y = obj_current_location.y - 32;
         obj_exclamation_1.visible = true;
         audio_play_sound(snd_Event, 1, false);
         alarm[2] = 60;
@@ -405,8 +405,8 @@ switch(global.overworld_step){
     case 5:
         obj_current_location.x = 428;
         obj_current_location.y = 224;   
-        obj_exclamation_1.x = getExclamationX();
-        obj_exclamation_1.y = getExclamationY();
+        obj_exclamation_1.x = obj_current_location.x + 25;
+        obj_exclamation_1.y = obj_current_location.y - 32;
         obj_exclamation_1.visible = true;
         audio_play_sound(snd_Event, 1, false);
         alarm[2] = 60;
@@ -414,8 +414,8 @@ switch(global.overworld_step){
     case 6:
         obj_current_location.x = 512;
         obj_current_location.y = 320;   
-        obj_exclamation_1.x = getExclamationX();
-        obj_exclamation_1.y = getExclamationY();
+        obj_exclamation_1.x = obj_current_location.x + 25;
+        obj_exclamation_1.y = obj_current_location.y - 32;
         obj_exclamation_1.visible = true;
         audio_play_sound(snd_Event, 1, false);
         alarm[2] = 60;

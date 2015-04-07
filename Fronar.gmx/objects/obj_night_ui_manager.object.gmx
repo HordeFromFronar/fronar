@@ -28,6 +28,7 @@
             <string>///Draw Functional UI
 xmax = 1280;
 ymax = 720;
+selected = 0;
 
 //Draw top right corner buttons
 instance_create(xmax - 48, y + 16, obj_button_menu);
