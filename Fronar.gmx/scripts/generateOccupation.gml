@@ -29,14 +29,15 @@ ds_list_add(occupations2,
     "College professor",
     "Day care worker",
     "Food truck driver",
-    "Crime scene investigator",
+//    "Crime scene investigator",
     "C-list actor",
     "Comedian",
     "Carpet cleaner",
     "Pokémon master",
     "Logger",
     "Professional blogger",
-    "Water sanitation specialist");
+//    "Water sanitation specialist");
+    );
     
 occupations3 = ds_list_create();
 ds_list_add(occupations3,
@@ -47,7 +48,7 @@ ds_list_add(occupations3,
     "Home care worker",
     "Pediatric nurse",
     "Hitman",
-    "Human resource manager",
+//    "Human resource manager",
     "Startup CEO",
     "Valet",
     "Wedding photographer",
@@ -58,7 +59,7 @@ ds_list_add(occupations3,
 
 occupations4 = ds_list_create();
 ds_list_add(occupations4,    
-    "Air conditioning repair person",
+//    "Air conditioning repair person",
     "Photojournalist",
     "Porn star",
     "Feng shui consultant",

@@ -12,7 +12,7 @@ ds_list_add(interests,
     "Knitting",
     "Water colours",
     "Paper mache",
-    "Retro-style video games",
+//    "Retro-style video games",
     "Poetry",
     "Automotive repair",
     "Building computers",
@@ -22,13 +22,13 @@ ds_list_add(interests,
 
 interests2 = ds_list_create();
 ds_list_add(interests2,
-    "Long distance running",
+//    "Long distance running",
     "Power yoga",
     "Crossfit training",
-    "Learning new languages",
+//    "Learning new languages",
     "Blackmail",
     "Hunting",
-    "White water rafting",
+//    "White water rafting",
     "Web design",
     "Carpentry",
     "Candle making",
@@ -36,7 +36,8 @@ ds_list_add(interests2,
     "Basket weaving",
     "Philosphastering",
     "Kegels",
-    "R-rated horror films");
+//    "R-rated horror films");
+    );
     
 interests3 = ds_list_create();
 ds_list_add(interests3,
