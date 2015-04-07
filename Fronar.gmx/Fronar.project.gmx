@@ -114,6 +114,24 @@
     <sprite>sprites\spr_icon_food</sprite>
     <sprite>sprites\spr_icon_medkit</sprite>
     <sprite>sprites\spr_event_border</sprite>
+    <sprite>sprites\spr_bed1</sprite>
+    <sprite>sprites\spr_bed2</sprite>
+    <sprite>sprites\spr_bed3</sprite>
+    <sprite>sprites\spr_bed4</sprite>
+    <sprite>sprites\spr_bed5</sprite>
+    <sprite>sprites\spr_chair1</sprite>
+    <sprite>sprites\spr_chair2</sprite>
+    <sprite>sprites\spr_chair3</sprite>
+    <sprite>sprites\spr_road1</sprite>
+    <sprite>sprites\spr_road2</sprite>
+    <sprite>sprites\spr_road3</sprite>
+    <sprite>sprites\spr_rug1</sprite>
+    <sprite>sprites\spr_rug4</sprite>
+    <sprite>sprites\spr_rug9</sprite>
+    <sprite>sprites\spr_table1</sprite>
+    <sprite>sprites\spr_table2</sprite>
+    <sprite>sprites\spr_table3</sprite>
+    <sprite>sprites\spr_table4</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_title</background>
@@ -138,6 +156,11 @@
         <background>background\back_overlay_grass</background>
       </backgrounds>
     </backgrounds>
+    <background>background\GreenRug</background>
+    <background>background\OrangeRug</background>
+    <background>background\TreeStump</background>
+    <background>background\TreeStump2</background>
+    <background>background\background23</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path0</path>
@@ -464,6 +487,24 @@
     <object>objects\obj_icon_medkit</object>
     <object>objects\obj_icon_food</object>
     <object>objects\obj_small_portrait</object>
+    <object>objects\obj_bed1</object>
+    <object>objects\obj_bed2</object>
+    <object>objects\obj_bed3</object>
+    <object>objects\obj_bed4</object>
+    <object>objects\obj_bed5</object>
+    <object>objects\obj_chair1</object>
+    <object>objects\obj_chair2</object>
+    <object>objects\obj_chair3</object>
+    <object>objects\obj_road1</object>
+    <object>objects\obj_road2</object>
+    <object>objects\obj_road3</object>
+    <object>objects\obj_rug1</object>
+    <object>objects\obj_rug4</object>
+    <object>objects\obj_rug9</object>
+    <object>objects\obj_table1</object>
+    <object>objects\obj_table2</object>
+    <object>objects\obj_table3</object>
+    <object>objects\obj_table4</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
@@ -473,6 +514,7 @@
     <room>rooms\rm_crew_select_1</room>
     <room>rooms\rm_worldmap_1</room>
     <room>rooms\House_RoomT</room>
+    <room>rooms\room23</room>
     <room>rooms\House_Room</room>
     <room>rooms\House_Room2</room>
     <room>rooms\rm_event_1</room>
