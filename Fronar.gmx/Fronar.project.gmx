@@ -161,6 +161,9 @@
     <background>background\TreeStump</background>
     <background>background\TreeStump2</background>
     <background>background\background23</background>
+    <background>background\bg_tut1</background>
+    <background>background\bg_tut2</background>
+    <background>background\bg_tut3</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path0</path>
@@ -505,6 +508,8 @@
     <object>objects\obj_table2</object>
     <object>objects\obj_table3</object>
     <object>objects\obj_table4</object>
+    <object>objects\obj_tut_left</object>
+    <object>objects\obj_tut_right</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
@@ -534,6 +539,9 @@
       <room>rooms\room_mobile_test</room>
     </rooms>
     <room>rooms\template_doNOTdelete</room>
+    <room>rooms\rm_tut1</room>
+    <room>rooms\rm_tut2</room>
+    <room>rooms\rm_tut3</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
