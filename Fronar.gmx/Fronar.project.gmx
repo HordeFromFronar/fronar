@@ -534,6 +534,7 @@
       <room>rooms\room_mobile_test</room>
     </rooms>
     <room>rooms\template_doNOTdelete</room>
+    <room>rooms\House_Room2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -11,8 +11,10 @@
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>//play sound
-audio_stop_all();
-audio_play_sound(snd_Map_Theme,10,1);
+if (!audio_is_playing(snd_Map_Theme)) {
+    audio_stop_all();
+    audio_play_sound(snd_Map_Theme,10,1);
+}
 obj_exclamation_1.visible = false;
 obj_current_location.visible = true;
 
