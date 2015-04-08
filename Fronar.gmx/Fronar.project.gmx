@@ -132,6 +132,14 @@
     <sprite>sprites\spr_table2</sprite>
     <sprite>sprites\spr_table3</sprite>
     <sprite>sprites\spr_table4</sprite>
+    <sprite>sprites\spr_cabinet1</sprite>
+    <sprite>sprites\spr_cabinet2</sprite>
+    <sprite>sprites\spr_cubicle1</sprite>
+    <sprite>sprites\spr_cubicle2</sprite>
+    <sprite>sprites\spr_cubicle3</sprite>
+    <sprite>sprites\spr_cubicle4</sprite>
+    <sprite>sprites\spr_swivel1</sprite>
+    <sprite>sprites\spr_swivel2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_title</background>
@@ -510,6 +518,14 @@
     <object>objects\obj_table4</object>
     <object>objects\obj_tut_left</object>
     <object>objects\obj_tut_right</object>
+    <object>objects\obj_cabinet1</object>
+    <object>objects\obj_cabinet2</object>
+    <object>objects\obj_cubicle1</object>
+    <object>objects\obj_cubicle2</object>
+    <object>objects\obj_cubicle3</object>
+    <object>objects\obj_cubicle4</object>
+    <object>objects\obj_swivel1</object>
+    <object>objects\obj_swivel2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
