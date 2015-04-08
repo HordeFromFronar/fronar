@@ -230,7 +230,6 @@ if (!audio_is_playing(snd_Night_Theme)) {
     <instance objName="obj_road3" x="624" y="656" name="inst_105FE271" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_road3" x="592" y="656" name="inst_7BCBC363" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_road3" x="560" y="656" name="inst_8C97EDE4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="&lt;undefined&gt;" x="0" y="0" name="inst_95C7CACC" locked="0" code="" scaleX="0" scaleY="0" colour="0" rotation="0"/>
     <instance objName="obj_road1" x="816" y="592" name="inst_6F0D3444" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_road3" x="816" y="656" name="inst_F4676226" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_road1" x="816" y="656" name="inst_5EAD262F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
