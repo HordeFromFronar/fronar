@@ -542,6 +542,7 @@
     <room>rooms\rm_tut1</room>
     <room>rooms\rm_tut2</room>
     <room>rooms\rm_tut3</room>
+    <room>rooms\House_Room2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
