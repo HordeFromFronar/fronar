@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>if (global.tacPause) { 
     draw_set_color(c_white);
-    draw_text(x, y, "PAUSED"); 
+    draw_text_transformed(x, y, "PAUSED", 3, 3, 0); 
 }
 </string>
           </argument>

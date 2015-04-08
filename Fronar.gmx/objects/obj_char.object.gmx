@@ -441,7 +441,7 @@ if (hp &lt;= 0) {
     instance_destroy();
 }
 
-if (healing) {
+if (healing &amp;&amp; !global.tacPause) {
     heal = 1 / room_speed;
 
     effect_create_above(ef_spark, x-16 + random(32), y-16 + random(32), choose(0, 1), 
