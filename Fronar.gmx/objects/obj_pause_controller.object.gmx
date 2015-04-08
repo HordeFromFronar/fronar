@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.tacPause) { draw_text(x, y, "PAUSED"); }
+            <string>if (global.tacPause) { 
+    draw_set_color(c_white);
+    draw_text(x, y, "PAUSED"); 
+}
 </string>
           </argument>
         </arguments>
