@@ -162,6 +162,11 @@ if (!audio_is_playing(snd_Night_Theme)) {
     <instance objName="obj_chair3" x="368" y="288" name="inst_4974A707" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="45"/>
     <instance objName="obj_chair3" x="752" y="368" name="inst_A58C802C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="45"/>
     <instance objName="obj_table4" x="448" y="304" name="inst_E4233075" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="200"/>
+    <instance objName="obj_light_static" x="464" y="320" name="inst_F62A5E34" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light_static" x="608" y="224" name="inst_DCD2FCE5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light_static" x="608" y="496" name="inst_B4A6F014" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light_static" x="736" y="368" name="inst_18803604" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light_static2" x="624" y="368" name="inst_804821E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_tileset_main" x="0" y="0" w="32" h="32" xo="256" yo="64" id="10001788" name="inst_A8710BAD" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

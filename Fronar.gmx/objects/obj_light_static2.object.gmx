@@ -3,7 +3,7 @@
   <spriteName>spr_light_bulb</spriteName>
   <solid>0</solid>
   <visible>0</visible>
-  <depth>-2</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,14 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-//color = make_color_rgb(random(255),random(255),random(255));
-color = make_color_rgb(250, 193, 121);
+            <string>//color = make_color_rgb(random(255),random(255),random(255));
+color = make_color_rgb(250, 180, 150);
 //intensity = choose(0, random(1.5));
 intensity = 0.1;
-sprite = spr_light_mask_point;
+sprite = spr_light_mask_point_hd;
 light = glr_light_create(sprite, 0, x, y, color, intensity);
-rot = 0;
+rot = 2;
 glr_light_set_shadow_strength(light, 0.8)
 glr_light_set_static(light, true);
 glr_light_set_layer(light, 2);
@@ -53,8 +52,5 @@ glr_light_set_layer(light, 2);
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints>
-    <point>8,8</point>
-    <point>8,8</point>
-  </PhysicsShapePoints>
+  <PhysicsShapePoints/>
 </object>

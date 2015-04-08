@@ -27,6 +27,26 @@
             <kind>1</kind>
             <string>glr_init(1);
 
+//enable shadow antialiasing
+glr_enable_fxaa(true);
+
+//set directional surface resolution (1 = 100% of engine quality)
+glr_set_directional_quality(1);
+
+//enable directional shadows
+glr_enable_directional(true);
+
+//set ambient occlusion surface resolution
+glr_set_occlusion_quality(1);
+
+//enable ambient occlusion
+glr_enable_occlusion(true);
+
+//set light additive intensity surface quality
+glr_set_intensity_quality(1);
+
+//enable additive light intensity
+glr_enable_intensity(true);
 </string>
           </argument>
         </arguments>
@@ -74,7 +94,8 @@
             <kind>1</kind>
             <string>daytime = (current_time mod 300000 )/300000;
 
-glr_set_ambient_daytime(daytime);
+//glr_set_ambient_color(make_color_rgb(100, 50, 120);
+glr_set_ambient_daytime(0.25);
 </string>
           </argument>
         </arguments>
