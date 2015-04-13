@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Init
 
-maxHealth = 5;
+maxHealth = 50;
 hp = maxHealth;
 evade = 0;
 armour = 0;

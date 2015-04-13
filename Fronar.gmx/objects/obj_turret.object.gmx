@@ -28,7 +28,7 @@
             <string>///Init
 image_speed = 0;
 
-maxHealth = 50;
+maxHealth = 80;
 hp = maxHealth;
 damage = 6;
 rate = 4;
