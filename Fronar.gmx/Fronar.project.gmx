@@ -172,6 +172,7 @@
     <background>background\bg_tut1</background>
     <background>background\bg_tut2</background>
     <background>background\bg_tut3</background>
+    <background>background\bg_day1_over</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path0</path>
@@ -529,6 +530,7 @@
     <object>objects\obj_cubicle4</object>
     <object>objects\obj_swivel1</object>
     <object>objects\obj_swivel2</object>
+    <object>objects\obj_transition_manager</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
@@ -562,6 +564,8 @@
     <room>rooms\rm_tut2</room>
     <room>rooms\rm_tut3</room>
     <room>rooms\House_Room2</room>
+    <room>rooms\rm_lvl1_over</room>
+    <room>rooms\rm_credits</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

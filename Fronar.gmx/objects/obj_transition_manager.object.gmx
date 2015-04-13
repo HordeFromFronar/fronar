@@ -2,7 +2,7 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -25,13 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Play Night music
+            <string>alarm[0] = 90;
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -48,28 +49,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Game over conditions
-
-if (instance_number(obj_char)&lt;= 0) {
-    alarm[1] = room_speed * 5;
-    gameOver(false);
-}
-
-enemy_manager = instance_find(obj_enemy_manager, 0)
-if (instance_number(obj_enemy) &lt;= 0 &amp;&amp; 
-    instance_number(obj_enemy_laser) &lt;= 0 &amp;&amp;
-    instance_number(obj_enemy_tank) &lt;= 0 &amp;&amp;
-    enemy_manager.wave &gt; enemy_manager.last_wave) {
-    if(room == House_Room){
-        global.overworld_step = 4;
-        room_goto(rm_lvl1_over);
+            <string>if (room == rm_lvl1_over){
+    room_goto(rm_worldmap_1);
     }
-    if(room == House_Room2){
-        gameOver(true);
-    }
-
+if (room == rm_game_win){
+    room_goto(rm_credits);
 }
-
 </string>
           </argument>
         </arguments>
