@@ -18,12 +18,12 @@ switch(global.event_id) {
             text =
             "After travelling through the trees for some time, the crew finds a clearing with a spike pit in the" +
             "#middle, several metres in diameter and about two metres deep. Suspended from ropes on all" + 
-            "#sides, an enormous sack marked 'RATIONS' hangs in the middle and dangling over the " +
+            "#sides, an enormous sack marked 'RATIONS' hangs in the middle, dangling over the" +
             "#spikes below." + 
-            '#"Alright, what asshole set this up?" ' + 
+            '##"Alright, what asshole set this up?" ' + 
             ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1) +
             " says." +
-            "#There's no guarantee that whatever's in the bag is actually edible, and retrieving it would be" +
+            "##There's no guarantee that whatever's in the bag is actually edible, and retrieving it would be" +
             "#dangerous.";
             return text; 
             break;
@@ -53,7 +53,7 @@ switch(global.event_id) {
         case 4:
             //Lightning
             text =
-            "There's not a cloud in the sky but lightning has struck the party. Be it a stroke of a good luck, a fickle" + 
+            "There's not a cloud in the sky but lightning has struck the crew. Be it a stroke of a good luck, a fickle" + 
             "#god's caprice, or a Borgi airstrike gone horribly wrong, everyone feels bright, crispy, and very far from" + 
             "#dead. #" + 
             '#"' + "I've never felt better!" + '"' + 
@@ -75,13 +75,14 @@ switch(global.event_id) {
             '##"' + "It's dated September 8. That's the day before the Borgis hit. Think it might still be around?" + '"' + 
             '##"' + "Not sure." + '" ' + char2 + " sighs. " + '"' + "But I haven't been to a circus since I was a kid. Might be nice, and we" +
             "#could use the break. No harm in checking." + '"' +
-            "##The party follows the directions on the flyer and arrives at a fenced off field with colourful arches " +
+            "##The crew follows the directions on the flyer and arrives at a fenced off field with colourful arches" +
             "#above the turnstile. Within, they find a deserted area populated with carnival booths, a moldy dunk" + 
             "#tank, and empty animal cages. A big top stands at the end of the row. There is no Ferris wheel in sight." +
             '##"' + "Guess we'll look around and report back? Might find some supplies, at least." + '"';
             return text;
             break;
         case 6:
+            //Forgotten Weapon
             char1 = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1);
             char2 = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1);
             char1gender = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 0);
@@ -109,6 +110,7 @@ switch(global.event_id) {
             return text;
             break;
         case 8:
+            //Library
             char1 = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1);
             char2 = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1);
             char1gender = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 0);
