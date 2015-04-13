@@ -391,6 +391,7 @@
       <font>fonts\font_glare</font>
     </fonts>
     <font>fonts\ArcadeClassic</font>
+    <font>fonts\Unibody_8</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_char</object>
