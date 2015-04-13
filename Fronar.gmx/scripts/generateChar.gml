@@ -77,4 +77,6 @@ while (count) {
     count--;
 }
 
-ds_list_copy(global.eventCharList,global.charList);
+global.eventCharList = ds_list_create();;
+
+ds_list_copy(global.eventCharList, global.charList);
