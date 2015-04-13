@@ -29,7 +29,7 @@
 image_speed = 0;
 depth = 10
 
-damage = 2;
+damage = 50;
 splash_radius = 100;
 evade = 0;
 crit = 0;

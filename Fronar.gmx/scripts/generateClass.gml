@@ -98,8 +98,8 @@ switch(x) {
         
         ds_list_add(char, 3);  // range
         ds_list_add(char, 5);  // speed
-        ds_list_add(char, 7);  // damage
-        ds_list_add(char, 7);  // fire rate
+        ds_list_add(char, 8);  // damage
+        ds_list_add(char, 5);  // fire rate
         ds_list_add(char, 0);  // armour
         ds_list_add(char, 10); // evasion
         ds_list_add(char, 10); // critical

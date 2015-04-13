@@ -28,10 +28,10 @@
             <string>///Init
 image_speed = 0;
 
-maxHealth = 5;
+maxHealth = 50;
 hp = maxHealth;
-damage = 1;
-rate = 1;
+damage = 6;
+rate = 4;
 range = 3;
 evade = 0;
 armour = 0;
