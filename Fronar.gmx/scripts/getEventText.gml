@@ -7,8 +7,8 @@ switch(global.event_id) {
             "Somewhere along the road the crew finds an abandoned shack with the windows blown out." +
             "#After poking around, " + 
             ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1) +
-            " finds some duct tape and a kitchen knife that can be made into a bayonet," +
-            "#and some fruit and vegetables growing in what's left of the garden out back." +
+            " finds some duct tape and a kitchen knife that can be made into a" +
+            "#bayonet, and some fruit and vegetables growing in what's left of the garden out back." +
             "##+3 Food";
             return text;
             break;

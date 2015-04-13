@@ -102,7 +102,7 @@ switch(global.event_id){
             //Display the second part of the scenario
             depth = -1;
             draw_set_colour(c_white);
-            draw_text(x1 + 32, y1 + 4*32, getEventTextPart2());
+            draw_text(x1 + 32, y1 + 5*32, getEventTextPart2());
             obj_event_continue.visible = true;
         }
         break;
