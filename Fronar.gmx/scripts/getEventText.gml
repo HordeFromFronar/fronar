@@ -122,7 +122,7 @@ switch(global.event_id) {
             "#pages without reading them." + 
             '##"' + "Do you think we'll get it all back someday?" + '"' + 
             '##"' + "Say again?" + '" ' + char1 + " calls from two rows over." + 
-            "##" + char2 + 'finds a spot on the shelf and puts the book away. "Nevermind," ' + char2pronoun + " mumbles, and" +
+            "##" + char2 + ' finds a spot on the shelf and puts the book away. "Nevermind," ' + char2pronoun + " mumbles, and" +
             "#continues down the line.";
             return text;
             break;
