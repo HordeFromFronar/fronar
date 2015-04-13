@@ -132,7 +132,7 @@ if (!global.event_part2){
         case 6:
             //Forgotten Weapon
             //Set damage to 0.  
-            ds_list_replace(ds_list_find_value(global.eventCharList, charId), 11, 0);      
+            ds_list_replace(ds_list_find_value(global.eventCharList, charId), 12, 0);      
             //Find the weapon during next event
             global.next_event = 7;
             global.event_char1 = charId;

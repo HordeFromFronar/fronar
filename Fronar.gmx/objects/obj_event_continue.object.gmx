@@ -65,7 +65,7 @@ switch(global.event_id){
         break; 
     case 7:
         //Found Weapon
-        ds_list_replace(ds_list_find_value(global.eventCharList, 0), 11 ,ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 11) + 1);
+        ds_list_replace(ds_list_find_value(global.eventCharList, 0), 12 ,ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 11) + 1);
         global.next_event = -1;
         global.event_char1 = -1;
         break;  
