@@ -14,7 +14,7 @@ switch(global.event_id) {
             getGenderedPronoun(chargender, true) + 
             " takes a few practice swings. " +
             '##"Let' + "'s see those Borgis come at me now!" + '"' +
-            "##     +3 to " + charname + "'s Damage."             
+            "##     +3 to " + charname + "'s Damage.";             
             return text;
             break;
         case 1:
