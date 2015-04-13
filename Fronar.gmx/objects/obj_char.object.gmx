@@ -421,6 +421,7 @@ if (!healing &amp;&amp; !global.tacPause) {
 //ds_list_replace(ds_list_find_value(global.charList, charID),8, hp);
 
 if (hp &lt;= 0) {
+    ds_list_replace(ds_list_find_value(global.charList, charID),7,0);
     if (global.selected = id) {
         global.selected = 0;
     }
@@ -457,6 +458,8 @@ if (healing &amp;&amp; !global.tacPause) {
         healedAmount = 0;
     }
 }
+
+ds_list_replace(ds_list_find_value(global.charList, charID),7,hp);
 
 </string>
           </argument>
