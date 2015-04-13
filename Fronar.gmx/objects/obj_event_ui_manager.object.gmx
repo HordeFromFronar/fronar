@@ -49,6 +49,7 @@ for (i = 0; i &lt; ds_list_size(global.charList); ++i){
     //Draw portraits from right to left
     //Only draw portraits for characters who are alive
     if(ds_list_find_value(char, 7) &gt; 0){
+        portrait_x -= 50;
         var portrait = instance_create(portrait_x, 0, obj_small_portrait);
         portrait.charId = i;
         portrait.image_index = ds_list_find_value(char, 8) mod 4;
