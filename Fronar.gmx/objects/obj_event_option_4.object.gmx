@@ -122,7 +122,7 @@ if (!global.event_part2){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_colour(c_cyan);
+            <string>draw_set_colour(c_aqua);
 depth = 0;
 x = x1;
 y = y1;
