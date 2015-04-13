@@ -31,7 +31,7 @@ global.event_id = generateEvent();
 
 //Don't shuffle if we're on a continuing event
 if(global.next_event == -1) {
-    global.eventCharList = global.charList;
+    ds_list_copy(global.eventCharList, global.charList);
     i = 0;
     len = ds_list_size(global.eventCharList);
     
