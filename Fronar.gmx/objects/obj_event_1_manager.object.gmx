@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Generate an event 
-//global.event_id = 8;
-global.event_id = generateEvent();
+global.event_id = 2;
+//global.event_id = generateEvent();
 
 //Don't shuffle if we're on a continuing event
 if(global.next_event == -1) {
