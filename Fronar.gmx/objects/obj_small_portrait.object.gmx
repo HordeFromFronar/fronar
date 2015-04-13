@@ -132,11 +132,11 @@ draw_self();
 if(alt){
     draw_set_color(c_black);
     //Draw some sort of background
-    draw_rectangle (x + 50, y + 50 , x - 320, y + 175, false);
+    draw_rectangle (x + 50, y + 50 , x - 350, y + 155, false);
     //Draw the alt text
     draw_set_color(c_white);
     char = ds_list_find_value(global.charList, charId);
-    draw_text(x - 305, y + 55, 
+    draw_text(x - 335, y + 55, 
     "Name: " + ds_list_find_value(char, 1) + " " + ds_list_find_value(char, 2) + 
     "#Gender: " + getGenderWord(ds_list_find_value(char, 0), true) + 
     "#Combat Class: " + ds_list_find_value(char, 16) + 

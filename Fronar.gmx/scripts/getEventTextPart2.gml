@@ -173,7 +173,7 @@ switch(global.event_id) {
                 case 0:
                     text += '"' + "Ugh. I couldn’t get all of it. Am I going to be okay?" + '"' + 
                     '##"' + "I guess we’ll find out," + '" ' + char2 + " says." + 
-                    "##+1 to " + char1 + "'s Movement Speed."; 
+                    "##     +1 to " + char1 + "'s Movement Speed."; 
                     break;
                 case 1:
                     text += '"' + "Hmm. Tastes kind of… salty. Is it supposed to be salty?" + '" ' + char1 + " asks. " + char1pronoun + " licks" + 

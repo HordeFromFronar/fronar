@@ -4,22 +4,21 @@ switch(global.event_id) {
         case 0:
             //Abandoned Shack
             text =
-            "Somewhere along the road the crew finds an abandoned shack with the windows blown out." +
-            "#After poking around, " + 
+            "Somewhere along the road the crew finds an abandoned shack with the windows blown out. After" +
+            "#poking around, " + 
             ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1) +
-            " finds some duct tape and a kitchen knife that can be made into a" +
-            "#bayonet, and some fruit and vegetables growing in what's left of the garden out back." +
-            "##+3 Food";
+            " finds some duct tape and a kitchen knife that can be made into a bayonet, and" +
+            "#some fruit and vegetables growing in what's left of the garden out back." +
+            "##     +3 Food";
             return text;
             break;
         case 1: 
             //Spike Pit
             //Need to -1 because irandom has inclusive range between 0 and n
             text =
-            "After travelling through the trees for some time, the crew finds a clearing with a spike pit in the" +
-            "#middle, several metres in diameter and about two metres deep. Suspended from ropes on all" + 
-            "#sides, an enormous sack marked 'RATIONS' hangs in the middle, dangling over the" +
-            "#spikes below." + 
+            "After travelling through the trees for some time, the crew finds a clearing with a spike pit in the middle," +
+            "#several metres in diameter and about two metres deep. Suspended from ropes on all sides, an" + 
+            "#enormous sack marked 'RATIONS' hangs in the middle, dangling over the spikes below." +
             '##"Alright, what asshole set this up?" ' + 
             ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1) +
             " says." +
@@ -32,8 +31,8 @@ switch(global.event_id) {
             text =
             '"Why who might ye be?"#' + 
             "#An old crone comes toddling up the road. Wearing what looks and smells like old kitchen rags and a" + 
-            "#deep hood over her eyes, she pulls a wagon of assorted goods behind her, as if she'd stepped straight" +
-            "#out of medieval times.#" +
+            "#deep hood over her eyes, she pulls a wagon of assorted goods behind her, as if she'd stepped" +
+            "#straight out of medieval times.#" +
             '#"' + "I'd be willing to trade with ye' if you've got the goods to spare. Just a warnin' though: I may look old" + 
             "#but I got some fight in me yet. So no funny business, y'hear?" + '"';
             return text;
@@ -91,11 +90,10 @@ switch(global.event_id) {
             char2pronoun = getGenderedPronoun(char2gender, false);
             char1posessive = getGenderedPosessive(char1gender, false);
             text = "Upon reaching the outskirts of a nearby town, " + char1 + " realizes " + char1pronoun + " forgot " + 
-            char1posessive +
-            "#weapon at last night's camp. Without a weapon " + char1pronoun + "'ll be no good in a fight." +
+            char1posessive + " weapon at last night's" +
+            "#camp. Without a weapon " + char1pronoun + "'ll be no good in a fight." +
             '##"' + "I'm really sorry, guys. Should I go back and get it?" + '"' +
-            "#" + char2 + " insists that the group keep moving. " + '"' + "We can't afford to backtrack," + '"' + char2pronoun +
-            "#says.";
+            "##" + char2 + " insists that the group keep moving. " + '"' + "We can't afford to backtrack," + '" ' + char2pronoun + " says.";
             return text;
             break;
         case 7:
