@@ -26,8 +26,8 @@ switch(x) {
     
     case 0:
         // hunter
-        ds_list_add(char, 7); // max health
-        ds_list_add(char, 7); // current health
+        ds_list_add(char, 70); // max health
+        ds_list_add(char, 70); // current health
         
         //portrait id (index)
         if (gender == "F") {
@@ -44,7 +44,7 @@ switch(x) {
         
         ds_list_add(char, 9);  // range
         ds_list_add(char, 5);  // speed
-        ds_list_add(char, 5);  // damage
+        ds_list_add(char, 25);  // damage
         ds_list_add(char, .5);  // fire rate
         ds_list_add(char, 0);  // armour
         ds_list_add(char, 10); // evasion
@@ -53,8 +53,8 @@ switch(x) {
         break;
     case 1:
         // grenadier
-        ds_list_add(char, 8); // max health
-        ds_list_add(char, 8); // current health
+        ds_list_add(char, 80); // max health
+        ds_list_add(char, 80); // current health
         
         //portrait id (index) --- TODO currently all v1 female grenadiers because that's all we have
         if (gender == "F") {
@@ -71,8 +71,8 @@ switch(x) {
         
         ds_list_add(char, 3);  // range
         ds_list_add(char, 2.5);  // speed
-        ds_list_add(char, 2);  // damage
-        ds_list_add(char, 1);  // fire rate
+        ds_list_add(char, 20);  // damage
+        ds_list_add(char, 0.6);  // fire rate
         ds_list_add(char, 0);  // armour
         ds_list_add(char, 10); // evasion
         ds_list_add(char, 10); // critical
@@ -80,8 +80,8 @@ switch(x) {
         break;      
     default:
         // soldier
-        ds_list_add(char, 10); // max health
-        ds_list_add(char, 10); // current health
+        ds_list_add(char, 100); // max health
+        ds_list_add(char, 100); // current health
         
         //portrait id (index)
         if (gender == "F") {
@@ -98,8 +98,8 @@ switch(x) {
         
         ds_list_add(char, 3);  // range
         ds_list_add(char, 5);  // speed
-        ds_list_add(char, 1);  // damage
-        ds_list_add(char, 3);  // fire rate
+        ds_list_add(char, 7);  // damage
+        ds_list_add(char, 7);  // fire rate
         ds_list_add(char, 0);  // armour
         ds_list_add(char, 10); // evasion
         ds_list_add(char, 10); // critical

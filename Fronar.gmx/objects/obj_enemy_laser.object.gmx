@@ -32,8 +32,8 @@ moveSpeed = 1;
 xDest = x;
 yDest = y;
 arrived = false;
-maxHealth = 4;
-hp = maxHealth;
+maxHealth = 100;
+hp = 100;
 rate = 1;
 range = 3;
 attacking = 0;
@@ -50,9 +50,6 @@ unstuck = 0;
 path = path_add();
 alarm[3] = 10;
 alarm[4] = 1;
-
-healing = false;   
-healedAmount = 0;
 
 originalSpeed = moveSpeed;
 slowed = false;
