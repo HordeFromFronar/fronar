@@ -365,7 +365,6 @@
     <script>scripts\getGenderedPronoun.gml</script>
     <script>scripts\getGenderedSelf.gml</script>
     <script>scripts\getGenderedObjective.gml</script>
-    <script>scripts\getGenderedPossessivePronoun.gml</script>
     <script>scripts\modifyParts.gml</script>
     <script>scripts\modifyMedicine.gml</script>
     <script>scripts\modifyFood.gml</script>
@@ -394,6 +393,13 @@
     </fonts>
     <font>fonts\ArcadeClassic</font>
     <font>fonts\Unibody_8</font>
+    <font>fonts\Unibody_8_size_12</font>
+    <font>fonts\Munro</font>
+    <font>fonts\Munro_Small</font>
+    <font>fonts\Unibody_8_bold</font>
+    <font>fonts\Unibody_8_black</font>
+    <font>fonts\Akashi</font>
+    <font>fonts\Akashi_2</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_char</object>

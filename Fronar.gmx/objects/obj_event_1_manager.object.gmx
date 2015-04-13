@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Generate an event 
-global.event_id = 2;
-//global.event_id = generateEvent();
+//global.event_id = 1;
+global.event_id = generateEvent();
 
 //Don't shuffle if we're on a continuing event
 if(global.next_event == -1) {
@@ -69,7 +69,7 @@ global.event_part2 = false;
             <kind>1</kind>
             <string>///Draw the event
 //Draw the Background for the event
-draw_set_font(Unibody_8);
+draw_set_font(Akashi_2);
 depth = 1;
 draw_set_colour(c_black);
 x1 = 4*32;
@@ -78,6 +78,7 @@ x2 = 1280-5*32;
 y2 = 720-3*32;
 //draw_rectangle(x1, y1, x2, y2, false);
 draw_sprite(spr_event_border, 0, x1, y1);
+x1 += 10;
 
 draw_set_colour(c_white);
 switch(global.event_id){
@@ -130,11 +131,11 @@ switch(global.event_id){
         draw_text(x1+32, y1+32, getEventText());
         //Only display if we have at least 10 food
         if(ds_list_find_value(global.resourceList, 2)&gt;= 10){
-            obj_event_option_1.text = "The crew trades 10 Food for 5 Parts.";
-            obj_event_option_2.text = "The crew trades 10 Food for 5 Med Kits.";
+            obj_event_option_1.text = "The party trades 10 Food for 5 Parts.";
+            obj_event_option_2.text = "The party trades 10 Food for 5 Med Kits.";
         }
         if(ds_list_find_value(global.resourceList, 0) &gt;= 5){
-            obj_event_option_3.text = "The crew trades 5 Parts for 3 Med Kits.";
+            obj_event_option_3.text = "The party trades 5 Parts for 3 Med Kits.";
         }
         obj_event_option_4.text = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1) + "'s feeling lucky and raises " + 
         getGenderedPosessive(ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 0), false) + " weapon." +
@@ -175,8 +176,8 @@ switch(global.event_id){
         //Lightning
         draw_text(x1+32, y1+32, getEventText());
         charname = ds_list_find_value(ds_list_find_value(global.eventCharList, 0), 1)
-        obj_event_option_1.text = "The crew takes a celebratory romp through the meadow.";
-        obj_event_option_2.text = "The crew decides to keep their heads down. They thank their good fortune and keep on moving.";
+        obj_event_option_1.text = "The party takes a celebratory romp through the meadow.";
+        obj_event_option_2.text = "The party decides to keep their heads down. They thank their good fortune and keep on moving.";
         obj_event_option_1.charId = 0;
         obj_event_option_2.charId = 0;
         obj_event_option_1.y1 = 8*32;
