@@ -89,7 +89,7 @@ for (i=0;i&lt;len;i++) {
           <argument>
             <kind>1</kind>
             <string>//NOTE YOU MUST CHECK PART2 SO THAT PLAYERS CANT SPAM CLICK FOR MORE POWER
-if (!global.event_part2){
+if (!global.event_part2 &amp;&amp; text != ""){
     global.event_selected_option = 2;
     global.event_part2 = true;
     switch(global.event_id){

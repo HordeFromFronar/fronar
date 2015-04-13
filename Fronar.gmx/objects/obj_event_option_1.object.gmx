@@ -91,7 +91,7 @@ for (i=0;i&lt;len;i++) {
             <kind>1</kind>
             <string>///Do the event choice
 //NOTE YOU MUST CHECK PART2 SO THAT PLAYERS CANT SPAM CLICK FOR MORE POWER
-if (!global.event_part2){
+if (!global.event_part2 &amp;&amp; text != ""){
     global.event_selected_option = 0;
     global.event_part2 = true;
     switch(global.event_id){
