@@ -115,14 +115,14 @@ switch(global.event_id){
         obj_event_option_3.text = "Send " + ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1) + " to retrieve the rations.";
         obj_event_option_2.charId = 0;
         obj_event_option_3.charId = 1;
-        obj_event_option_1.y1 = 8*32;
-        obj_event_option_2.y1 = 9*32;
-        obj_event_option_3.y1 = 10*32;
+        obj_event_option_1.y1 = 9*32;
+        obj_event_option_2.y1 = 10*32;
+        obj_event_option_3.y1 = 11*32;
         if(global.event_part2){
             //Display the second part of the scenario
             depth = -1;
             draw_set_colour(c_white);
-            draw_text(x1 + 32, y1 + 4*32 + 16, getEventTextPart2());
+            draw_text(x1 + 32, 9*32 + 16, getEventTextPart2());
             obj_event_continue.visible = true;
         }
         break;
@@ -142,15 +142,15 @@ switch(global.event_id){
         '"Who' + "'" + 're you kidding, lady? Back away from#' + 
         'the wagon."';
         obj_event_option_4.charId = 0;
-        obj_event_option_1.y1 = 8*32;
-        obj_event_option_2.y1 = 9*32;
-        obj_event_option_3.y1 = 10*32;
-        obj_event_option_4.y1 = 11*32;
+        obj_event_option_1.y1 = 9*32;
+        obj_event_option_2.y1 = 10*32;
+        obj_event_option_3.y1 = 11*32;
+        obj_event_option_4.y1 = 12*32;
         if(global.event_part2){
             //Display the second part of the scenario
             depth = -1;
             draw_set_colour(c_white);
-            draw_text(x1 + 32, y1 + 5*32, getEventTextPart2());
+            draw_text(x1 + 32, 9*32, getEventTextPart2());
             obj_event_continue.visible = true;
         }
         break;
@@ -162,13 +162,13 @@ switch(global.event_id){
         obj_event_option_2.text = charname + " shrugs and swallows.";
         obj_event_option_1.charId = 0;
         obj_event_option_2.charId = 0;
-        obj_event_option_1.y1 = 8*32;
-        obj_event_option_2.y1 = 9*32;
+        obj_event_option_1.y1 = 9*32;
+        obj_event_option_2.y1 = 10*32;
         if(global.event_part2){
             //Display the second part of the scenario
             depth = -1;
             draw_set_colour(c_white);
-            draw_text(x1 + 32, 8*32, getEventTextPart2());
+            draw_text(x1 + 32, 9*32, getEventTextPart2());
             obj_event_continue.visible = true;
         }
         break;
@@ -180,13 +180,13 @@ switch(global.event_id){
         obj_event_option_2.text = "The party decides to keep their heads down. They thank their good fortune and keep on moving.";
         obj_event_option_1.charId = 0;
         obj_event_option_2.charId = 0;
-        obj_event_option_1.y1 = 8*32;
-        obj_event_option_2.y1 = 9*32;
+        obj_event_option_1.y1 = 9*32;
+        obj_event_option_2.y1 = 10*32;
         if(global.event_part2){
             //Display the second part of the scenario
             depth = -1;
             draw_set_colour(c_white);
-            draw_text(x1 + 32, 8*32, getEventTextPart2());
+            draw_text(x1 + 32, 9*32, getEventTextPart2());
             obj_event_continue.visible = true;
         }
         break;
@@ -197,13 +197,13 @@ switch(global.event_id){
         obj_event_option_2.text = ds_list_find_value(ds_list_find_value(global.eventCharList, 1), 1) + " checks out the carnival booths.";
         obj_event_option_1.charId = 0;
         obj_event_option_2.charId = 1;
-        obj_event_option_1.y1 = 11*32;
-        obj_event_option_2.y1 = 12*32;
+        obj_event_option_1.y1 = 12*32;
+        obj_event_option_2.y1 = 13*32;
         if(global.event_part2){
             //Display the second part of the scenario
             depth = -1;
             draw_set_colour(c_white);
-            draw_text(x1 + 32, 11*32, getEventTextPart2());
+            draw_text(x1 + 32, 12*32, getEventTextPart2());
             obj_event_continue.visible = true;
         }
         break;
@@ -252,14 +252,14 @@ switch(global.event_id){
         obj_event_option_1.charId = 0;
         obj_event_option_2.charId = 1;
         obj_event_option_3.charId = char3id;
-        obj_event_option_1.y1 = 11*32;
-        obj_event_option_2.y1 = 12*32;
-        obj_event_option_3.y1 = 13*32;
+        obj_event_option_1.y1 = 13*32;
+        obj_event_option_2.y1 = 14*32;
+        obj_event_option_3.y1 = 15*32;
         if(global.event_part2){
             //Display the second part of the scenario
             depth = -1;
             draw_set_colour(c_white);
-            draw_text(x1 + 32, 11*32, getEventTextPart2());
+            draw_text(x1 + 32, 13*32, getEventTextPart2());
             obj_event_continue.visible = true;
         }
         
