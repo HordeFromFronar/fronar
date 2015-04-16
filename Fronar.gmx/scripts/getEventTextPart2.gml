@@ -56,7 +56,7 @@ switch(global.event_id) {
                         charself + " and crawl out of the pit, but " + charpronoun + " is bleeding profusely.#" + 
                         "#Turns out the sack is chock-full of non-perishable foodstuffs. Still, someone has a sick sense of humour.#" + 
                         "#     +10 Food" + 
-                        "#     -10 to " + charname + "'s health, and " + charposessive + " movement speed is decreased to 1.";
+                        "#     -10 to " + charname + "'s health, and " + charposessive + " movement speed is decreased to 10.";
                         break;
                     case 1:
                         text = charname + 
@@ -78,7 +78,7 @@ switch(global.event_id) {
                         "#the spikes. With a scream that sends a flock of birds flying " + charpronoun + " manages to free#" +
                         charself + " and crawl out of the pit, but " + charpronoun + " is bleeding profusely.#" + 
                         "#Turns out the sack is chock-full of horse manure. Someone has a sick sense of humour.#" + 
-                        "#     -10 to " + charname + "'s health, and " + charposessive + " movement speed is decreased to 1.";
+                        "#     -10 to " + charname + "'s health, and " + charposessive + " movement speed is decreased to 10.";
                         break;
                     case 2:
                         text = charname + 
@@ -173,14 +173,14 @@ switch(global.event_id) {
                 case 0:
                     text += '"' + "Ugh. I couldn’t get all of it. Am I going to be okay?" + '"' + 
                     '##"' + "I guess we’ll find out," + '" ' + char2 + " says." + 
-                    "##     +1 to " + char1 + "'s Movement Speed."; 
+                    "##     +10 to " + char1 + "'s Movement Speed."; 
                     break;
                 case 1:
                     text += '"' + "Hmm. Tastes kind of… salty. Is it supposed to be salty?" + '" ' + char1 + " asks. " + char1pronoun + " licks" + 
                     "#" + char1posessive + " lips." + 
                     '##"' + "I wouldn't know anything about it," + '" ' + char2 + " says." + 
                     "##     -30 to " + char1 + "'s Health." + 
-                    "##     +2 to " + char1 + "'s Movement Speed.";                
+                    "##     +20 to " + char1 + "'s Movement Speed.";                
                     break;
             }
             return text;
@@ -198,7 +198,7 @@ switch(global.event_id) {
                     if (global.event_subevent == 0) {
                         text += '"' + "We're so lucky!" + '" ' + char + ' says. "' + charpronoun + " throws " + charself + " into a bush of flowers that pillows" +
                         "#" + charposessive + 'fall. "' + "Who’d have thought getting struck by lightning would be such a good thing!" + '"' +
-                        "##     +1 to Crew's Attack Speed";
+                        "##     +10 to Crew's Attack Speed";
                     }
                     else {
                         text += '"' + "We’re so lucky! " + char + " says. " + '"' + "Who’d have thought getting struck by lightning would be such a" + 
@@ -207,7 +207,7 @@ switch(global.event_id) {
                         "##" + char + " climbs out of the grass pile on all fours, an empty syringe sticking out of " + charposessive + 
                         "#backside." + 
                         '##"Sonofabitch," ' + char + ' says.  "' + "There's the other shoe." + '"' +
-                        "##     -1 to " + char + "'s Attack Speed.";
+                        "##     -10 to " + char + "'s Attack Speed.";
                     }
                     break;
                 case 1:

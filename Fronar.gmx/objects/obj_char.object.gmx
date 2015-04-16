@@ -443,7 +443,7 @@ if (hp &lt;= 0) {
 }
 
 if (healing &amp;&amp; !global.tacPause) {
-    heal = 1 / room_speed;
+    heal = 9 / room_speed;
 
     effect_create_above(ef_spark, x-16 + random(32), y-16 + random(32), choose(0, 1), 
                         merge_colour(c_white, c_aqua, random(1)));
@@ -453,7 +453,7 @@ if (healing &amp;&amp; !global.tacPause) {
         hp = maxHealth
         healing = false;   
         healedAmount = 0;
-    } else if (healedAmount == 10) {
+    } else if (healedAmount == 100) {
         healing = false;
         healedAmount = 0;
     }
