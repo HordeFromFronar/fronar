@@ -44,7 +44,7 @@ switch(x) {
         
         ds_list_add(char, 9);  // range
         ds_list_add(char, 5);  // speed
-        ds_list_add(char, 25);  // damage
+        ds_list_add(char, 35);  // damage
         ds_list_add(char, .5);  // fire rate
         ds_list_add(char, 0);  // armour
         ds_list_add(char, 10); // evasion
@@ -71,7 +71,7 @@ switch(x) {
         
         ds_list_add(char, 3);  // range
         ds_list_add(char, 2.5);  // speed
-        ds_list_add(char, 20);  // damage
+        ds_list_add(char, 25);  // damage
         ds_list_add(char, 0.6);  // fire rate
         ds_list_add(char, 0);  // armour
         ds_list_add(char, 10); // evasion
