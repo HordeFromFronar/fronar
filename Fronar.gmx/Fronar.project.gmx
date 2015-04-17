@@ -142,6 +142,7 @@
     <sprite>sprites\spr_swivel2</sprite>
     <sprite>sprites\spr_resume</sprite>
     <sprite>sprites\spr_menu</sprite>
+    <sprite>sprites\spr_credits</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_title</background>
@@ -542,6 +543,7 @@
     <object>objects\obj_transition_manager</object>
     <object>objects\obj_resume</object>
     <object>objects\obj_menu</object>
+    <object>objects\obj_credits</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
