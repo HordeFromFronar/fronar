@@ -59,42 +59,42 @@ switch(global.overworld_step){
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 180;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }   
                 break;
             case 1:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 180;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 2:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 180;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 3:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 180;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 4:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 180;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 5:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 180;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
         }
@@ -105,42 +105,42 @@ switch(global.overworld_step){
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 250;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }   
                 break;
             case 1:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 250;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 2:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 250;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 3:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 250;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 4:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 250;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 5:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 250;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
         }
@@ -151,42 +151,42 @@ switch(global.overworld_step){
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 310;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }   
                 break;
             case 1:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 310;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 2:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 310;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 3:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 310;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 4:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 310;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 5:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 310;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
         }
@@ -197,42 +197,42 @@ switch(global.overworld_step){
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 310;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }   
                 break;
             case 1:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 310;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 2:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 310;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 3:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 310;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 4:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 310;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 5:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 310;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
         }
@@ -243,42 +243,42 @@ switch(global.overworld_step){
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 210;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }   
                 break;
             case 1:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 210;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 2:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 210;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 3:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 210;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 4:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 210;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 5:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 210;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
         }
@@ -289,42 +289,42 @@ switch(global.overworld_step){
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 0;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }   
                 break;
             case 1:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 0;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 2:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 0;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 3:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 0;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 4:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 0;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
             case 5:
                 stepobj = instance_create(getStep(step, true), getStep(step, false), obj_footstep);
                 with(stepobj){
                     image_angle = 0;
-                    audio_play_sound(snd_footstep,10,0)
+                    audio_play_sound(snd_footstep,10,0);
                 }
                 break;
         }
