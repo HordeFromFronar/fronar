@@ -36,7 +36,7 @@ if(global.next_event == -1) {
     len = ds_list_size(global.eventCharList);
     
     for (i=0;i&lt;len;i++) {
-        if(ds_list_find_value(ds_list_find_value(global.eventCharList, i), 7) == 0) {
+        if(ds_list_find_value(ds_list_find_value(global.eventCharList, i), 7) &lt;= 0) {
             ds_list_delete(global.eventCharList, i);
         }
     }
