@@ -134,7 +134,7 @@ if (global.selected) {
             draw_rectangle (x - 510, y, x, y + 64, false);
             //Draw the alt text
             draw_set_color(c_white);
-            draw_text(x - 495, y + 8, "8");
+            draw_text(x - 495, y + 8, "5");
             draw_text(x - 495, y + 4, "##An electromagnetic pulse. It detonates after 5 seconds, #dealing damage to Borgis and slowing them briefly.");
             draw_sprite( spr_icon_parts, 0, x - 480, y + 4 );  
         }

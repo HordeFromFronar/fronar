@@ -134,7 +134,7 @@ if (global.selected) {
             draw_rectangle (x - 495, y, x, y + 64, false);
             //Draw the alt text
             draw_set_color(c_white);
-            draw_text(x - 480, y + 4, "4##Permanently slows Borgis that pass through it, and#deals a small amount of damage. Disappears over time.
+            draw_text(x - 480, y + 4, "5##Permanently slows Borgis that pass through it, and#deals a small amount of damage. Disappears over time.
         ");
             draw_sprite( spr_icon_parts, 0, x - 460, y + 4 );  
         }        

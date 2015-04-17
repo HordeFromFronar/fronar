@@ -133,8 +133,8 @@ if (global.selected) {
             draw_rectangle (x - 420, y , x, y + 64, false);
             //Draw the alt text
             draw_set_color(c_white);
-            draw_text(x - 404, y + 8, "7##Attacks oncoming Borgis. Can be destroyed.");
-            draw_sprite( spr_icon_parts, 0, x - 390, y );  
+            draw_text(x - 404, y + 8, "10##Attacks oncoming Borgis. Can be destroyed.");
+            draw_sprite( spr_icon_parts, 0, x - 385, y );  
         }    
         draw_self();
     }
