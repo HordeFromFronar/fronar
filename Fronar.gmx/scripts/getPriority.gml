@@ -9,23 +9,43 @@ with (obj) {
     target_turret = instance_nearest(x, y, obj_turret);
     target_barricade = instance_nearest(x, y, obj_barricade);
     
-    if (distance_to_object(target_door) <= distance_to_object(target_char) && 
-        distance_to_object(target_door) <= distance_to_object(target_crate) && 
-        distance_to_object(target_door) <= distance_to_object(target_turret) &&
-        distance_to_object(target_door) <= distance_to_object(target_barricade) &&
-        !target_door.open) {
-        target = target_door;
-        ignoreSight = 1;
-    } else if (distance_to_object(target_crate) <= distance_to_object(target_char) && 
-        distance_to_object(target_crate) <= distance_to_object(target_turret) &&
-        distance_to_object(target_crate) <= distance_to_object(target_barricade)) {
-        target = target_crate;
-    } else if (distance_to_object(target_char) <= distance_to_object(target_turret) &&
-        distance_to_object(target_char) <= distance_to_object(target_barricade)) {
-        target = target_char;
-    } else if (distance_to_object(target_turret) <= distance_to_object(target_barricade)){
-        target = target_turret;
-    } else {
-        target = target_barricade;
+    if (instance_exists(target_door)) {
+        if (distance_to_object(target_door) <= distance_to_object(target_char) && 
+            distance_to_object(target_door) <= distance_to_object(target_crate) && 
+            distance_to_object(target_door) <= distance_to_object(target_turret) &&
+            distance_to_object(target_door) <= distance_to_object(target_barricade) &&
+            !target_door.open) {
+            target = target_door;
+            ignoreSight = 1;
+        } else if (distance_to_object(target_crate) <= distance_to_object(target_char) && 
+            distance_to_object(target_crate) <= distance_to_object(target_turret) &&
+            distance_to_object(target_crate) <= distance_to_object(target_barricade)) {
+            target = target_crate;
+        } else if (distance_to_object(target_char) <= distance_to_object(target_turret) &&
+            distance_to_object(target_char) <= distance_to_object(target_barricade)) {
+            target = target_char;
+        } else if (distance_to_object(target_turret) <= distance_to_object(target_barricade)){
+            target = target_turret;
+        } else if (instance_exists(target_barricade)) {
+            target = target_barricade;
+        } else {
+            target = 0;
+        }
+    }
+    else {
+        if (distance_to_object(target_crate) <= distance_to_object(target_char) && 
+            distance_to_object(target_crate) <= distance_to_object(target_turret) &&
+            distance_to_object(target_crate) <= distance_to_object(target_barricade)) {
+            target = target_crate;
+        } else if (distance_to_object(target_char) <= distance_to_object(target_turret) &&
+            distance_to_object(target_char) <= distance_to_object(target_barricade)) {
+            target = target_char;
+        } else if (distance_to_object(target_turret) <= distance_to_object(target_barricade)){
+            target = target_turret;
+        } else if (instance_exists(target_barricade)) {
+            target = target_barricade;
+        } else {
+            target = 0;
+        }
     }
 }

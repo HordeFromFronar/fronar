@@ -26,6 +26,8 @@
     <sound>sound\snd_Title_Theme</sound>
     <sound>sound\snd_Map_Theme</sound>
     <sound>sound\snd_Night_Theme</sound>
+    <sound>sound\snd_footstep</sound>
+    <sound>sound\snd_victory</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_char</sprite>

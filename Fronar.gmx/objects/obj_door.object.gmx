@@ -102,28 +102,31 @@ if (hp &lt;= 0) {
             <string>///Open
 closest = instance_nearest(originalX, originalY, obj_char);
 
-if (point_distance(originalX,originalY,closest.x,closest.y) &lt; 20) {
-    if (x!= targetX || y != targetY) {
-        if (distance_to_point(targetX, targetY) &lt;= openSpeed) {
-            x = targetX;
-            y = targetY;
-            speed = 0;
-        } else {
-            move_towards_point(targetX,targetY,openSpeed);
+if (instance_exists(closest)) {
+
+    if (point_distance(originalX,originalY,closest.x,closest.y) &lt; 20) {
+        if (x!= targetX || y != targetY) {
+            if (distance_to_point(targetX, targetY) &lt;= openSpeed) {
+                x = targetX;
+                y = targetY;
+                speed = 0;
+            } else {
+                move_towards_point(targetX,targetY,openSpeed);
+            }
         }
-    }
-    open = 1;
-} else {
-    if (x!= originalX || y != originalY) {
-        if (distance_to_point(originalX, originalY) &lt;= openSpeed) {
-            x = originalX;
-            y = originalY;
-            speed = 0;
-        } else {
-            move_towards_point(originalX,originalY,openSpeed);
+        open = 1;
+    } else {
+        if (x!= originalX || y != originalY) {
+            if (distance_to_point(originalX, originalY) &lt;= openSpeed) {
+                x = originalX;
+                y = originalY;
+                speed = 0;
+            } else {
+                move_towards_point(originalX,originalY,openSpeed);
+            }
         }
+        open = 0;
     }
-    open = 0;
 }
 </string>
           </argument>
