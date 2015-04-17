@@ -61,8 +61,13 @@ evade = ds_list_find_value(ds_list_find_value(global.charList, charID),14);
 crit = ds_list_find_value(ds_list_find_value(global.charList, charID),15);
 class = ds_list_find_value(ds_list_find_value(global.charList, charID),16);
 
-if (rate == 0) {
-    rate = 0.5;
+if (rate &lt; 0) {
+    rate = 0;
+    ds_list_replace(ds_list_find_value(global.charList, charID),12,0);
+}
+if (moveSpeed &lt; 1) {
+    moveSpeed = 1;
+    ds_list_replace(ds_list_find_value(global.charList, charID),10,1);
 }
 
 image_index = portraitId;

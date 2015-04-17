@@ -140,6 +140,8 @@
     <sprite>sprites\spr_cubicle4</sprite>
     <sprite>sprites\spr_swivel1</sprite>
     <sprite>sprites\spr_swivel2</sprite>
+    <sprite>sprites\spr_resume</sprite>
+    <sprite>sprites\spr_menu</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_title</background>
@@ -436,6 +438,7 @@
     <object>objects\obj_options</object>
     <object>objects\obj_continue</object>
     <object>objects\obj_quit</object>
+    <object>objects\obj_exit</object>
     <object>objects\obj_title_borgi</object>
     <object>objects\obj_opening_panel</object>
     <object>objects\obj_opening_left</object>
@@ -537,6 +540,8 @@
     <object>objects\obj_swivel1</object>
     <object>objects\obj_swivel2</object>
     <object>objects\obj_transition_manager</object>
+    <object>objects\obj_resume</object>
+    <object>objects\obj_menu</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>

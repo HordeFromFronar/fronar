@@ -3,7 +3,7 @@
   <spriteName>spr_button_menu</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-10</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -48,7 +48,14 @@ audio_play_sound(snd_Menu, 1, false);
           <argument>
             <kind>1</kind>
             <string>///Display Settings
-
+if(global.options == 0) {
+    global.tacPause = 1;
+    global.options = 1;
+    global.selected = 0;
+} else {
+    global.tacPause = 0;
+    global.options = 0;
+}
 </string>
           </argument>
         </arguments>
@@ -72,6 +79,14 @@ audio_play_sound(snd_Menu, 1, false);
           <argument>
             <kind>1</kind>
             <string>///Settings
+if(global.options == 0) {
+    global.tacPause = 1;
+    global.options = 1;
+    global.selected = 0;
+} else {
+    global.tacPause = 0;
+    global.options = 0;
+}
 </string>
           </argument>
         </arguments>

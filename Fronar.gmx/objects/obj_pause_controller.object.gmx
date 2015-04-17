@@ -51,7 +51,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.tacPause) {
+            <string>if (global.tacPause &amp;&amp; global.options == 0) {
     global.tacPause = 0;
 } else {
     global.tacPause = 1;

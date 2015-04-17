@@ -44,6 +44,7 @@ globalvar next_event;
 globalvar eventCharList;
 globalvar travelling;
 globalvar tacPause;
+globalvar options;
 
 selected = 0;
 eventNumber = 0;
@@ -58,6 +59,7 @@ event_subevent = 0;
 next_event = -1;
 travelling = 0;
 tacPause = 0;
+options = 0;
 
 charList = ds_list_create();
 resourceList = ds_list_create();
